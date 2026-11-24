@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T20:13:03Z",
+  "generated": "2026-11-24T21:24:04Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -146,6 +146,12 @@
       "type": "feast",
       "liturgy": "2026-12-09-liturgy.html",
       "vespers": "2026-12-09-vespers.html"
+    }
+  ],
+  "akathists": [
+    {
+      "title": "Akathist to All Saints of North America",
+      "file": "akathist-all-north-american-saints.html"
     }
   ]
 }
