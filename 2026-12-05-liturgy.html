@@ -14,7 +14,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Divine Liturgy — Ven. Sabbas the Sanctified (December 5, 2026)</h1>
 <p class='rubric'>Ven. Sabbas the Sanctified. Nativity Fast.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option><option value='__add__'>+ Add New Translation</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
 <hr class='sep'>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is the Kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
@@ -235,10 +235,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Wisdom!</p>
 <p><span class='speaker'>Reader:</span> The reading from the Epistle of the Holy Apostle Paul to the Galatians.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, longsuffering, kindness, goodness, faithfulness, gentleness, self-control. Against such there is no law. And those who are Christ’s have crucified the flesh with its passions and desires. If we live in the Spirit, let us also walk in the Spirit. Let us not become conceited, provoking one another, envying one another. Brethren, if a man is overtaken in any trespass, you who are spiritual restore such a one in a spirit of gentleness, considering yourself lest you also be tempted. Bear one another’s burdens, and so fulfill the law of Christ.</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law. Now those who belong to Christ Jesus have crucified the flesh with its passions and desires. If we live by the Spirit, let us also walk by the Spirit. Let us not become boastful, challenging one another, envying one another. Brethren, even if anyone is caught in any trespass, you who are spiritual, restore such a one in a spirit of gentleness; each one looking to yourself, so that you too will not be tempted. Bear one another’s burdens, and thereby fulfill the law of Christ.</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law. And they that are Christ&#x27;s have crucified the flesh with the affections and lusts. If we live in the Spirit, let us also walk in the Spirit. Let us not be desirous of vain glory, provoking one another, envying one another. Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted. Bear ye one another&#x27;s burdens, and so fulfil the law of Christ.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such there is no law. And those who belong to Christ Jesus have crucified the flesh with its passions and desires. If we live by the Spirit, let us also walk by the Spirit. Let us have no self-conceit, no provoking of one another, no envy of one another. Brethren, if a man is overtaken in any trespass, you who are spiritual should restore him in a spirit of gentleness. Look to yourself, lest you too be tempted. Bear one another’s burdens, and so fulfil the law of Christ.</p></div>
+<div class='reading-oca' data-ref='Galatians 5:22-6:2'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, longsuffering, kindness, goodness, faithfulness, gentleness, self-control. Against such there is no law. And those who are Christ’s have crucified the flesh with its passions and desires. If we live in the Spirit, let us also walk in the Spirit. Let us not become conceited, provoking one another, envying one another. Brethren, if a man is overtaken in any trespass, you who are spiritual restore such a one in a spirit of gentleness, considering yourself lest you also be tempted. Bear one another’s burdens, and so fulfill the law of Christ.</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Galatians 5:22-6:2' style='display:none'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law. Now those who belong to Christ Jesus have crucified the flesh with its passions and desires. If we live by the Spirit, let us also walk by the Spirit. Let us not become boastful, challenging one another, envying one another. Brethren, even if anyone is caught in any trespass, you who are spiritual, restore such a one in a spirit of gentleness; each one looking to yourself, so that you too will not be tempted. Bear one another’s burdens, and thereby fulfill the law of Christ.</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='Galatians 5:22-6:2' style='display:none'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law. And they that are Christ&#x27;s have crucified the flesh with the affections and lusts. If we live in the Spirit, let us also walk in the Spirit. Let us not be desirous of vain glory, provoking one another, envying one another. Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted. Bear ye one another&#x27;s burdens, and so fulfil the law of Christ.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='Galatians 5:22-6:2' style='display:none'><p><span class='speaker'>Reader:</span> But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such there is no law. And those who belong to Christ Jesus have crucified the flesh with its passions and desires. If we live by the Spirit, let us also walk by the Spirit. Let us have no self-conceit, no provoking of one another, no envy of one another. Brethren, if a man is overtaken in any trespass, you who are spiritual should restore him in a spirit of gentleness. Look to yourself, lest you too be tempted. Bear one another’s burdens, and so fulfil the law of Christ.</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee, Reader.</p>
 <p><span class='speaker'>Reader:</span> (quietly) And to thy spirit.</p>
 <p class='rubric'>Then the reader continues immediately…</p>
@@ -260,10 +260,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> The reading from the Holy Gospel according to Matthew.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <p><span class='speaker-clergy'>Priest:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker-clergy'>Deacon:</span> All things have been delivered to Me by My Father, and no one knows the Son except the Father. Nor does anyone know the Father except the Son, and the one to whom the Son wills to reveal Him. Come to Me, all you who labor and are heavy laden, and I will give you rest. Take My yoke upon you and learn from Me, for I am gentle and lowly in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.”</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> All things have been handed over to Me by My Father; and no one knows the Son except the Father; nor does anyone know the Father except the Son, and anyone to whom the Son wills to reveal Him. “Come to Me, all who are weary and heavy-laden, and I will give you rest. Take My yoke upon you and learn from Me, for I am gentle and humble in heart, and you will find rest for your souls . For My yoke is easy and My burden is light.”</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> All things are delivered unto me of my Father: and no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son, and he to whomsoever the Son will reveal him. Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> All things have been delivered to me by my Father; and no one knows the Son except the Father, and no one knows the Father except the Son and any one to whom the Son chooses to reveal him. Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me; for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.”</p></div>
+<div class='reading-oca' data-ref='Matthew 11:27-30'><p><span class='speaker-clergy'>Deacon:</span> All things have been delivered to Me by My Father, and no one knows the Son except the Father. Nor does anyone know the Father except the Son, and the one to whom the Son wills to reveal Him. Come to Me, all you who labor and are heavy laden, and I will give you rest. Take My yoke upon you and learn from Me, for I am gentle and lowly in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.”</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Matthew 11:27-30' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> All things have been handed over to Me by My Father; and no one knows the Son except the Father; nor does anyone know the Father except the Son, and anyone to whom the Son wills to reveal Him. “Come to Me, all who are weary and heavy-laden, and I will give you rest. Take My yoke upon you and learn from Me, for I am gentle and humble in heart, and you will find rest for your souls . For My yoke is easy and My burden is light.”</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='Matthew 11:27-30' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> All things are delivered unto me of my Father: and no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son, and he to whomsoever the Son will reveal him. Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='Matthew 11:27-30' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> All things have been delivered to me by my Father; and no one knows the Son except the Father, and no one knows the Father except the Son and any one to whom the Son chooses to reveal him. Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me; for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.”</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee that proclaimest the Gospel.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <h2>The Homily</h2>
@@ -555,22 +555,133 @@ function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  // A runtime-added translation's divs do not exist until its fetch
+  // finishes; until then, show the OCA text rather than a blank reading.
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = '');
+  }
   var rs = document.querySelector('.readings-select');
-  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
+  if(rs){
+    var want = readingSource==='oca' ? 'oca' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
 }
 function setScriptureReading(v){
+  if(v === '__add__'){
+    // "+ Add New Translation" was picked: put the select back on the
+    // current reading and open the app's add-a-translation flow. The
+    // sentinel is never saved as a translation.
+    applyReadingPrefs();
+    if(window.ServiceApp) ServiceApp.addTranslation();
+    return;
+  }
   if(v === 'oca'){ readingSource = 'oca'; }
   else { readingSource = 'bg'; bgVersion = v; }
   applyReadingPrefs();
   _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
   _savePref('version', bgVersion);
 }
+// Adds a translation fetched in the app (Nov 24, 2026): version is the
+// BibleGateway version code, label is the display name (the code itself
+// for runtime-added versions), and texts maps each reading's data-ref to
+// the joined verse text, or null when BibleGateway has no text for that
+// reading in this version. For each ref it builds a .reading-bg div by
+// cloning the reading's .reading-oca div (so the speaker markup matches
+// exactly) and replacing the text after the speaker span. Unavailable
+// readings get the Vespers-style fallback (a rubric + the OCA text).
+// Idempotent — the app re-adds its saved translations on every page load.
+function addTranslation(version, label, texts){
+  // Add the option to the dropdown, alphabetically by label among the
+  // translation options, before the "__add__" sentinel.
+  var rs = document.querySelector('.readings-select');
+  if(rs && !rs.querySelector('option[value="'+version+'"]')){
+    var o = document.createElement('option');
+    o.value = version;
+    o.textContent = label;
+    var sentinel = rs.querySelector('option[value="__add__"]');
+    var placed = false;
+    for(var i=0; i<rs.options.length; i++){
+      var opt = rs.options[i];
+      if(opt.value === 'oca' || opt.value === '__add__') continue;
+      if(label.localeCompare(opt.text) < 0){ rs.add(o, opt); placed = true; break; }
+    }
+    if(!placed){
+      if(sentinel) rs.add(o, sentinel);
+      else rs.add(o);
+    }
+  }
+  // Build a .reading-bg div for each reading.
+  Object.keys(texts).forEach(function(ref){
+    var oca = null, lastBg = null, exists = false;
+    document.querySelectorAll('.reading-oca').forEach(function(d){
+      if(d.dataset.ref === ref) oca = d;
+    });
+    if(!oca) return;
+    document.querySelectorAll('.reading-bg').forEach(function(d){
+      if(d.dataset.ref === ref){
+        if(d.dataset.version === version) exists = true;
+        lastBg = d;
+      }
+    });
+    if(exists) return;
+    var div = oca.cloneNode(true);
+    div.className = 'reading-bg';
+    div.dataset.version = version;
+    div.dataset.ref = ref;
+    div.style.display = 'none';
+    var text = texts[ref];
+    if(text){
+      // Replace the text after the speaker span with the new text.
+      var p = div.querySelector('p');
+      if(p){
+        var span = p.querySelector('span');
+        var afterSpan = false;
+        Array.prototype.slice.call(p.childNodes).forEach(function(n){
+          if(n === span){ afterSpan = true; return; }
+          if(afterSpan) p.removeChild(n);
+        });
+        p.appendChild(document.createTextNode(' ' + text));
+      }
+    } else {
+      // Unavailable: Vespers-style fallback — rubric + the OCA text
+      // (the clone already holds the OCA spoken paragraph).
+      var rub = document.createElement('p');
+      rub.className = 'rubric';
+      rub.textContent = 'BibleGateway (' + label + ') text not available for this reading; showing the OCA text.';
+      div.insertBefore(rub, div.firstChild);
+    }
+    if(lastBg) lastBg.after(div);
+    else oca.after(div);
+  });
+  // Append Sources lines after the Sources h2, then select the new version.
+  var srcH2 = null;
+  document.querySelectorAll('h2').forEach(function(h){ if(h.textContent === 'Sources') srcH2 = h; });
+  if(srcH2){
+    Object.keys(texts).forEach(function(ref){
+      var line = ref + ': Source: BibleGateway (' + label + '). Same OCA pericope, different translation. (Added in the app.)';
+      var dup = false;
+      document.querySelectorAll('p.rubric').forEach(function(p){ if(p.textContent === line) dup = true; });
+      if(dup) return;
+      var insertAfter = srcH2, n = srcH2.nextSibling;
+      while(n){
+        if(n.nodeType === 1){
+          if(n.tagName === 'P' && n.classList.contains('rubric')){ insertAfter = n; n = n.nextSibling; }
+          else break;
+        } else n = n.nextSibling;
+      }
+      var rub2 = document.createElement('p');
+      rub2.className = 'rubric';
+      rub2.textContent = line;
+      insertAfter.after(rub2);
+    });
+  }
+  setScriptureReading(version);
+}
 // Compatibility wrappers for the app, which calls these from
-// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
-// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
-// or 'biblegateway') selects the saved translation — bgVersion, which
-// starts at the KJV default when none has been saved. setBgVersion(v)
-// selects that translation.
+// applySavedPrefs and resetReadingPrefs: setReadingSource('oca') selects
+// the OCA text; setReadingSource('bg' or 'biblegateway') selects the saved
+// translation — bgVersion, which starts at the KJV default when none has
+// been saved. setBgVersion(v) selects that translation.
 function setReadingSource(src){
   if(src === 'oca'){ setScriptureReading('oca'); }
   else { setScriptureReading(bgVersion); }
