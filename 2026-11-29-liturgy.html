@@ -521,6 +521,43 @@ function applyPatronPrefs(){
   document.querySelectorAll('.patron-btn').forEach(b=>b.classList.toggle('active', b.dataset.patron===patronMode));
 }
 function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
+// Adds a patron fetched in the app (Nov 24, 2026): p is
+// {key, shortName, troparion:{tone,lines}, kontakion:{tone,lines}}.
+// Builds the patron's button and hymn blocks from the existing ones, so
+// an added patron behaves exactly like a library patron. Idempotent —
+// the app re-adds its saved patrons on every page load.
+function addPatron(p){
+  var row = document.querySelector('.patron-btn');
+  row = row ? row.closest('.src-toggle') : null;
+  if(row && !row.querySelector('[data-patron="'+p.key+'"]')){
+    var b = document.createElement('button');
+    b.className = 'src-btn patron-btn';
+    b.setAttribute('data-patron', p.key);
+    b.textContent = p.shortName;
+    b.addEventListener('click', function(){ setPatron(p.key); });
+    row.appendChild(b);
+  }
+  [['troparion', p.troparion], ['kontakion', p.kontakion]].forEach(function(pair){
+    var kind = pair[0], h = pair[1];
+    if(!h || !h.lines) return;
+    var blocks = document.querySelectorAll('.patron-block.patron-'+kind);
+    if(!blocks.length) return;
+    if(document.querySelector('.patron-block.patron-'+kind+'.patron-'+p.key)) return;
+    var d = document.createElement('div');
+    d.className = 'patron-block patron-'+kind+' patron-'+p.key;
+    var lab = document.createElement('p');
+    lab.className = 'label';
+    lab.textContent = 'Tone ' + h.tone + ' ' + kind.charAt(0).toUpperCase() + kind.slice(1) + ' (' + p.shortName + ' — Patron of the Temple)';
+    d.appendChild(lab);
+    h.lines.forEach(function(ln){
+      var pp = document.createElement('p');
+      pp.textContent = ln;
+      d.appendChild(pp);
+    });
+    blocks[blocks.length-1].after(d);
+  });
+  applyPatronPrefs();
+}
 document.addEventListener('DOMContentLoaded', applyPatronPrefs);
 </script>
 <footer>Assembled by liturgical-app v1 (prototype) — variable texts © Orthodox Church in America, Dept. of Liturgical Music and Translations, duplicated for liturgical use; readings from oca.org (NKJV). Fixed texts: OCA service-book / Reader's Vespers sources; the priest's silent prayers follow the service-book text (via ponomar.net); antiphon psalms and Psalm 33 from the Psalter of the Seventy (Holy Transfiguration Monastery) as printed in the Royster Service Book; the Litiya prayers follow Hapgood's Service Book (1906), lightly adapted. Verify against parish practice before liturgical use.</footer></body></html>
