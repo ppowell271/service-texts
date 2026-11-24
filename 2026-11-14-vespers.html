@@ -14,7 +14,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Great Vespers — Holy and All-praised Apostle Philip (November 14, 2026)</h1>
 <p class='rubric'>Served Friday evening, November 13. Holy and All-praised Apostle Philip, Tone 6. Three readings and a Litiya are appointed.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select patron-btn' onchange="setPatron(this.value)"><option value='st-innocent' selected>St. Innocent</option><option value='st-george'>St. George</option><option value='st-nicholas'>St. Nicholas</option></select></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select patron-btn' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option></select></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
 <hr class='sep'>
 <h2>The Typical Beginning</h2>
 <p><span class='speaker'>Reader:</span> Through the prayers of our holy fathers, Lord Jesus Christ, Son of God, have mercy on us. Amen.</p>
@@ -432,11 +432,12 @@ function applyPatronPrefs(){
 function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
 // Adds a patron fetched in the app (Nov 24, 2026): p is
 // {key, shortName, troparion:{tone,lines}, kontakion:{tone,lines}}.
-// Adds the patron's option to the selector (alphabetically, after the
-// first option — the default, St. Innocent, always stays first) and
-// builds the hymn blocks from the existing ones, so an added patron
-// behaves exactly like a library patron. Idempotent — the app re-adds
-// its saved patrons on every page load.
+// Adds the patron's option to the selector in alphabetical order
+// (Nov 24, 2026 — Philip: all patrons alphabetical, St. Innocent
+// included, not pinned first) and builds the hymn blocks from the
+// existing ones, so an added patron behaves exactly like a library
+// patron. Idempotent — the app re-adds its saved patrons on every
+// page load.
 function addPatron(p){
   var s = document.querySelector('.patron-select');
   if(s && !s.querySelector('option[value="'+p.key+'"]')){
@@ -444,7 +445,7 @@ function addPatron(p){
     o.value = p.key;
     o.textContent = p.shortName;
     var placed = false;
-    for(var i=1; i<s.options.length; i++){
+    for(var i=0; i<s.options.length; i++){
       if(p.shortName.localeCompare(s.options[i].text) < 0){ s.add(o, s.options[i]); placed = true; break; }
     }
     if(!placed) s.add(o);
