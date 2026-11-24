@@ -14,7 +14,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Divine Liturgy — St. John Chrysostom, Archbishop of Constantinople (November 13, 2026)</h1>
 <p class='rubric'>St. John Chrysostom, Archbishop of Constantinople.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option><option value='__add__'>+ Add New Translation</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
 <hr class='sep'>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is the Kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
@@ -236,10 +236,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Wisdom!</p>
 <p><span class='speaker'>Reader:</span> The reading from the Epistle of the Holy Apostle Paul to the Hebrews.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker'>Reader:</span> For such a High Priest was fitting for us, who is holy, harmless, undefiled, separate from sinners, and has become higher than the heavens; who does not need daily, as those high priests, to offer up sacrifices, first for his own sins and then for the people’s, for this He did once for all when He offered up Himself. For the law appoints as high priests men who have weakness, but the word of the oath, which came after the law, appoints the Son who has been perfected forever. Now this is the main point of the things we are saying: We have such a High Priest, who is seated at the right hand of the throne of the Majesty in the heavens, a Minister of the sanctuary and of the true tabernacle which the Lord erected, and not man.</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker'>Reader:</span> For it was fitting for us to have such a high priest, holy, innocent, undefiled, separated from sinners and exalted above the heavens; who does not need daily, like those high priests, to offer up sacrifices, first for His own sins and then for the sins of the people, because this He did once for all when He offered up Himself. For the Law appoints men as high priests who are weak, but the word of the oath, which came after the Law, appoints a Son, made perfect forever. Now the main point in what has been said is this: we have such a high priest, who has taken His seat at the right hand of the throne of the Majesty in the heavens, a minister in the sanctuary and in the true tabernacle, which the Lord pitched, not man.</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker'>Reader:</span> For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens; Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people&#x27;s: for this he did once, when he offered up himself. For the law maketh men high priests which have infirmity; but the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore. Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens; A minister of the sanctuary, and of the true tabernacle, which the Lord pitched, and not man.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker'>Reader:</span> For it was fitting that we should have such a high priest, holy, blameless, unstained, separated from sinners, exalted above the heavens. He has no need, like those high priests, to offer sacrifices daily, first for his own sins and then for those of the people; he did this once for all when he offered up himself. Indeed, the law appoints men in their weakness as high priests, but the word of the oath, which came later than the law, appoints a Son who has been made perfect for ever. Now the point in what we are saying is this: we have such a high priest, one who is seated at the right hand of the throne of the Majesty in heaven, a minister in the sanctuary and the true tent which is set up not by man but by the Lord.</p></div>
+<div class='reading-oca' data-ref='Hebrews 7:26-8:2'><p><span class='speaker'>Reader:</span> For such a High Priest was fitting for us, who is holy, harmless, undefiled, separate from sinners, and has become higher than the heavens; who does not need daily, as those high priests, to offer up sacrifices, first for his own sins and then for the people’s, for this He did once for all when He offered up Himself. For the law appoints as high priests men who have weakness, but the word of the oath, which came after the law, appoints the Son who has been perfected forever. Now this is the main point of the things we are saying: We have such a High Priest, who is seated at the right hand of the throne of the Majesty in the heavens, a Minister of the sanctuary and of the true tabernacle which the Lord erected, and not man.</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Hebrews 7:26-8:2' style='display:none'><p><span class='speaker'>Reader:</span> For it was fitting for us to have such a high priest, holy, innocent, undefiled, separated from sinners and exalted above the heavens; who does not need daily, like those high priests, to offer up sacrifices, first for His own sins and then for the sins of the people, because this He did once for all when He offered up Himself. For the Law appoints men as high priests who are weak, but the word of the oath, which came after the Law, appoints a Son, made perfect forever. Now the main point in what has been said is this: we have such a high priest, who has taken His seat at the right hand of the throne of the Majesty in the heavens, a minister in the sanctuary and in the true tabernacle, which the Lord pitched, not man.</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='Hebrews 7:26-8:2' style='display:none'><p><span class='speaker'>Reader:</span> For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens; Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people&#x27;s: for this he did once, when he offered up himself. For the law maketh men high priests which have infirmity; but the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore. Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens; A minister of the sanctuary, and of the true tabernacle, which the Lord pitched, and not man.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='Hebrews 7:26-8:2' style='display:none'><p><span class='speaker'>Reader:</span> For it was fitting that we should have such a high priest, holy, blameless, unstained, separated from sinners, exalted above the heavens. He has no need, like those high priests, to offer sacrifices daily, first for his own sins and then for those of the people; he did this once for all when he offered up himself. Indeed, the law appoints men in their weakness as high priests, but the word of the oath, which came later than the law, appoints a Son who has been made perfect for ever. Now the point in what we are saying is this: we have such a high priest, one who is seated at the right hand of the throne of the Majesty in heaven, a minister in the sanctuary and the true tent which is set up not by man but by the Lord.</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee, Reader.</p>
 <p><span class='speaker'>Reader:</span> (quietly) And to thy spirit.</p>
 <p class='rubric'>Then the reader continues immediately…</p>
@@ -261,10 +261,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> The reading from the Holy Gospel according to John.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <p><span class='speaker-clergy'>Priest:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker-clergy'>Deacon:</span> I am the door. If anyone enters by Me, he will be saved, and will go in and out and find pasture. The thief does not come except to steal, and to kill, and to destroy. I have come that they may have life, and that they may have it more abundantly. I am the good shepherd. The good shepherd gives His life for the sheep. But a hireling, he who is not the shepherd, one who does not own the sheep, sees the wolf coming and leaves the sheep and flees; and the wolf catches the sheep and scatters them. The hireling flees because he is a hireling and does not care about the sheep. I am the good shepherd; and I know My sheep, and am known by My own. As the Father knows Me, even so I know the Father; and I lay down My life for the sheep. And other sheep I have which are not of this fold; them also I must bring, and they will hear My voice; and there will be one flock and one shepherd.</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> I am the door; if anyone enters through Me, he will be saved, and will go in and out and find pasture. The thief comes only to steal and kill and destroy; I came that they may have life, and have it abundantly. “I am the good shepherd; the good shepherd lays down His life for the sheep. He who is a hired hand, and not a shepherd, who is not the owner of the sheep, sees the wolf coming, and leaves the sheep and flees, and the wolf snatches them and scatters them. He flees because he is a hired hand and is not concerned about the sheep. I am the good shepherd, and I know My own and My own know Me, even as the Father knows Me and I know the Father; and I lay down My life for the sheep. I have other sheep, which are not of this fold; I must bring them also, and they will hear My voice; and they will become one flock with one shepherd.</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture. The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly. I am the good shepherd: the good shepherd giveth his life for the sheep. But he that is an hireling, and not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth: and the wolf catcheth them, and scattereth the sheep. The hireling fleeth, because he is an hireling, and careth not for the sheep. I am the good shepherd, and know my sheep, and am known of mine. As the Father knoweth me, even so know I the Father: and I lay down my life for the sheep. And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> I am the door; if any one enters by me, he will be saved, and will go in and out and find pasture. The thief comes only to steal and kill and destroy; I came that they may have life, and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep. He who is a hireling and not a shepherd, whose own the sheep are not, sees the wolf coming and leaves the sheep and flees; and the wolf snatches them and scatters them. He flees because he is a hireling and cares nothing for the sheep. I am the good shepherd; I know my own and my own know me, as the Father knows me and I know the Father; and I lay down my life for the sheep. And I have other sheep, that are not of this fold; I must bring them also, and they will heed my voice. So there shall be one flock, one shepherd.</p></div>
+<div class='reading-oca' data-ref='John 10:9-16'><p><span class='speaker-clergy'>Deacon:</span> I am the door. If anyone enters by Me, he will be saved, and will go in and out and find pasture. The thief does not come except to steal, and to kill, and to destroy. I have come that they may have life, and that they may have it more abundantly. I am the good shepherd. The good shepherd gives His life for the sheep. But a hireling, he who is not the shepherd, one who does not own the sheep, sees the wolf coming and leaves the sheep and flees; and the wolf catches the sheep and scatters them. The hireling flees because he is a hireling and does not care about the sheep. I am the good shepherd; and I know My sheep, and am known by My own. As the Father knows Me, even so I know the Father; and I lay down My life for the sheep. And other sheep I have which are not of this fold; them also I must bring, and they will hear My voice; and there will be one flock and one shepherd.</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='John 10:9-16' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> I am the door; if anyone enters through Me, he will be saved, and will go in and out and find pasture. The thief comes only to steal and kill and destroy; I came that they may have life, and have it abundantly. “I am the good shepherd; the good shepherd lays down His life for the sheep. He who is a hired hand, and not a shepherd, who is not the owner of the sheep, sees the wolf coming, and leaves the sheep and flees, and the wolf snatches them and scatters them. He flees because he is a hired hand and is not concerned about the sheep. I am the good shepherd, and I know My own and My own know Me, even as the Father knows Me and I know the Father; and I lay down My life for the sheep. I have other sheep, which are not of this fold; I must bring them also, and they will hear My voice; and they will become one flock with one shepherd.</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='John 10:9-16' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture. The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly. I am the good shepherd: the good shepherd giveth his life for the sheep. But he that is an hireling, and not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth: and the wolf catcheth them, and scattereth the sheep. The hireling fleeth, because he is an hireling, and careth not for the sheep. I am the good shepherd, and know my sheep, and am known of mine. As the Father knoweth me, even so know I the Father: and I lay down my life for the sheep. And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='John 10:9-16' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> I am the door; if any one enters by me, he will be saved, and will go in and out and find pasture. The thief comes only to steal and kill and destroy; I came that they may have life, and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep. He who is a hireling and not a shepherd, whose own the sheep are not, sees the wolf coming and leaves the sheep and flees; and the wolf snatches them and scatters them. He flees because he is a hireling and cares nothing for the sheep. I am the good shepherd; I know my own and my own know me, as the Father knows me and I know the Father; and I lay down my life for the sheep. And I have other sheep, that are not of this fold; I must bring them also, and they will heed my voice. So there shall be one flock, one shepherd.</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee that proclaimest the Gospel.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <h2>The Homily</h2>
@@ -556,22 +556,133 @@ function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  // A runtime-added translation's divs do not exist until its fetch
+  // finishes; until then, show the OCA text rather than a blank reading.
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = '');
+  }
   var rs = document.querySelector('.readings-select');
-  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
+  if(rs){
+    var want = readingSource==='oca' ? 'oca' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
 }
 function setScriptureReading(v){
+  if(v === '__add__'){
+    // "+ Add New Translation" was picked: put the select back on the
+    // current reading and open the app's add-a-translation flow. The
+    // sentinel is never saved as a translation.
+    applyReadingPrefs();
+    if(window.ServiceApp) ServiceApp.addTranslation();
+    return;
+  }
   if(v === 'oca'){ readingSource = 'oca'; }
   else { readingSource = 'bg'; bgVersion = v; }
   applyReadingPrefs();
   _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
   _savePref('version', bgVersion);
 }
+// Adds a translation fetched in the app (Nov 24, 2026): version is the
+// BibleGateway version code, label is the display name (the code itself
+// for runtime-added versions), and texts maps each reading's data-ref to
+// the joined verse text, or null when BibleGateway has no text for that
+// reading in this version. For each ref it builds a .reading-bg div by
+// cloning the reading's .reading-oca div (so the speaker markup matches
+// exactly) and replacing the text after the speaker span. Unavailable
+// readings get the Vespers-style fallback (a rubric + the OCA text).
+// Idempotent — the app re-adds its saved translations on every page load.
+function addTranslation(version, label, texts){
+  // Add the option to the dropdown, alphabetically by label among the
+  // translation options, before the "__add__" sentinel.
+  var rs = document.querySelector('.readings-select');
+  if(rs && !rs.querySelector('option[value="'+version+'"]')){
+    var o = document.createElement('option');
+    o.value = version;
+    o.textContent = label;
+    var sentinel = rs.querySelector('option[value="__add__"]');
+    var placed = false;
+    for(var i=0; i<rs.options.length; i++){
+      var opt = rs.options[i];
+      if(opt.value === 'oca' || opt.value === '__add__') continue;
+      if(label.localeCompare(opt.text) < 0){ rs.add(o, opt); placed = true; break; }
+    }
+    if(!placed){
+      if(sentinel) rs.add(o, sentinel);
+      else rs.add(o);
+    }
+  }
+  // Build a .reading-bg div for each reading.
+  Object.keys(texts).forEach(function(ref){
+    var oca = null, lastBg = null, exists = false;
+    document.querySelectorAll('.reading-oca').forEach(function(d){
+      if(d.dataset.ref === ref) oca = d;
+    });
+    if(!oca) return;
+    document.querySelectorAll('.reading-bg').forEach(function(d){
+      if(d.dataset.ref === ref){
+        if(d.dataset.version === version) exists = true;
+        lastBg = d;
+      }
+    });
+    if(exists) return;
+    var div = oca.cloneNode(true);
+    div.className = 'reading-bg';
+    div.dataset.version = version;
+    div.dataset.ref = ref;
+    div.style.display = 'none';
+    var text = texts[ref];
+    if(text){
+      // Replace the text after the speaker span with the new text.
+      var p = div.querySelector('p');
+      if(p){
+        var span = p.querySelector('span');
+        var afterSpan = false;
+        Array.prototype.slice.call(p.childNodes).forEach(function(n){
+          if(n === span){ afterSpan = true; return; }
+          if(afterSpan) p.removeChild(n);
+        });
+        p.appendChild(document.createTextNode(' ' + text));
+      }
+    } else {
+      // Unavailable: Vespers-style fallback — rubric + the OCA text
+      // (the clone already holds the OCA spoken paragraph).
+      var rub = document.createElement('p');
+      rub.className = 'rubric';
+      rub.textContent = 'BibleGateway (' + label + ') text not available for this reading; showing the OCA text.';
+      div.insertBefore(rub, div.firstChild);
+    }
+    if(lastBg) lastBg.after(div);
+    else oca.after(div);
+  });
+  // Append Sources lines after the Sources h2, then select the new version.
+  var srcH2 = null;
+  document.querySelectorAll('h2').forEach(function(h){ if(h.textContent === 'Sources') srcH2 = h; });
+  if(srcH2){
+    Object.keys(texts).forEach(function(ref){
+      var line = ref + ': Source: BibleGateway (' + label + '). Same OCA pericope, different translation. (Added in the app.)';
+      var dup = false;
+      document.querySelectorAll('p.rubric').forEach(function(p){ if(p.textContent === line) dup = true; });
+      if(dup) return;
+      var insertAfter = srcH2, n = srcH2.nextSibling;
+      while(n){
+        if(n.nodeType === 1){
+          if(n.tagName === 'P' && n.classList.contains('rubric')){ insertAfter = n; n = n.nextSibling; }
+          else break;
+        } else n = n.nextSibling;
+      }
+      var rub2 = document.createElement('p');
+      rub2.className = 'rubric';
+      rub2.textContent = line;
+      insertAfter.after(rub2);
+    });
+  }
+  setScriptureReading(version);
+}
 // Compatibility wrappers for the app, which calls these from
-// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
-// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
-// or 'biblegateway') selects the saved translation — bgVersion, which
-// starts at the KJV default when none has been saved. setBgVersion(v)
-// selects that translation.
+// applySavedPrefs and resetReadingPrefs: setReadingSource('oca') selects
+// the OCA text; setReadingSource('bg' or 'biblegateway') selects the saved
+// translation — bgVersion, which starts at the KJV default when none has
+// been saved. setBgVersion(v) selects that translation.
 function setReadingSource(src){
   if(src === 'oca'){ setScriptureReading('oca'); }
   else { setScriptureReading(bgVersion); }
