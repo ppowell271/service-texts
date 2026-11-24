@@ -401,22 +401,133 @@ function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  // A runtime-added translation's divs do not exist until its fetch
+  // finishes; until then, show the OCA text rather than a blank reading.
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = '');
+  }
   var rs = document.querySelector('.readings-select');
-  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
+  if(rs){
+    var want = readingSource==='oca' ? 'oca' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
 }
 function setScriptureReading(v){
+  if(v === '__add__'){
+    // "+ Add New Translation" was picked: put the select back on the
+    // current reading and open the app's add-a-translation flow. The
+    // sentinel is never saved as a translation.
+    applyReadingPrefs();
+    if(window.ServiceApp) ServiceApp.addTranslation();
+    return;
+  }
   if(v === 'oca'){ readingSource = 'oca'; }
   else { readingSource = 'bg'; bgVersion = v; }
   applyReadingPrefs();
   _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
   _savePref('version', bgVersion);
 }
+// Adds a translation fetched in the app (Nov 24, 2026): version is the
+// BibleGateway version code, label is the display name (the code itself
+// for runtime-added versions), and texts maps each reading's data-ref to
+// the joined verse text, or null when BibleGateway has no text for that
+// reading in this version. For each ref it builds a .reading-bg div by
+// cloning the reading's .reading-oca div (so the speaker markup matches
+// exactly) and replacing the text after the speaker span. Unavailable
+// readings get the Vespers-style fallback (a rubric + the OCA text).
+// Idempotent — the app re-adds its saved translations on every page load.
+function addTranslation(version, label, texts){
+  // Add the option to the dropdown, alphabetically by label among the
+  // translation options, before the "__add__" sentinel.
+  var rs = document.querySelector('.readings-select');
+  if(rs && !rs.querySelector('option[value="'+version+'"]')){
+    var o = document.createElement('option');
+    o.value = version;
+    o.textContent = label;
+    var sentinel = rs.querySelector('option[value="__add__"]');
+    var placed = false;
+    for(var i=0; i<rs.options.length; i++){
+      var opt = rs.options[i];
+      if(opt.value === 'oca' || opt.value === '__add__') continue;
+      if(label.localeCompare(opt.text) < 0){ rs.add(o, opt); placed = true; break; }
+    }
+    if(!placed){
+      if(sentinel) rs.add(o, sentinel);
+      else rs.add(o);
+    }
+  }
+  // Build a .reading-bg div for each reading.
+  Object.keys(texts).forEach(function(ref){
+    var oca = null, lastBg = null, exists = false;
+    document.querySelectorAll('.reading-oca').forEach(function(d){
+      if(d.dataset.ref === ref) oca = d;
+    });
+    if(!oca) return;
+    document.querySelectorAll('.reading-bg').forEach(function(d){
+      if(d.dataset.ref === ref){
+        if(d.dataset.version === version) exists = true;
+        lastBg = d;
+      }
+    });
+    if(exists) return;
+    var div = oca.cloneNode(true);
+    div.className = 'reading-bg';
+    div.dataset.version = version;
+    div.dataset.ref = ref;
+    div.style.display = 'none';
+    var text = texts[ref];
+    if(text){
+      // Replace the text after the speaker span with the new text.
+      var p = div.querySelector('p');
+      if(p){
+        var span = p.querySelector('span');
+        var afterSpan = false;
+        Array.prototype.slice.call(p.childNodes).forEach(function(n){
+          if(n === span){ afterSpan = true; return; }
+          if(afterSpan) p.removeChild(n);
+        });
+        p.appendChild(document.createTextNode(' ' + text));
+      }
+    } else {
+      // Unavailable: Vespers-style fallback — rubric + the OCA text
+      // (the clone already holds the OCA spoken paragraph).
+      var rub = document.createElement('p');
+      rub.className = 'rubric';
+      rub.textContent = 'BibleGateway (' + label + ') text not available for this reading; showing the OCA text.';
+      div.insertBefore(rub, div.firstChild);
+    }
+    if(lastBg) lastBg.after(div);
+    else oca.after(div);
+  });
+  // Append Sources lines after the Sources h2, then select the new version.
+  var srcH2 = null;
+  document.querySelectorAll('h2').forEach(function(h){ if(h.textContent === 'Sources') srcH2 = h; });
+  if(srcH2){
+    Object.keys(texts).forEach(function(ref){
+      var line = ref + ': Source: BibleGateway (' + label + '). Same OCA pericope, different translation. (Added in the app.)';
+      var dup = false;
+      document.querySelectorAll('p.rubric').forEach(function(p){ if(p.textContent === line) dup = true; });
+      if(dup) return;
+      var insertAfter = srcH2, n = srcH2.nextSibling;
+      while(n){
+        if(n.nodeType === 1){
+          if(n.tagName === 'P' && n.classList.contains('rubric')){ insertAfter = n; n = n.nextSibling; }
+          else break;
+        } else n = n.nextSibling;
+      }
+      var rub2 = document.createElement('p');
+      rub2.className = 'rubric';
+      rub2.textContent = line;
+      insertAfter.after(rub2);
+    });
+  }
+  setScriptureReading(version);
+}
 // Compatibility wrappers for the app, which calls these from
-// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
-// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
-// or 'biblegateway') selects the saved translation — bgVersion, which
-// starts at the KJV default when none has been saved. setBgVersion(v)
-// selects that translation.
+// applySavedPrefs and resetReadingPrefs: setReadingSource('oca') selects
+// the OCA text; setReadingSource('bg' or 'biblegateway') selects the saved
+// translation — bgVersion, which starts at the KJV default when none has
+// been saved. setBgVersion(v) selects that translation.
 function setReadingSource(src){
   if(src === 'oca'){ setScriptureReading('oca'); }
   else { setScriptureReading(bgVersion); }
