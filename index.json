@@ -1,0 +1,40 @@
+{
+  "generated": "2026-11-23T20:33:00Z",
+  "sundays": [
+    {
+      "date": "2026-11-15",
+      "title": "24th Sunday after Pentecost (8th of Luke).",
+      "tone": 7,
+      "liturgy": "2026-11-15-liturgy.html",
+      "vespers": "2026-11-15-vespers.html"
+    },
+    {
+      "date": "2026-11-22",
+      "title": "25th Sunday after Pentecost (9th of Luke).",
+      "tone": 8,
+      "liturgy": "2026-11-22-liturgy.html",
+      "vespers": "2026-11-22-vespers.html"
+    },
+    {
+      "date": "2026-11-29",
+      "title": "26th Sunday after Pentecost (10th of Luke).",
+      "tone": 1,
+      "liturgy": "2026-11-29-liturgy.html",
+      "vespers": "2026-11-29-vespers.html"
+    },
+    {
+      "date": "2026-12-06",
+      "title": "27th Sunday after Pentecost (11th of Luke).",
+      "tone": 2,
+      "liturgy": "2026-12-06-liturgy.html",
+      "vespers": "2026-12-06-vespers.html"
+    },
+    {
+      "date": "2026-12-13",
+      "title": "28th Sunday after Pentecost (12th of Luke).",
+      "tone": 3,
+      "liturgy": "2026-12-13-liturgy.html",
+      "vespers": "2026-12-13-vespers.html"
+    }
+  ]
+}
