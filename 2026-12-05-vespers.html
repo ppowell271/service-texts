@@ -14,7 +14,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Great Vespers — Ven. Sabbas the Sanctified (December 5, 2026)</h1>
 <p class='rubric'>Served Friday evening, December 4. Ven. Sabbas the Sanctified, Tone 5. Three readings and a Litiya are appointed.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select patron-btn' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option></select></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
 <hr class='sep'>
 <h2>The Typical Beginning</h2>
 <p><span class='speaker'>Reader:</span> Through the prayers of our holy fathers, Lord Jesus Christ, Son of God, have mercy on us. Amen.</p>
@@ -469,7 +469,17 @@ function applyPatronPrefs(){
   var s = document.querySelector('.patron-select');
   if(s && s.querySelector('option[value="'+patronMode+'"]')) s.value = patronMode;
 }
-function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
+function setPatron(k){
+  if(k === '__add__'){
+    // "+ Add New Saint" was picked: put the select back on the
+    // current patron and open the app's add-a-patron flow. The
+    // sentinel is never saved as a patron.
+    applyPatronPrefs();
+    if(window.ServiceApp) ServiceApp.addPatron();
+    return;
+  }
+  patronMode = k; applyPatronPrefs(); _savePref('patron', k);
+}
 // Adds a patron fetched in the app (Nov 24, 2026): p is
 // {key, shortName, troparion:{tone,lines}, kontakion:{tone,lines}}.
 // Adds the patron's option to the selector in alphabetical order
@@ -484,11 +494,16 @@ function addPatron(p){
     var o = document.createElement('option');
     o.value = p.key;
     o.textContent = p.shortName;
+    // Insert alphabetically among the saint options; the
+    // "+ Add New Saint" entry (the last option) stays last.
+    var last = s.options[s.options.length-1];
+    var hasAdd = last && last.value === '__add__';
+    var limit = hasAdd ? s.options.length-1 : s.options.length;
     var placed = false;
-    for(var i=0; i<s.options.length; i++){
+    for(var i=0; i<limit; i++){
       if(p.shortName.localeCompare(s.options[i].text) < 0){ s.add(o, s.options[i]); placed = true; break; }
     }
-    if(!placed) s.add(o);
+    if(!placed){ if(hasAdd) s.add(o, last); else s.add(o); }
   }
   [['troparion', p.troparion], ['kontakion', p.kontakion]].forEach(function(pair){
     var kind = pair[0], h = pair[1];
