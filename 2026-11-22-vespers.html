@@ -392,6 +392,36 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Priest:</span> O Thou Who didst rise from the dead, Lord Jesus Christ, Son of God, through the prayers of Thy most pure Mother, of the holy Apostles of the Seventy Philemon and Archippus, the Martyr Apphia, and Onesimus, disciple of St. Paul, of the holy and righteous Ancestors of God, Joachim and Anna, and of all the saints, have mercy on us and save us, for Thou art good and lovest mankind.</p>
 <p class='rubric'>Note: if this Vespers is served as part of a Vigil, the troparia above are replaced by “Rejoice, O Virgin Theotokos…” (thrice), from the OCA file&#x27;s (at Vigil) section — not printed here.</p>
 <script>
+var readingSource = 'oca', bgVersion = 'KJV';
+function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
+function applyReadingPrefs(){
+  document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
+  document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
+    (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  document.querySelectorAll('.src-btn[data-src]').forEach(b=>b.classList.toggle('active', b.dataset.src===readingSource));
+  document.querySelectorAll('.ver-btn').forEach(b=>b.classList.toggle('active', b.dataset.version===bgVersion));
+  var row = document.getElementById('bg-version-row');
+  if (row) row.style.display = readingSource==='bg' ? '' : 'none';
+}
+function setReadingSource(src){ readingSource = src; applyReadingPrefs(); _savePref('source', src); }
+function setBgVersion(v){ bgVersion = v; readingSource = 'bg'; applyReadingPrefs(); _savePref('version', v); _savePref('source', 'bg'); }
+var silentMode = 'summary';
+function applySilentPrefs(){
+  document.querySelectorAll('.silent-off').forEach(e=>e.style.display = silentMode==='summary' ? '' : 'none');
+  document.querySelectorAll('.silent-on').forEach(e=>e.style.display = silentMode==='full' ? '' : 'none');
+  document.querySelectorAll('.pray-btn').forEach(b=>b.classList.toggle('active', b.dataset.mode===silentMode));
+}
+function setSilentPrayers(m){ silentMode = m; applySilentPrefs(); _savePref('silent', m); }
+var thirdMode = 'beatitudes';
+function applyThirdPrefs(){
+  document.querySelectorAll('.third-ps94').forEach(e=>e.style.display = thirdMode==='ps94' ? '' : 'none');
+  document.querySelectorAll('.third-beatitudes').forEach(e=>e.style.display = thirdMode==='beatitudes' ? '' : 'none');
+  document.querySelectorAll('.third-btn').forEach(b=>b.classList.toggle('active', b.dataset.third===thirdMode));
+}
+function setThirdAntiphon(m){ thirdMode = m; applyThirdPrefs(); _savePref('third', m); }
+document.addEventListener('DOMContentLoaded', function(){ applyReadingPrefs(); applySilentPrefs(); applyThirdPrefs(); });
+</script>
+<script>
 var patronMode = 'st-innocent';
 function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
 function applyPatronPrefs(){
@@ -399,6 +429,43 @@ function applyPatronPrefs(){
   document.querySelectorAll('.patron-btn').forEach(b=>b.classList.toggle('active', b.dataset.patron===patronMode));
 }
 function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
+// Adds a patron fetched in the app (Nov 24, 2026): p is
+// {key, shortName, troparion:{tone,lines}, kontakion:{tone,lines}}.
+// Builds the patron's button and hymn blocks from the existing ones, so
+// an added patron behaves exactly like a library patron. Idempotent —
+// the app re-adds its saved patrons on every page load.
+function addPatron(p){
+  var row = document.querySelector('.patron-btn');
+  row = row ? row.closest('.src-toggle') : null;
+  if(row && !row.querySelector('[data-patron="'+p.key+'"]')){
+    var b = document.createElement('button');
+    b.className = 'src-btn patron-btn';
+    b.setAttribute('data-patron', p.key);
+    b.textContent = p.shortName;
+    b.addEventListener('click', function(){ setPatron(p.key); });
+    row.appendChild(b);
+  }
+  [['troparion', p.troparion], ['kontakion', p.kontakion]].forEach(function(pair){
+    var kind = pair[0], h = pair[1];
+    if(!h || !h.lines) return;
+    var blocks = document.querySelectorAll('.patron-block.patron-'+kind);
+    if(!blocks.length) return;
+    if(document.querySelector('.patron-block.patron-'+kind+'.patron-'+p.key)) return;
+    var d = document.createElement('div');
+    d.className = 'patron-block patron-'+kind+' patron-'+p.key;
+    var lab = document.createElement('p');
+    lab.className = 'label';
+    lab.textContent = 'Tone ' + h.tone + ' ' + kind.charAt(0).toUpperCase() + kind.slice(1) + ' (' + p.shortName + ' — Patron of the Temple)';
+    d.appendChild(lab);
+    h.lines.forEach(function(ln){
+      var pp = document.createElement('p');
+      pp.textContent = ln;
+      d.appendChild(pp);
+    });
+    blocks[blocks.length-1].after(d);
+  });
+  applyPatronPrefs();
+}
 document.addEventListener('DOMContentLoaded', applyPatronPrefs);
 </script>
 <footer>Assembled by liturgical-app v1 (prototype) — variable texts © Orthodox Church in America, Dept. of Liturgical Music and Translations, duplicated for liturgical use; readings from oca.org (NKJV). Fixed texts: OCA service-book / Reader's Vespers sources; the priest's silent prayers follow the service-book text (via ponomar.net); antiphon psalms and Psalm 33 from the Psalter of the Seventy (Holy Transfiguration Monastery) as printed in the Royster Service Book; the Litiya prayers follow Hapgood's Service Book (1906), lightly adapted. Verify against parish practice before liturgical use.</footer></body></html>
