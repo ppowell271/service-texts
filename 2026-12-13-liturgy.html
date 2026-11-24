@@ -526,7 +526,7 @@ function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
-  document.querySelectorAll('.src-btn').forEach(b=>b.classList.toggle('active', b.dataset.src===readingSource));
+  document.querySelectorAll('.src-btn[data-src]').forEach(b=>b.classList.toggle('active', b.dataset.src===readingSource));
   document.querySelectorAll('.ver-btn').forEach(b=>b.classList.toggle('active', b.dataset.version===bgVersion));
   var row = document.getElementById('bg-version-row');
   if (row) row.style.display = readingSource==='bg' ? '' : 'none';
