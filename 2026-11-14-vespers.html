@@ -9,12 +9,12 @@ p{margin:.5em 0}
 .verse{font-style:italic;margin:.12em 0}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
 .sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
-.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}
+.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
 .opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Great Vespers — Holy and All-praised Apostle Philip (November 14, 2026)</h1>
 <p class='rubric'>Served Friday evening, November 13. Holy and All-praised Apostle Philip, Tone 6. Three readings and a Litiya are appointed.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><button class='src-btn patron-btn active' data-patron='st-innocent' onclick="setPatron('st-innocent')">St. Innocent</button><button class='src-btn patron-btn' data-patron='st-george' onclick="setPatron('st-george')">St. George</button><button class='src-btn patron-btn' data-patron='st-nicholas' onclick="setPatron('st-nicholas')">St. Nicholas</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><button class='src-btn active' data-src='oca' onclick="setReadingSource('oca')">OCA (NKJV)</button><button class='src-btn' data-src='bg' onclick="setReadingSource('bg')">BibleGateway</button><span id='bg-version-row' style='display:none'><span class='rubric'>&nbsp;Translation:&nbsp;</span><button class='src-btn ver-btn' data-version='NASB1995' onclick="setBgVersion('NASB1995')">NASB (1995)</button><button class='src-btn ver-btn active' data-version='KJV' onclick="setBgVersion('KJV')">KJV</button><button class='src-btn ver-btn' data-version='RSV' onclick="setBgVersion('RSV')">RSV</button></span></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select patron-btn' onchange="setPatron(this.value)"><option value='st-innocent' selected>St. Innocent</option><option value='st-george'>St. George</option><option value='st-nicholas'>St. Nicholas</option></select></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
 <hr class='sep'>
 <h2>The Typical Beginning</h2>
 <p><span class='speaker'>Reader:</span> Through the prayers of our holy fathers, Lord Jesus Christ, Son of God, have mercy on us. Amen.</p>
@@ -377,17 +377,33 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <script>
 var readingSource = 'oca', bgVersion = 'KJV';
 function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
+// The single scripture-readings dropdown: 'oca' shows the OCA (NKJV)
+// text; any other value is a BibleGateway translation.
 function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
-  document.querySelectorAll('.src-btn[data-src]').forEach(b=>b.classList.toggle('active', b.dataset.src===readingSource));
-  document.querySelectorAll('.ver-btn').forEach(b=>b.classList.toggle('active', b.dataset.version===bgVersion));
-  var row = document.getElementById('bg-version-row');
-  if (row) row.style.display = readingSource==='bg' ? '' : 'none';
+  var rs = document.querySelector('.readings-select');
+  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
 }
-function setReadingSource(src){ readingSource = src; applyReadingPrefs(); _savePref('source', src); }
-function setBgVersion(v){ bgVersion = v; readingSource = 'bg'; applyReadingPrefs(); _savePref('version', v); _savePref('source', 'bg'); }
+function setScriptureReading(v){
+  if(v === 'oca'){ readingSource = 'oca'; }
+  else { readingSource = 'bg'; bgVersion = v; }
+  applyReadingPrefs();
+  _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
+  _savePref('version', bgVersion);
+}
+// Compatibility wrappers for the app, which calls these from
+// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
+// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
+// or 'biblegateway') selects the saved translation — bgVersion, which
+// starts at the KJV default when none has been saved. setBgVersion(v)
+// selects that translation.
+function setReadingSource(src){
+  if(src === 'oca'){ setScriptureReading('oca'); }
+  else { setScriptureReading(bgVersion); }
+}
+function setBgVersion(v){ setScriptureReading(v); }
 var silentMode = 'summary';
 function applySilentPrefs(){
   document.querySelectorAll('.silent-off').forEach(e=>e.style.display = silentMode==='summary' ? '' : 'none');
@@ -410,24 +426,28 @@ var patronMode = 'st-innocent';
 function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
 function applyPatronPrefs(){
   document.querySelectorAll('.patron-block').forEach(e=>e.style.display = e.classList.contains('patron-'+patronMode) ? '' : 'none');
-  document.querySelectorAll('.patron-btn').forEach(b=>b.classList.toggle('active', b.dataset.patron===patronMode));
+  var s = document.querySelector('.patron-select');
+  if(s && s.querySelector('option[value="'+patronMode+'"]')) s.value = patronMode;
 }
 function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
 // Adds a patron fetched in the app (Nov 24, 2026): p is
 // {key, shortName, troparion:{tone,lines}, kontakion:{tone,lines}}.
-// Builds the patron's button and hymn blocks from the existing ones, so
-// an added patron behaves exactly like a library patron. Idempotent —
-// the app re-adds its saved patrons on every page load.
+// Adds the patron's option to the selector (alphabetically, after the
+// first option — the default, St. Innocent, always stays first) and
+// builds the hymn blocks from the existing ones, so an added patron
+// behaves exactly like a library patron. Idempotent — the app re-adds
+// its saved patrons on every page load.
 function addPatron(p){
-  var row = document.querySelector('.patron-btn');
-  row = row ? row.closest('.src-toggle') : null;
-  if(row && !row.querySelector('[data-patron="'+p.key+'"]')){
-    var b = document.createElement('button');
-    b.className = 'src-btn patron-btn';
-    b.setAttribute('data-patron', p.key);
-    b.textContent = p.shortName;
-    b.addEventListener('click', function(){ setPatron(p.key); });
-    row.appendChild(b);
+  var s = document.querySelector('.patron-select');
+  if(s && !s.querySelector('option[value="'+p.key+'"]')){
+    var o = document.createElement('option');
+    o.value = p.key;
+    o.textContent = p.shortName;
+    var placed = false;
+    for(var i=1; i<s.options.length; i++){
+      if(p.shortName.localeCompare(s.options[i].text) < 0){ s.add(o, s.options[i]); placed = true; break; }
+    }
+    if(!placed) s.add(o);
   }
   [['troparion', p.troparion], ['kontakion', p.kontakion]].forEach(function(pair){
     var kind = pair[0], h = pair[1];
@@ -448,7 +468,7 @@ function addPatron(p){
     });
     blocks[blocks.length-1].after(d);
   });
-  applyPatronPrefs();
+  setPatron(p.key);
 }
 document.addEventListener('DOMContentLoaded', applyPatronPrefs);
 </script>
