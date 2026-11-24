@@ -14,7 +14,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Divine Liturgy — St. Ambrose, Bishop of Milan (December 7, 2026)</h1>
 <p class='rubric'>St. Ambrose, Bishop of Milan. Nativity Fast.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option><option value='__add__'>+ Add New Translation</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
 <hr class='sep'>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is the Kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
@@ -259,10 +259,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Wisdom!</p>
 <p><span class='speaker'>Reader:</span> The reading from the Second Epistle of the Holy Apostle Paul to Timothy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker'>Reader:</span> But in a great house there are not only vessels of gold and silver, but also of wood and clay, some for honor and some for dishonor. Therefore if anyone cleanses himself from the latter, he will be a vessel for honor, sanctified and useful for the Master, prepared for every good work. Flee also youthful lusts; but pursue righteousness, faith, love, peace with those who call on the Lord out of a pure heart. But avoid foolish and ignorant disputes, knowing that they generate strife. And a servant of the Lord must not quarrel but be gentle to all, able to teach, patient, in humility correcting those who are in opposition, if God perhaps will grant them repentance, so that they may know the truth, and that they may come to their senses and escape the snare of the devil, having been taken captive by him to do his will.</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker'>Reader:</span> Now in a large house there are not only gold and silver vessels, but also vessels of wood and of earthenware, and some to honor and some to dishonor. Therefore, if anyone cleanses himself from these things, he will be a vessel for honor, sanctified, useful to the Master, prepared for every good work. Now flee from youthful lusts and pursue righteousness, faith, love and peace, with those who call on the Lord from a pure heart. But refuse foolish and ignorant speculations, knowing that they produce quarrels. The Lord’s bond-servant must not be quarrelsome, but be kind to all, able to teach, patient when wronged, with gentleness correcting those who are in opposition, if perhaps God may grant them repentance leading to the knowledge of the truth, and they may come to their senses and escape from the snare of the devil, having been held captive by him to do his will.</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker'>Reader:</span> But in a great house there are not only vessels of gold and of silver, but also of wood and of earth; and some to honour, and some to dishonour. If a man therefore purge himself from these, he shall be a vessel unto honour, sanctified, and meet for the master&#x27;s use, and prepared unto every good work. Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart. But foolish and unlearned questions avoid, knowing that they do gender strifes. And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth; And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker'>Reader:</span> In a great house there are not only vessels of gold and silver but also of wood and earthenware, and some for noble use, some for ignoble. If any one purifies himself from what is ignoble, then he will be a vessel for noble use, consecrated and useful to the master of the house, ready for any good work. So shun youthful passions and aim at righteousness, faith, love, and peace, along with those who call upon the Lord from a pure heart. Have nothing to do with stupid, senseless controversies; you know that they breed quarrels. And the Lord’s servant must not be quarrelsome but kindly to every one, an apt teacher, forbearing, correcting his opponents with gentleness. God may perhaps grant that they will repent and come to know the truth, and they may escape from the snare of the devil, after being captured by him to do his will.</p></div>
+<div class='reading-oca' data-ref='2 Timothy 2:20-26'><p><span class='speaker'>Reader:</span> But in a great house there are not only vessels of gold and silver, but also of wood and clay, some for honor and some for dishonor. Therefore if anyone cleanses himself from the latter, he will be a vessel for honor, sanctified and useful for the Master, prepared for every good work. Flee also youthful lusts; but pursue righteousness, faith, love, peace with those who call on the Lord out of a pure heart. But avoid foolish and ignorant disputes, knowing that they generate strife. And a servant of the Lord must not quarrel but be gentle to all, able to teach, patient, in humility correcting those who are in opposition, if God perhaps will grant them repentance, so that they may know the truth, and that they may come to their senses and escape the snare of the devil, having been taken captive by him to do his will.</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='2 Timothy 2:20-26' style='display:none'><p><span class='speaker'>Reader:</span> Now in a large house there are not only gold and silver vessels, but also vessels of wood and of earthenware, and some to honor and some to dishonor. Therefore, if anyone cleanses himself from these things, he will be a vessel for honor, sanctified, useful to the Master, prepared for every good work. Now flee from youthful lusts and pursue righteousness, faith, love and peace, with those who call on the Lord from a pure heart. But refuse foolish and ignorant speculations, knowing that they produce quarrels. The Lord’s bond-servant must not be quarrelsome, but be kind to all, able to teach, patient when wronged, with gentleness correcting those who are in opposition, if perhaps God may grant them repentance leading to the knowledge of the truth, and they may come to their senses and escape from the snare of the devil, having been held captive by him to do his will.</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='2 Timothy 2:20-26' style='display:none'><p><span class='speaker'>Reader:</span> But in a great house there are not only vessels of gold and of silver, but also of wood and of earth; and some to honour, and some to dishonour. If a man therefore purge himself from these, he shall be a vessel unto honour, sanctified, and meet for the master&#x27;s use, and prepared unto every good work. Flee also youthful lusts: but follow righteousness, faith, charity, peace, with them that call on the Lord out of a pure heart. But foolish and unlearned questions avoid, knowing that they do gender strifes. And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth; And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='2 Timothy 2:20-26' style='display:none'><p><span class='speaker'>Reader:</span> In a great house there are not only vessels of gold and silver but also of wood and earthenware, and some for noble use, some for ignoble. If any one purifies himself from what is ignoble, then he will be a vessel for noble use, consecrated and useful to the master of the house, ready for any good work. So shun youthful passions and aim at righteousness, faith, love, and peace, along with those who call upon the Lord from a pure heart. Have nothing to do with stupid, senseless controversies; you know that they breed quarrels. And the Lord’s servant must not be quarrelsome but kindly to every one, an apt teacher, forbearing, correcting his opponents with gentleness. God may perhaps grant that they will repent and come to know the truth, and they may escape from the snare of the devil, after being captured by him to do his will.</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee, Reader.</p>
 <p><span class='speaker'>Reader:</span> (quietly) And to thy spirit.</p>
 <p class='rubric'>Then the reader continues immediately…</p>
@@ -286,10 +286,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> The reading from the Holy Gospel according to Luke.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <p><span class='speaker-clergy'>Priest:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker-clergy'>Deacon:</span> Then some of the Sadducees, who deny that there is a resurrection, came to Him and asked Him, saying: “Teacher, Moses wrote to us that if a man’s brother dies, having a wife, and he dies without children, his brother should take his wife and raise up offspring for his brother. Now there were seven brothers. And the first took a wife, and died without children. And the second took her as wife, and he died childless. Then the third took her, and in like manner the seven also; and they left no children, and died. Last of all the woman died also. Therefore, in the resurrection, whose wife does she become? For all seven had her as wife.” Jesus answered and said to them, “The sons of this age marry and are given in marriage. But those who are counted worthy to attain that age, and the resurrection from the dead, neither marry nor are given in marriage; nor can they die anymore, for they are equal to the angels and are sons of God, being sons of the resurrection. But even Moses showed in the burning bush passage that the dead are raised, when he called the Lord ‘the God of Abraham, the God of Isaac, and the God of Jacob.’ For He is not the God of the dead but of the living, for all live to Him.” Then some of the scribes answered and said, “Teacher, You have spoken well.” But after that they dared not question Him anymore. And He said to them, “How can they say that the Christ is the Son of David? Now David himself said in the Book of Psalms: ‘The LORD said to my Lord, sit at My right hand, till I make Your enemies Your footstool.’ Therefore David calls Him ‘Lord’; how is He then his Son?”</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> Now there came to Him some of the Sadducees (who say that there is no resurrection), and they questioned Him, saying, “Teacher, Moses wrote for us that if a man’s brother dies , having a wife, and he is childless, his brother should marry the wife and raise up children to his brother . Now there were seven brothers; and the first took a wife and died childless; and the second and the third married her; and in the same way all seven died, leaving no children. Finally the woman died also. In the resurrection therefore, which one’s wife will she be? For all seven had married her.” Jesus said to them, “The sons of this age marry and are given in marriage, but those who are considered worthy to attain to that age and the resurrection from the dead, neither marry nor are given in marriage; for they cannot even die anymore, because they are like angels, and are sons of God, being sons of the resurrection. But that the dead are raised, even Moses showed, in the passage about the burning bush, where he calls the Lord the God of Abraham, and the God of Isaac, and the God of Jacob . Now He is not the God of the dead but of the living; for all live to Him.” Some of the scribes answered and said, “Teacher, You have spoken well.” For they did not have courage to question Him any longer about anything. Then He said to them, “How is it that they say the Christ is David’s son? For David himself says in the book of Psalms, ‘The Lord said to my Lord , “Sit at My right hand , Until I make Your enemies a footstool for Your feet .”’ Therefore David calls Him ‘Lord,’ and how is He his son?”</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> Then came to him certain of the Sadducees, which deny that there is any resurrection; and they asked him, Saying, Master, Moses wrote unto us, If any man&#x27;s brother die, having a wife, and he die without children, that his brother should take his wife, and raise up seed unto his brother. There were therefore seven brethren: and the first took a wife, and died without children. And the second took her to wife, and he died childless. And the third took her; and in like manner the seven also: and they left no children, and died. Last of all the woman died also. Therefore in the resurrection whose wife of them is she? for seven had her to wife. And Jesus answering said unto them, The children of this world marry, and are given in marriage: But they which shall be accounted worthy to obtain that world, and the resurrection from the dead, neither marry, nor are given in marriage: Neither can they die any more: for they are equal unto the angels; and are the children of God, being the children of the resurrection. Now that the dead are raised, even Moses shewed at the bush, when he calleth the Lord the God of Abraham, and the God of Isaac, and the God of Jacob. For he is not a God of the dead, but of the living: for all live unto him. Then certain of the scribes answering said, Master, thou hast well said. And after that they durst not ask him any question at all. And he said unto them, How say they that Christ is David&#x27;s son? And David himself saith in the book of Psalms, The Lord said unto my Lord, Sit thou on my right hand, Till I make thine enemies thy footstool. David therefore calleth him Lord, how is he then his son?</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> There came to him some Sad′ducees, those who say that there is no resurrection, and they asked him a question, saying, “Teacher, Moses wrote for us that if a man’s brother dies, having a wife but no children, the man must take the wife and raise up children for his brother. Now there were seven brothers; the first took a wife, and died without children; and the second and the third took her, and likewise all seven left no children and died. Afterward the woman also died. In the resurrection, therefore, whose wife will the woman be? For the seven had her as wife.” And Jesus said to them, “The sons of this age marry and are given in marriage; but those who are accounted worthy to attain to that age and to the resurrection from the dead neither marry nor are given in marriage, for they cannot die any more, because they are equal to angels and are sons of God, being sons of the resurrection. But that the dead are raised, even Moses showed, in the passage about the bush, where he calls the Lord the God of Abraham and the God of Isaac and the God of Jacob. Now he is not God of the dead, but of the living; for all live to him.” And some of the scribes answered, “Teacher, you have spoken well.” For they no longer dared to ask him any question. But he said to them, “How can they say that the Christ is David’s son? For David himself says in the Book of Psalms, ‘The Lord said to my Lord, Sit at my right hand, till I make thy enemies a stool for thy feet.’ David thus calls him Lord; so how is he his son?”</p></div>
+<div class='reading-oca' data-ref='Luke 20:27-44'><p><span class='speaker-clergy'>Deacon:</span> Then some of the Sadducees, who deny that there is a resurrection, came to Him and asked Him, saying: “Teacher, Moses wrote to us that if a man’s brother dies, having a wife, and he dies without children, his brother should take his wife and raise up offspring for his brother. Now there were seven brothers. And the first took a wife, and died without children. And the second took her as wife, and he died childless. Then the third took her, and in like manner the seven also; and they left no children, and died. Last of all the woman died also. Therefore, in the resurrection, whose wife does she become? For all seven had her as wife.” Jesus answered and said to them, “The sons of this age marry and are given in marriage. But those who are counted worthy to attain that age, and the resurrection from the dead, neither marry nor are given in marriage; nor can they die anymore, for they are equal to the angels and are sons of God, being sons of the resurrection. But even Moses showed in the burning bush passage that the dead are raised, when he called the Lord ‘the God of Abraham, the God of Isaac, and the God of Jacob.’ For He is not the God of the dead but of the living, for all live to Him.” Then some of the scribes answered and said, “Teacher, You have spoken well.” But after that they dared not question Him anymore. And He said to them, “How can they say that the Christ is the Son of David? Now David himself said in the Book of Psalms: ‘The LORD said to my Lord, sit at My right hand, till I make Your enemies Your footstool.’ Therefore David calls Him ‘Lord’; how is He then his Son?”</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Luke 20:27-44' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> Now there came to Him some of the Sadducees (who say that there is no resurrection), and they questioned Him, saying, “Teacher, Moses wrote for us that if a man’s brother dies , having a wife, and he is childless, his brother should marry the wife and raise up children to his brother . Now there were seven brothers; and the first took a wife and died childless; and the second and the third married her; and in the same way all seven died, leaving no children. Finally the woman died also. In the resurrection therefore, which one’s wife will she be? For all seven had married her.” Jesus said to them, “The sons of this age marry and are given in marriage, but those who are considered worthy to attain to that age and the resurrection from the dead, neither marry nor are given in marriage; for they cannot even die anymore, because they are like angels, and are sons of God, being sons of the resurrection. But that the dead are raised, even Moses showed, in the passage about the burning bush, where he calls the Lord the God of Abraham, and the God of Isaac, and the God of Jacob . Now He is not the God of the dead but of the living; for all live to Him.” Some of the scribes answered and said, “Teacher, You have spoken well.” For they did not have courage to question Him any longer about anything. Then He said to them, “How is it that they say the Christ is David’s son? For David himself says in the book of Psalms, ‘The Lord said to my Lord , “Sit at My right hand , Until I make Your enemies a footstool for Your feet .”’ Therefore David calls Him ‘Lord,’ and how is He his son?”</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='Luke 20:27-44' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> Then came to him certain of the Sadducees, which deny that there is any resurrection; and they asked him, Saying, Master, Moses wrote unto us, If any man&#x27;s brother die, having a wife, and he die without children, that his brother should take his wife, and raise up seed unto his brother. There were therefore seven brethren: and the first took a wife, and died without children. And the second took her to wife, and he died childless. And the third took her; and in like manner the seven also: and they left no children, and died. Last of all the woman died also. Therefore in the resurrection whose wife of them is she? for seven had her to wife. And Jesus answering said unto them, The children of this world marry, and are given in marriage: But they which shall be accounted worthy to obtain that world, and the resurrection from the dead, neither marry, nor are given in marriage: Neither can they die any more: for they are equal unto the angels; and are the children of God, being the children of the resurrection. Now that the dead are raised, even Moses shewed at the bush, when he calleth the Lord the God of Abraham, and the God of Isaac, and the God of Jacob. For he is not a God of the dead, but of the living: for all live unto him. Then certain of the scribes answering said, Master, thou hast well said. And after that they durst not ask him any question at all. And he said unto them, How say they that Christ is David&#x27;s son? And David himself saith in the book of Psalms, The Lord said unto my Lord, Sit thou on my right hand, Till I make thine enemies thy footstool. David therefore calleth him Lord, how is he then his son?</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='Luke 20:27-44' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> There came to him some Sad′ducees, those who say that there is no resurrection, and they asked him a question, saying, “Teacher, Moses wrote for us that if a man’s brother dies, having a wife but no children, the man must take the wife and raise up children for his brother. Now there were seven brothers; the first took a wife, and died without children; and the second and the third took her, and likewise all seven left no children and died. Afterward the woman also died. In the resurrection, therefore, whose wife will the woman be? For the seven had her as wife.” And Jesus said to them, “The sons of this age marry and are given in marriage; but those who are accounted worthy to attain to that age and to the resurrection from the dead neither marry nor are given in marriage, for they cannot die any more, because they are equal to angels and are sons of God, being sons of the resurrection. But that the dead are raised, even Moses showed, in the passage about the bush, where he calls the Lord the God of Abraham and the God of Isaac and the God of Jacob. Now he is not God of the dead, but of the living; for all live to him.” And some of the scribes answered, “Teacher, you have spoken well.” For they no longer dared to ask him any question. But he said to them, “How can they say that the Christ is David’s son? For David himself says in the Book of Psalms, ‘The Lord said to my Lord, Sit at my right hand, till I make thy enemies a stool for thy feet.’ David thus calls him Lord; so how is he his son?”</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee that proclaimest the Gospel.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <h2>The Homily</h2>
@@ -582,22 +582,133 @@ function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  // A runtime-added translation's divs do not exist until its fetch
+  // finishes; until then, show the OCA text rather than a blank reading.
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = '');
+  }
   var rs = document.querySelector('.readings-select');
-  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
+  if(rs){
+    var want = readingSource==='oca' ? 'oca' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
 }
 function setScriptureReading(v){
+  if(v === '__add__'){
+    // "+ Add New Translation" was picked: put the select back on the
+    // current reading and open the app's add-a-translation flow. The
+    // sentinel is never saved as a translation.
+    applyReadingPrefs();
+    if(window.ServiceApp) ServiceApp.addTranslation();
+    return;
+  }
   if(v === 'oca'){ readingSource = 'oca'; }
   else { readingSource = 'bg'; bgVersion = v; }
   applyReadingPrefs();
   _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
   _savePref('version', bgVersion);
 }
+// Adds a translation fetched in the app (Nov 24, 2026): version is the
+// BibleGateway version code, label is the display name (the code itself
+// for runtime-added versions), and texts maps each reading's data-ref to
+// the joined verse text, or null when BibleGateway has no text for that
+// reading in this version. For each ref it builds a .reading-bg div by
+// cloning the reading's .reading-oca div (so the speaker markup matches
+// exactly) and replacing the text after the speaker span. Unavailable
+// readings get the Vespers-style fallback (a rubric + the OCA text).
+// Idempotent — the app re-adds its saved translations on every page load.
+function addTranslation(version, label, texts){
+  // Add the option to the dropdown, alphabetically by label among the
+  // translation options, before the "__add__" sentinel.
+  var rs = document.querySelector('.readings-select');
+  if(rs && !rs.querySelector('option[value="'+version+'"]')){
+    var o = document.createElement('option');
+    o.value = version;
+    o.textContent = label;
+    var sentinel = rs.querySelector('option[value="__add__"]');
+    var placed = false;
+    for(var i=0; i<rs.options.length; i++){
+      var opt = rs.options[i];
+      if(opt.value === 'oca' || opt.value === '__add__') continue;
+      if(label.localeCompare(opt.text) < 0){ rs.add(o, opt); placed = true; break; }
+    }
+    if(!placed){
+      if(sentinel) rs.add(o, sentinel);
+      else rs.add(o);
+    }
+  }
+  // Build a .reading-bg div for each reading.
+  Object.keys(texts).forEach(function(ref){
+    var oca = null, lastBg = null, exists = false;
+    document.querySelectorAll('.reading-oca').forEach(function(d){
+      if(d.dataset.ref === ref) oca = d;
+    });
+    if(!oca) return;
+    document.querySelectorAll('.reading-bg').forEach(function(d){
+      if(d.dataset.ref === ref){
+        if(d.dataset.version === version) exists = true;
+        lastBg = d;
+      }
+    });
+    if(exists) return;
+    var div = oca.cloneNode(true);
+    div.className = 'reading-bg';
+    div.dataset.version = version;
+    div.dataset.ref = ref;
+    div.style.display = 'none';
+    var text = texts[ref];
+    if(text){
+      // Replace the text after the speaker span with the new text.
+      var p = div.querySelector('p');
+      if(p){
+        var span = p.querySelector('span');
+        var afterSpan = false;
+        Array.prototype.slice.call(p.childNodes).forEach(function(n){
+          if(n === span){ afterSpan = true; return; }
+          if(afterSpan) p.removeChild(n);
+        });
+        p.appendChild(document.createTextNode(' ' + text));
+      }
+    } else {
+      // Unavailable: Vespers-style fallback — rubric + the OCA text
+      // (the clone already holds the OCA spoken paragraph).
+      var rub = document.createElement('p');
+      rub.className = 'rubric';
+      rub.textContent = 'BibleGateway (' + label + ') text not available for this reading; showing the OCA text.';
+      div.insertBefore(rub, div.firstChild);
+    }
+    if(lastBg) lastBg.after(div);
+    else oca.after(div);
+  });
+  // Append Sources lines after the Sources h2, then select the new version.
+  var srcH2 = null;
+  document.querySelectorAll('h2').forEach(function(h){ if(h.textContent === 'Sources') srcH2 = h; });
+  if(srcH2){
+    Object.keys(texts).forEach(function(ref){
+      var line = ref + ': Source: BibleGateway (' + label + '). Same OCA pericope, different translation. (Added in the app.)';
+      var dup = false;
+      document.querySelectorAll('p.rubric').forEach(function(p){ if(p.textContent === line) dup = true; });
+      if(dup) return;
+      var insertAfter = srcH2, n = srcH2.nextSibling;
+      while(n){
+        if(n.nodeType === 1){
+          if(n.tagName === 'P' && n.classList.contains('rubric')){ insertAfter = n; n = n.nextSibling; }
+          else break;
+        } else n = n.nextSibling;
+      }
+      var rub2 = document.createElement('p');
+      rub2.className = 'rubric';
+      rub2.textContent = line;
+      insertAfter.after(rub2);
+    });
+  }
+  setScriptureReading(version);
+}
 // Compatibility wrappers for the app, which calls these from
-// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
-// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
-// or 'biblegateway') selects the saved translation — bgVersion, which
-// starts at the KJV default when none has been saved. setBgVersion(v)
-// selects that translation.
+// applySavedPrefs and resetReadingPrefs: setReadingSource('oca') selects
+// the OCA text; setReadingSource('bg' or 'biblegateway') selects the saved
+// translation — bgVersion, which starts at the KJV default when none has
+// been saved. setBgVersion(v) selects that translation.
 function setReadingSource(src){
   if(src === 'oca'){ setScriptureReading('oca'); }
   else { setScriptureReading(bgVersion); }
