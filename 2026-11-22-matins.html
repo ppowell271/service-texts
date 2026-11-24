@@ -9,12 +9,12 @@ p{margin:.5em 0}
 .verse{font-style:italic;margin:.12em 0}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
 .sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
-.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}
+.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
 .opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Sunday Matins — Sunday, November 22, 2026 (Tone 8)</h1>
 <p class='rubric'>25th Sunday after Pentecost (9th of Luke). Afterfeast of the Entrance of the Theotokos into the Temple. Apostles of the Seventy Philemon and Archippus, Martyr Apphia, and Onesimus.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><button class='src-btn active' data-src='oca' onclick="setReadingSource('oca')">OCA (NKJV)</button><button class='src-btn' data-src='biblegateway' onclick="setReadingSource('biblegateway')">BibleGateway</button></div><div class='src-toggle' id='bg-version-row' style='display:none'><span class='rubric'>Translation:&nbsp;</span><button class='src-btn ver-btn' data-version='NASB1995' onclick="setBgVersion('NASB1995')">NASB (1995)</button><button class='src-btn ver-btn active' data-version='KJV' onclick="setBgVersion('KJV')">KJV</button><button class='src-btn ver-btn' data-version='RSV' onclick="setBgVersion('RSV')">RSV</button></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
 <hr class='sep'>
 <h2>The Opening</h2>
 <p class='rubric'>When Matins is served alone, it begins with the Royal Office, or, in some places, with the Typical Beginning. When Matins follows Vespers as part of the All-Night Vigil, it begins instead with “Glory to God in the highest, and on earth peace, good will towards men” (thrice) and “O Lord, open my lips, and my mouth shall show forth Thy praise” (twice).</p>
@@ -344,17 +344,33 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <script>
 var readingSource = 'oca', bgVersion = 'KJV';
 function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
+// The single scripture-readings dropdown: 'oca' shows the OCA (NKJV)
+// text; any other value is a BibleGateway translation.
 function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
-  document.querySelectorAll('.src-btn[data-src]').forEach(b=>b.classList.toggle('active', b.dataset.src===readingSource));
-  document.querySelectorAll('.ver-btn').forEach(b=>b.classList.toggle('active', b.dataset.version===bgVersion));
-  var row = document.getElementById('bg-version-row');
-  if (row) row.style.display = readingSource==='bg' ? '' : 'none';
+  var rs = document.querySelector('.readings-select');
+  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
 }
-function setReadingSource(src){ readingSource = src; applyReadingPrefs(); _savePref('source', src); }
-function setBgVersion(v){ bgVersion = v; readingSource = 'bg'; applyReadingPrefs(); _savePref('version', v); _savePref('source', 'bg'); }
+function setScriptureReading(v){
+  if(v === 'oca'){ readingSource = 'oca'; }
+  else { readingSource = 'bg'; bgVersion = v; }
+  applyReadingPrefs();
+  _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
+  _savePref('version', bgVersion);
+}
+// Compatibility wrappers for the app, which calls these from
+// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
+// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
+// or 'biblegateway') selects the saved translation — bgVersion, which
+// starts at the KJV default when none has been saved. setBgVersion(v)
+// selects that translation.
+function setReadingSource(src){
+  if(src === 'oca'){ setScriptureReading('oca'); }
+  else { setScriptureReading(bgVersion); }
+}
+function setBgVersion(v){ setScriptureReading(v); }
 var silentMode = 'summary';
 function applySilentPrefs(){
   document.querySelectorAll('.silent-off').forEach(e=>e.style.display = silentMode==='summary' ? '' : 'none');
