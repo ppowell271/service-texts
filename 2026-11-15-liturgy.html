@@ -14,7 +14,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 @media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Divine Liturgy — Sunday, November 15, 2026 (Tone 7)</h1>
 <p class='rubric'>24th Sunday after Pentecost (8th of Luke). Holy Martyrs and Confessors Gurias, Samonas, and Abibus, of Edessa. Nativity Fast.</p>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent' selected>St. Innocent</option><option value='st-nicholas'>St. Nicholas</option><option value='__add__'>+ Add New Saint</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn active' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='oca' selected>NKJV (OCA)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option><option value='__add__'>+ Add New Translation</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
 <hr class='sep'>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is the Kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
@@ -249,10 +249,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Wisdom!</p>
 <p><span class='speaker'>Reader:</span> The reading from the Epistle of the Holy Apostle Paul to the Ephesians.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker'>Reader:</span> For He Himself is our peace, who has made both one, and has broken down the middle wall of separation, having abolished in His flesh the enmity, that is, the law of commandments contained in ordinances, so as to create in Himself one new man from the two, thus making peace, and that He might reconcile them both to God in one body through the cross, thereby putting to death the enmity. And He came and preached peace to you who were afar off and to those who were near. For through Him we both have access by one Spirit to the Father. Now, therefore, you are no longer strangers and foreigners, but fellow citizens with the saints and members of the household of God, having been built on the foundation of the apostles and prophets, Jesus Christ Himself being the chief cornerstone, in whom the whole building, being fitted together, grows into a holy temple in the Lord, in whom you also are being built together for a dwelling place of God in the Spirit.</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker'>Reader:</span> For He Himself is our peace, who made both groups into one and broke down the barrier of the dividing wall, by abolishing in His flesh the enmity, which is the Law of commandments contained in ordinances, so that in Himself He might make the two into one new man, thus establishing peace, and might reconcile them both in one body to God through the cross, by it having put to death the enmity. And He came and preached peace to you who were far away, and peace to those who were near ; for through Him we both have our access in one Spirit to the Father. So then you are no longer strangers and aliens, but you are fellow citizens with the saints, and are of God’s household, having been built on the foundation of the apostles and prophets, Christ Jesus Himself being the corner stone, in whom the whole building, being fitted together, is growing into a holy temple in the Lord, in whom you also are being built together into a dwelling of God in the Spirit.</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker'>Reader:</span> For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us; Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace; And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby: And came and preached peace to you which were afar off, and to them that were nigh. For through him we both have access by one Spirit unto the Father. Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God; And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone; In whom all the building fitly framed together groweth unto an holy temple in the Lord: In whom ye also are builded together for an habitation of God through the Spirit.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker'>Reader:</span> For he is our peace, who has made us both one, and has broken down the dividing wall of hostility, by abolishing in his flesh the law of commandments and ordinances, that he might create in himself one new man in place of the two, so making peace, and might reconcile us both to God in one body through the cross, thereby bringing the hostility to an end. And he came and preached peace to you who were far off and peace to those who were near; for through him we both have access in one Spirit to the Father. So then you are no longer strangers and sojourners, but you are fellow citizens with the saints and members of the household of God, built upon the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone, in whom the whole structure is joined together and grows into a holy temple in the Lord; in whom you also are built into it for a dwelling place of God in the Spirit.</p></div>
+<div class='reading-oca' data-ref='Ephesians 2:14-22'><p><span class='speaker'>Reader:</span> For He Himself is our peace, who has made both one, and has broken down the middle wall of separation, having abolished in His flesh the enmity, that is, the law of commandments contained in ordinances, so as to create in Himself one new man from the two, thus making peace, and that He might reconcile them both to God in one body through the cross, thereby putting to death the enmity. And He came and preached peace to you who were afar off and to those who were near. For through Him we both have access by one Spirit to the Father. Now, therefore, you are no longer strangers and foreigners, but fellow citizens with the saints and members of the household of God, having been built on the foundation of the apostles and prophets, Jesus Christ Himself being the chief cornerstone, in whom the whole building, being fitted together, grows into a holy temple in the Lord, in whom you also are being built together for a dwelling place of God in the Spirit.</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Ephesians 2:14-22' style='display:none'><p><span class='speaker'>Reader:</span> For He Himself is our peace, who made both groups into one and broke down the barrier of the dividing wall, by abolishing in His flesh the enmity, which is the Law of commandments contained in ordinances, so that in Himself He might make the two into one new man, thus establishing peace, and might reconcile them both in one body to God through the cross, by it having put to death the enmity. And He came and preached peace to you who were far away, and peace to those who were near ; for through Him we both have our access in one Spirit to the Father. So then you are no longer strangers and aliens, but you are fellow citizens with the saints, and are of God’s household, having been built on the foundation of the apostles and prophets, Christ Jesus Himself being the corner stone, in whom the whole building, being fitted together, is growing into a holy temple in the Lord, in whom you also are being built together into a dwelling of God in the Spirit.</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='Ephesians 2:14-22' style='display:none'><p><span class='speaker'>Reader:</span> For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us; Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace; And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby: And came and preached peace to you which were afar off, and to them that were nigh. For through him we both have access by one Spirit unto the Father. Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God; And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone; In whom all the building fitly framed together groweth unto an holy temple in the Lord: In whom ye also are builded together for an habitation of God through the Spirit.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='Ephesians 2:14-22' style='display:none'><p><span class='speaker'>Reader:</span> For he is our peace, who has made us both one, and has broken down the dividing wall of hostility, by abolishing in his flesh the law of commandments and ordinances, that he might create in himself one new man in place of the two, so making peace, and might reconcile us both to God in one body through the cross, thereby bringing the hostility to an end. And he came and preached peace to you who were far off and peace to those who were near; for through him we both have access in one Spirit to the Father. So then you are no longer strangers and sojourners, but you are fellow citizens with the saints and members of the household of God, built upon the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone, in whom the whole structure is joined together and grows into a holy temple in the Lord; in whom you also are built into it for a dwelling place of God in the Spirit.</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee, Reader.</p>
 <p><span class='speaker'>Reader:</span> (quietly) And to thy spirit.</p>
 <p class='rubric'>Then the reader continues immediately…</p>
@@ -274,10 +274,10 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> The reading from the Holy Gospel according to Luke.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <p><span class='speaker-clergy'>Priest:</span> Let us attend!</p>
-<div class='reading-oca'><p><span class='speaker-clergy'>Deacon:</span> And behold, a certain lawyer stood up and tested Him, saying, “Teacher, what shall I do to inherit eternal life?” He said to him, “What is written in the law? What is your reading of it?” So he answered and said, “’You shall love the LORD your God with all your heart, with all your soul, with all your strength, and with all your mind,’ and ‘your neighbor as yourself.’” And He said to him, “You have answered rightly; do this and you will live.” But he, wanting to justify himself, said to Jesus, “And who is my neighbor?” Then Jesus answered and said: “A certain man went down from Jerusalem to Jericho, and fell among thieves, who stripped him of his clothing, wounded him, and departed, leaving him half dead. Now by chance a certain priest came down that road. And when he saw him, he passed by on the other side. Likewise a Levite, when he arrived at the place, came and looked, and passed by on the other side. But a certain Samaritan, as he journeyed, came where he was. And when he saw him, he had compassion. So he went to him and bandaged his wounds, pouring on oil and wine; and he set him on his own animal, brought him to an inn, and took care of him. On the next day, when he departed, he took out two denarii, gave them to the innkeeper, and said to him, ‘Take care of him; and whatever more you spend, when I come again, I will repay you.’ So which of these three do you think was neighbor to him who fell among the thieves?” And he said, “He who showed mercy on him.” Then Jesus said to him, “Go and do likewise.”</p></div>
-<div class='reading-bg' data-version='NASB1995' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> And a lawyer stood up and put Him to the test, saying, “Teacher, what shall I do to inherit eternal life?” And He said to him, “What is written in the Law? How does it read to you?” And he answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself .” And He said to him, “You have answered correctly; do this and you will live .” But wishing to justify himself, he said to Jesus, “And who is my neighbor?” Jesus replied and said, “A man was going down from Jerusalem to Jericho, and fell among robbers, and they stripped him and beat him, and went away leaving him half dead. And by chance a priest was going down on that road, and when he saw him, he passed by on the other side. Likewise a Levite also, when he came to the place and saw him, passed by on the other side. But a Samaritan, who was on a journey, came upon him; and when he saw him, he felt compassion, and came to him and bandaged up his wounds, pouring oil and wine on them; and he put him on his own beast, and brought him to an inn and took care of him. On the next day he took out two denarii and gave them to the innkeeper and said, ‘Take care of him; and whatever more you spend, when I return I will repay you.’ Which of these three do you think proved to be a neighbor to the man who fell into the robbers’ hands?” And he said, “The one who showed mercy toward him.” Then Jesus said to him, “Go and do the same.”</p></div>
-<div class='reading-bg' data-version='KJV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> And, behold, a certain lawyer stood up, and tempted him, saying, Master, what shall I do to inherit eternal life? He said unto him, What is written in the law? how readest thou? And he answering said, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbour as thyself. And he said unto him, Thou hast answered right: this do, and thou shalt live. But he, willing to justify himself, said unto Jesus, And who is my neighbour? And Jesus answering said, A certain man went down from Jerusalem to Jericho, and fell among thieves, which stripped him of his raiment, and wounded him, and departed, leaving him half dead. And by chance there came down a certain priest that way: and when he saw him, he passed by on the other side. And likewise a Levite, when he was at the place, came and looked on him, and passed by on the other side. But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him, And went to him, and bound up his wounds, pouring in oil and wine, and set him on his own beast, and brought him to an inn, and took care of him. And on the morrow when he departed, he took out two pence, and gave them to the host, and said unto him, Take care of him; and whatsoever thou spendest more, when I come again, I will repay thee. Which now of these three, thinkest thou, was neighbour unto him that fell among the thieves? And he said, He that shewed mercy on him. Then said Jesus unto him, Go, and do thou likewise.</p></div>
-<div class='reading-bg' data-version='RSV' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> And behold, a lawyer stood up to put him to the test, saying, “Teacher, what shall I do to inherit eternal life?” He said to him, “What is written in the law? How do you read?” And he answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself.” And he said to him, “You have answered right; do this, and you will live.” But he, desiring to justify himself, said to Jesus, “And who is my neighbor?” Jesus replied, “A man was going down from Jerusalem to Jericho, and he fell among robbers, who stripped him and beat him, and departed, leaving him half dead. Now by chance a priest was going down that road; and when he saw him he passed by on the other side. So likewise a Levite, when he came to the place and saw him, passed by on the other side. But a Samaritan, as he journeyed, came to where he was; and when he saw him, he had compassion, and went to him and bound up his wounds, pouring on oil and wine; then he set him on his own beast and brought him to an inn, and took care of him. And the next day he took out two denarii and gave them to the innkeeper, saying, ‘Take care of him; and whatever more you spend, I will repay you when I come back.’ Which of these three, do you think, proved neighbor to the man who fell among the robbers?” He said, “The one who showed mercy on him.” And Jesus said to him, “Go and do likewise.”</p></div>
+<div class='reading-oca' data-ref='Luke 10:25-37'><p><span class='speaker-clergy'>Deacon:</span> And behold, a certain lawyer stood up and tested Him, saying, “Teacher, what shall I do to inherit eternal life?” He said to him, “What is written in the law? What is your reading of it?” So he answered and said, “’You shall love the LORD your God with all your heart, with all your soul, with all your strength, and with all your mind,’ and ‘your neighbor as yourself.’” And He said to him, “You have answered rightly; do this and you will live.” But he, wanting to justify himself, said to Jesus, “And who is my neighbor?” Then Jesus answered and said: “A certain man went down from Jerusalem to Jericho, and fell among thieves, who stripped him of his clothing, wounded him, and departed, leaving him half dead. Now by chance a certain priest came down that road. And when he saw him, he passed by on the other side. Likewise a Levite, when he arrived at the place, came and looked, and passed by on the other side. But a certain Samaritan, as he journeyed, came where he was. And when he saw him, he had compassion. So he went to him and bandaged his wounds, pouring on oil and wine; and he set him on his own animal, brought him to an inn, and took care of him. On the next day, when he departed, he took out two denarii, gave them to the innkeeper, and said to him, ‘Take care of him; and whatever more you spend, when I come again, I will repay you.’ So which of these three do you think was neighbor to him who fell among the thieves?” And he said, “He who showed mercy on him.” Then Jesus said to him, “Go and do likewise.”</p></div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Luke 10:25-37' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> And a lawyer stood up and put Him to the test, saying, “Teacher, what shall I do to inherit eternal life?” And He said to him, “What is written in the Law? How does it read to you?” And he answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself .” And He said to him, “You have answered correctly; do this and you will live .” But wishing to justify himself, he said to Jesus, “And who is my neighbor?” Jesus replied and said, “A man was going down from Jerusalem to Jericho, and fell among robbers, and they stripped him and beat him, and went away leaving him half dead. And by chance a priest was going down on that road, and when he saw him, he passed by on the other side. Likewise a Levite also, when he came to the place and saw him, passed by on the other side. But a Samaritan, who was on a journey, came upon him; and when he saw him, he felt compassion, and came to him and bandaged up his wounds, pouring oil and wine on them; and he put him on his own beast, and brought him to an inn and took care of him. On the next day he took out two denarii and gave them to the innkeeper and said, ‘Take care of him; and whatever more you spend, when I return I will repay you.’ Which of these three do you think proved to be a neighbor to the man who fell into the robbers’ hands?” And he said, “The one who showed mercy toward him.” Then Jesus said to him, “Go and do the same.”</p></div>
+<div class='reading-bg' data-version='KJV' data-ref='Luke 10:25-37' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> And, behold, a certain lawyer stood up, and tempted him, saying, Master, what shall I do to inherit eternal life? He said unto him, What is written in the law? how readest thou? And he answering said, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbour as thyself. And he said unto him, Thou hast answered right: this do, and thou shalt live. But he, willing to justify himself, said unto Jesus, And who is my neighbour? And Jesus answering said, A certain man went down from Jerusalem to Jericho, and fell among thieves, which stripped him of his raiment, and wounded him, and departed, leaving him half dead. And by chance there came down a certain priest that way: and when he saw him, he passed by on the other side. And likewise a Levite, when he was at the place, came and looked on him, and passed by on the other side. But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him, And went to him, and bound up his wounds, pouring in oil and wine, and set him on his own beast, and brought him to an inn, and took care of him. And on the morrow when he departed, he took out two pence, and gave them to the host, and said unto him, Take care of him; and whatsoever thou spendest more, when I come again, I will repay thee. Which now of these three, thinkest thou, was neighbour unto him that fell among the thieves? And he said, He that shewed mercy on him. Then said Jesus unto him, Go, and do thou likewise.</p></div>
+<div class='reading-bg' data-version='RSV' data-ref='Luke 10:25-37' style='display:none'><p><span class='speaker-clergy'>Deacon:</span> And behold, a lawyer stood up to put him to the test, saying, “Teacher, what shall I do to inherit eternal life?” He said to him, “What is written in the law? How do you read?” And he answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself.” And he said to him, “You have answered right; do this, and you will live.” But he, desiring to justify himself, said to Jesus, “And who is my neighbor?” Jesus replied, “A man was going down from Jerusalem to Jericho, and he fell among robbers, who stripped him and beat him, and departed, leaving him half dead. Now by chance a priest was going down that road; and when he saw him he passed by on the other side. So likewise a Levite, when he came to the place and saw him, passed by on the other side. But a Samaritan, as he journeyed, came to where he was; and when he saw him, he had compassion, and went to him and bound up his wounds, pouring on oil and wine; then he set him on his own beast and brought him to an inn, and took care of him. And the next day he took out two denarii and gave them to the innkeeper, saying, ‘Take care of him; and whatever more you spend, I will repay you when I come back.’ Which of these three, do you think, proved neighbor to the man who fell among the robbers?” He said, “The one who showed mercy on him.” And Jesus said to him, “Go and do likewise.”</p></div>
 <p><span class='speaker-clergy'>Priest:</span> Peace be unto thee that proclaimest the Gospel.</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <h2>The Homily</h2>
@@ -568,22 +568,133 @@ function applyReadingPrefs(){
   document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = readingSource==='oca' ? '' : 'none');
   document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
     (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  // A runtime-added translation's divs do not exist until its fetch
+  // finishes; until then, show the OCA text rather than a blank reading.
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-oca').forEach(e=>e.style.display = '');
+  }
   var rs = document.querySelector('.readings-select');
-  if(rs) rs.value = readingSource==='oca' ? 'oca' : bgVersion;
+  if(rs){
+    var want = readingSource==='oca' ? 'oca' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
 }
 function setScriptureReading(v){
+  if(v === '__add__'){
+    // "+ Add New Translation" was picked: put the select back on the
+    // current reading and open the app's add-a-translation flow. The
+    // sentinel is never saved as a translation.
+    applyReadingPrefs();
+    if(window.ServiceApp) ServiceApp.addTranslation();
+    return;
+  }
   if(v === 'oca'){ readingSource = 'oca'; }
   else { readingSource = 'bg'; bgVersion = v; }
   applyReadingPrefs();
   _savePref('source', readingSource === 'oca' ? 'oca' : 'biblegateway');
   _savePref('version', bgVersion);
 }
+// Adds a translation fetched in the app (Nov 24, 2026): version is the
+// BibleGateway version code, label is the display name (the code itself
+// for runtime-added versions), and texts maps each reading's data-ref to
+// the joined verse text, or null when BibleGateway has no text for that
+// reading in this version. For each ref it builds a .reading-bg div by
+// cloning the reading's .reading-oca div (so the speaker markup matches
+// exactly) and replacing the text after the speaker span. Unavailable
+// readings get the Vespers-style fallback (a rubric + the OCA text).
+// Idempotent — the app re-adds its saved translations on every page load.
+function addTranslation(version, label, texts){
+  // Add the option to the dropdown, alphabetically by label among the
+  // translation options, before the "__add__" sentinel.
+  var rs = document.querySelector('.readings-select');
+  if(rs && !rs.querySelector('option[value="'+version+'"]')){
+    var o = document.createElement('option');
+    o.value = version;
+    o.textContent = label;
+    var sentinel = rs.querySelector('option[value="__add__"]');
+    var placed = false;
+    for(var i=0; i<rs.options.length; i++){
+      var opt = rs.options[i];
+      if(opt.value === 'oca' || opt.value === '__add__') continue;
+      if(label.localeCompare(opt.text) < 0){ rs.add(o, opt); placed = true; break; }
+    }
+    if(!placed){
+      if(sentinel) rs.add(o, sentinel);
+      else rs.add(o);
+    }
+  }
+  // Build a .reading-bg div for each reading.
+  Object.keys(texts).forEach(function(ref){
+    var oca = null, lastBg = null, exists = false;
+    document.querySelectorAll('.reading-oca').forEach(function(d){
+      if(d.dataset.ref === ref) oca = d;
+    });
+    if(!oca) return;
+    document.querySelectorAll('.reading-bg').forEach(function(d){
+      if(d.dataset.ref === ref){
+        if(d.dataset.version === version) exists = true;
+        lastBg = d;
+      }
+    });
+    if(exists) return;
+    var div = oca.cloneNode(true);
+    div.className = 'reading-bg';
+    div.dataset.version = version;
+    div.dataset.ref = ref;
+    div.style.display = 'none';
+    var text = texts[ref];
+    if(text){
+      // Replace the text after the speaker span with the new text.
+      var p = div.querySelector('p');
+      if(p){
+        var span = p.querySelector('span');
+        var afterSpan = false;
+        Array.prototype.slice.call(p.childNodes).forEach(function(n){
+          if(n === span){ afterSpan = true; return; }
+          if(afterSpan) p.removeChild(n);
+        });
+        p.appendChild(document.createTextNode(' ' + text));
+      }
+    } else {
+      // Unavailable: Vespers-style fallback — rubric + the OCA text
+      // (the clone already holds the OCA spoken paragraph).
+      var rub = document.createElement('p');
+      rub.className = 'rubric';
+      rub.textContent = 'BibleGateway (' + label + ') text not available for this reading; showing the OCA text.';
+      div.insertBefore(rub, div.firstChild);
+    }
+    if(lastBg) lastBg.after(div);
+    else oca.after(div);
+  });
+  // Append Sources lines after the Sources h2, then select the new version.
+  var srcH2 = null;
+  document.querySelectorAll('h2').forEach(function(h){ if(h.textContent === 'Sources') srcH2 = h; });
+  if(srcH2){
+    Object.keys(texts).forEach(function(ref){
+      var line = ref + ': Source: BibleGateway (' + label + '). Same OCA pericope, different translation. (Added in the app.)';
+      var dup = false;
+      document.querySelectorAll('p.rubric').forEach(function(p){ if(p.textContent === line) dup = true; });
+      if(dup) return;
+      var insertAfter = srcH2, n = srcH2.nextSibling;
+      while(n){
+        if(n.nodeType === 1){
+          if(n.tagName === 'P' && n.classList.contains('rubric')){ insertAfter = n; n = n.nextSibling; }
+          else break;
+        } else n = n.nextSibling;
+      }
+      var rub2 = document.createElement('p');
+      rub2.className = 'rubric';
+      rub2.textContent = line;
+      insertAfter.after(rub2);
+    });
+  }
+  setScriptureReading(version);
+}
 // Compatibility wrappers for the app, which calls these from
-// applySavedPrefs and resetReadingPrefs (no app rebuild in this task):
-// setReadingSource('oca') selects the OCA text; setReadingSource('bg'
-// or 'biblegateway') selects the saved translation — bgVersion, which
-// starts at the KJV default when none has been saved. setBgVersion(v)
-// selects that translation.
+// applySavedPrefs and resetReadingPrefs: setReadingSource('oca') selects
+// the OCA text; setReadingSource('bg' or 'biblegateway') selects the saved
+// translation — bgVersion, which starts at the KJV default when none has
+// been saved. setBgVersion(v) selects that translation.
 function setReadingSource(src){
   if(src === 'oca'){ setScriptureReading('oca'); }
   else { setScriptureReading(bgVersion); }
