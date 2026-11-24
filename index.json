@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T23:14:57Z",
+  "generated": "2026-11-24T23:39:57Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -176,6 +176,10 @@
     {
       "title": "Akathist to Our Lady of Sitka",
       "file": "akathist-our-lady-of-sitka.html"
+    },
+    {
+      "title": "Akathist Hymn of Forgiveness Sunday",
+      "file": "akathist-forgiveness-sunday.html"
     }
   ]
 }
