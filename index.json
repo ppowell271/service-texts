@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T21:24:04Z",
+  "generated": "2026-11-24T22:35:16Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -152,6 +152,30 @@
     {
       "title": "Akathist to All Saints of North America",
       "file": "akathist-all-north-american-saints.html"
+    },
+    {
+      "title": "Akathist to St. Herman of Alaska",
+      "file": "akathist-st-herman-of-alaska.html"
+    },
+    {
+      "title": "Akathist to St. Innocent of Moscow",
+      "file": "akathist-st-innocent-of-moscow.html"
+    },
+    {
+      "title": "Akathist to St. Jacob of Alaska",
+      "file": "akathist-st-jacob-of-alaska.html"
+    },
+    {
+      "title": "Akathist to the Theotokos, Joy of All Who Sorrow",
+      "file": "akathist-theotokos-joy-of-all-who-sorrow.html"
+    },
+    {
+      "title": "Akathist to the Wonderworking Tikhvin Icon of the Mother of God",
+      "file": "akathist-tikhvin-icon.html"
+    },
+    {
+      "title": "Akathist to Our Lady of Sitka",
+      "file": "akathist-our-lady-of-sitka.html"
     }
   ]
 }
