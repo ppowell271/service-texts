@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T14:14:35Z",
+  "generated": "2026-11-25T14:48:46Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -177,7 +177,8 @@
       "title": "Akathist to the Theotokos, Joy of All Who Sorrow",
       "short_title": "The Theotokos, Joy of All Who Sorrow",
       "category": "theotokos",
-      "file": "akathist-theotokos-joy-of-all-who-sorrow.html"
+      "file": "akathist-theotokos-joy-of-all-who-sorrow.html",
+      "listen": "https://www.youtube.com/watch?v=I_jN_agn7so"
     },
     {
       "title": "Akathist to the Wonderworking Tikhvin Icon of the Mother of God",
@@ -219,7 +220,8 @@
       "title": "Akathist to St. Nicholas of Myra",
       "short_title": "St. Nicholas of Myra",
       "category": "saint",
-      "file": "akathist-st-nicholas.html"
+      "file": "akathist-st-nicholas.html",
+      "listen": "https://www.youtube.com/watch?v=npu5_1k43EA"
     },
     {
       "title": "The Akathist Hymn to Saint Innocent of Moscow",
@@ -250,13 +252,15 @@
       "title": "Akathist of Thanksgiving (Glory to God for All Things)",
       "short_title": "Thanksgiving (Glory to God for All Things)",
       "category": "lord",
-      "file": "akathist-glory-to-god-for-all-things.html"
+      "file": "akathist-glory-to-god-for-all-things.html",
+      "listen": "https://www.youtube.com/watch?v=X8ArCrMzd3w"
     },
     {
       "title": "Akathist to St. John Chrysostom",
       "short_title": "St. John Chrysostom",
       "category": "saint",
-      "file": "akathist-st-john-chrysostom.html"
+      "file": "akathist-st-john-chrysostom.html",
+      "listen": "https://www.youtube.com/watch?v=qiEMPDp9Og4"
     },
     {
       "title": "Akathist to St. Panteleimon the Great Martyr",
@@ -268,7 +272,8 @@
       "title": "Akathist to the Guardian Angel",
       "short_title": "The Guardian Angel",
       "category": "angel",
-      "file": "akathist-guardian-angel.html"
+      "file": "akathist-guardian-angel.html",
+      "listen": "https://www.youtube.com/watch?v=XY-xcI1rMDg"
     },
     {
       "title": "Akathist to the Holy Apostle James the Brother of the Lord",
@@ -394,7 +399,8 @@
     },
     {
       "title": "The Paraklesis Service with the Little Supplicatory Canon",
-      "file": "paraklesis-little-paraklesis-dormition.html"
+      "file": "paraklesis-little-paraklesis-dormition.html",
+      "listen": "https://www.youtube.com/watch?v=oLtlMT6H2uA"
     },
     {
       "title": "Annunciation Paraklesis \u2014 Reader\u2019s Service",
@@ -419,19 +425,22 @@
       "title": "Prayers before Sleep",
       "short_title": "Prayers before Sleep",
       "category": "Daily Prayers",
-      "file": "prayer-prayers-before-sleep.html"
+      "file": "prayer-prayers-before-sleep.html",
+      "listen": "https://www.youtube.com/watch?v=imeJWj1Pcu4"
     },
     {
       "title": "The Order of Preparation for Holy Communion",
       "short_title": "Preparation for Holy Communion",
       "category": "Daily Prayers",
-      "file": "prayer-preparation-for-holy-communion.html"
+      "file": "prayer-preparation-for-holy-communion.html",
+      "listen": "https://www.youtube.com/watch?v=DKajYdSg1h8"
     },
     {
       "title": "Prayers after Holy Communion",
       "short_title": "Prayers after Holy Communion",
       "category": "Daily Prayers",
-      "file": "prayer-prayers-after-holy-communion.html"
+      "file": "prayer-prayers-after-holy-communion.html",
+      "listen": "https://www.youtube.com/watch?v=Kh-cej0f718"
     },
     {
       "title": "Sunday Troparia and Kontakia",
@@ -486,17 +495,20 @@
     {
       "title": "Supplicatory Canon to Our Lord Jesus Christ",
       "short_title": "Our Lord Jesus Christ",
-      "file": "canon-supplicatory-canon-to-our-lord-jesus-christ.html"
+      "file": "canon-supplicatory-canon-to-our-lord-jesus-christ.html",
+      "listen": "https://www.youtube.com/watch?v=XES4nzXbcK8"
     },
     {
       "title": "Supplicatory Canon to the Most Holy Theotokos",
       "short_title": "The Most Holy Theotokos",
-      "file": "canon-supplicatory-canon-to-the-most-holy-theotokos.html"
+      "file": "canon-supplicatory-canon-to-the-most-holy-theotokos.html",
+      "listen": "https://www.youtube.com/watch?v=50iZ1XVKg94"
     },
     {
       "title": "Canon to the Guardian Angel",
       "short_title": "The Guardian Angel",
-      "file": "canon-canon-to-the-guardian-angel.html"
+      "file": "canon-canon-to-the-guardian-angel.html",
+      "listen": "https://www.youtube.com/watch?v=sRXIAkYqVuI"
     },
     {
       "title": "Canon of Repentance to Our Lord Jesus Christ",
