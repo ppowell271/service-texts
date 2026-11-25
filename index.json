@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T23:39:57Z",
+  "generated": "2026-11-25T00:09:24Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -180,6 +180,34 @@
     {
       "title": "Akathist Hymn of Forgiveness Sunday",
       "file": "akathist-forgiveness-sunday.html"
+    },
+    {
+      "title": "Akathist Hymn in Preparation for the Nativity in the Flesh of our Lord, God and Savior Jesus Christ",
+      "file": "akathist-preparation-for-nativity.html"
+    },
+    {
+      "title": "Akathist Hymn to the Nativity of Christ",
+      "file": "akathist-nativity-of-christ.html"
+    },
+    {
+      "title": "Akathist Hymn to the Nativity of Christ",
+      "file": "akathist-nativity-of-christ-archaic.html"
+    },
+    {
+      "title": "Akathist to St. Nicholas of Myra",
+      "file": "akathist-st-nicholas.html"
+    },
+    {
+      "title": "The Akathist Hymn to Saint Innocent of Moscow",
+      "file": "akathist-st-innocent-life.html"
+    },
+    {
+      "title": "Akathist to the Spiritual Ladder, the Precious Cross",
+      "file": "akathist-elevation-of-the-cross.html"
+    },
+    {
+      "title": "Akathist Hymn to the Spiritual Ladder, the Precious Cross",
+      "file": "akathist-precious-cross.html"
     }
   ]
 }
