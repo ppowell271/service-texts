@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T20:21:58Z",
+  "generated": "2026-11-25T22:48:19Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -15,7 +15,12 @@
         "ninth": "2026-11-15-ninth-hour.html",
         "third_sixth": "2026-11-15-third-sixth-hours.html"
       },
-      "matins": "2026-11-15-matins.html"
+      "matins": "2026-11-15-matins.html",
+      "antiochian": {
+        "vespers": "antiochian-2026-11-15-vespers.html",
+        "matins": "antiochian-2026-11-15-matins.html",
+        "liturgy": "antiochian-2026-11-15-liturgy.html"
+      }
     },
     {
       "date": "2026-11-22",
@@ -31,7 +36,12 @@
         "ninth": "2026-11-22-ninth-hour.html",
         "third_sixth": "2026-11-22-third-sixth-hours.html"
       },
-      "matins": "2026-11-22-matins.html"
+      "matins": "2026-11-22-matins.html",
+      "antiochian": {
+        "vespers": "antiochian-2026-11-22-vespers.html",
+        "matins": "antiochian-2026-11-22-matins.html",
+        "liturgy": "antiochian-2026-11-22-liturgy.html"
+      }
     },
     {
       "date": "2026-11-29",
@@ -47,7 +57,12 @@
         "ninth": "2026-11-29-ninth-hour.html",
         "third_sixth": "2026-11-29-third-sixth-hours.html"
       },
-      "matins": "2026-11-29-matins.html"
+      "matins": "2026-11-29-matins.html",
+      "antiochian": {
+        "vespers": "antiochian-2026-11-29-vespers.html",
+        "matins": "antiochian-2026-11-29-matins.html",
+        "liturgy": "antiochian-2026-11-29-liturgy.html"
+      }
     },
     {
       "date": "2026-12-06",
