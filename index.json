@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T04:32:27Z",
+  "generated": "2026-11-25T05:33:14Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -286,6 +286,36 @@
       "short_title": "St. Elizabeth the New Martyr",
       "category": "saint",
       "file": "akathist-st-elizabeth-new-martyr.html"
+    },
+    {
+      "title": "Akathist to the Mother of God, Nurturer of Children",
+      "short_title": "Theotokos, Nurturer of Children",
+      "category": "theotokos",
+      "file": "akathist-theotokos-nurturer-of-children.html"
+    },
+    {
+      "title": "Akathist to St. Tikhon, Patriarch of Moscow",
+      "short_title": "St. Tikhon, Patriarch of Moscow",
+      "category": "saint",
+      "file": "akathist-st-tikhon-patriarch-of-moscow.html"
+    },
+    {
+      "title": "Akathist Hymn to Saint John, Forerunner and Baptist of the Lord",
+      "short_title": "St. John the Forerunner",
+      "category": "saint",
+      "file": "akathist-st-john-the-forerunner.html"
+    },
+    {
+      "title": "Akathist to the Holy Apostle Andrew the First-Called",
+      "short_title": "St. Andrew the First-Called",
+      "category": "saint",
+      "file": "akathist-st-andrew-first-called.html"
+    },
+    {
+      "title": "Akathist Hymn to the Theotokos, the Inexhaustible Cup",
+      "short_title": "Theotokos, the Inexhaustible Cup",
+      "category": "theotokos",
+      "file": "akathist-theotokos-inexhaustible-cup.html"
     }
   ],
   "paraklesis": [
