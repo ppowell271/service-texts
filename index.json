@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T13:01:18Z",
+  "generated": "2026-11-25T13:54:13Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -354,6 +354,36 @@
       "short_title": "Three Holy Hierarchs",
       "category": "saint",
       "file": "akathist-three-holy-hierarchs.html"
+    },
+    {
+      "title": "Akathist to the Holy Apostle and Evangelist Matthew",
+      "short_title": "St. Matthew",
+      "category": "saint",
+      "file": "akathist-st-matthew.html"
+    },
+    {
+      "title": "Akathist to Saint Anthony the Great",
+      "short_title": "St. Anthony the Great",
+      "category": "saint",
+      "file": "akathist-st-anthony-the-great.html"
+    },
+    {
+      "title": "Akathist Hymn to Our Father among the Saints Alexis of Wilkes-Barre",
+      "short_title": "St. Alexis of Wilkes-Barre",
+      "category": "saint",
+      "file": "akathist-st-alexis-of-wilkes-barre.html"
+    },
+    {
+      "title": "Akathist to Saint John of Chicago",
+      "short_title": "St. John of Chicago",
+      "category": "saint",
+      "file": "akathist-st-john-of-chicago.html"
+    },
+    {
+      "title": "Akathist to Saint Macarius the Great",
+      "short_title": "St. Macarius the Great",
+      "category": "saint",
+      "file": "akathist-st-macarius-the-great.html"
     }
   ],
   "paraklesis": [
