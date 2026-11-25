@@ -8,9 +8,13 @@ p{margin:.5em 0}
 .label{font-weight:bold;color:#7a1f1f;margin:1.1em 0 .25em}
 .verse{font-style:italic;margin:.12em 0}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
-.sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}</style></head><body>
+.sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
+.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
+.opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
+@media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Sunday Matins — Sunday, November 15, 2026 (Tone 7)</h1>
 <p class='rubric'>24th Sunday after Pentecost (8th of Luke). Martyrs Guria, Shamuna and Habib the Deacon of Edessa; Thomas the New, patriarch of Constantinople; Venerable Paisios Velichkovsky. Nativity Fast. (Antiochian prototype — OLG sources.)</p>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='antiochian' selected>Antiochian (OLG)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div></div>
 <hr class='sep'>
 <h2>The Opening</h2>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is our God always, now and ever, and unto ages of ages.</p>
@@ -175,7 +179,18 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Priest:</span> The reading from the holy gospel according to Saint Mark (16:1-8).</p>
 <p><span class='speaker'>Choir:</span> Glory to thee, O Lord. Glory to thee.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend.</p>
+<div class='reading-default' data-ref='Mark 16:1-8'>
 <p><span class='speaker-clergy'>Priest:</span> When the Sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome, bought spices, so that they might go and anoint Jesus. And very early in the morning, on the first day of the week, they came to the tomb at the rising of the sun. And they were saying to one another, “Who will roll away the stone for us from the door of the tomb?” And looking up, they saw that the stone was rolled back – it was very large. And entering the tomb, they saw a young man sitting on the right side, dressed in a long white robe; and they were amazed. And he said to them, “Do not be amazed; you seek Jesus of Nazareth, Who was crucified. He is risen; He is not here; see the place where they laid Him. But go, tell His disciples and Peter that He is going before you to Galilee; there you will see Him, as He told you.” And they went out quickly and fled from the tomb; for trembling and astonishment had come upon them; and they said nothing to anyone, for they were afraid.</p>
+</div>
+<div class='reading-bg' data-version='KJV' data-ref='Mark 16:1-8' style='display:none'>
+<p><span class='speaker-clergy'>Priest:</span> And when the sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome, had bought sweet spices, that they might come and anoint him. And very early in the morning the first day of the week, they came unto the sepulchre at the rising of the sun. And they said among themselves, Who shall roll us away the stone from the door of the sepulchre? And when they looked, they saw that the stone was rolled away: for it was very great. And entering into the sepulchre, they saw a young man sitting on the right side, clothed in a long white garment; and they were affrighted. And he saith unto them, Be not affrighted: Ye seek Jesus of Nazareth, which was crucified: he is risen; he is not here: behold the place where they laid him. But go your way, tell his disciples and Peter that he goeth before you into Galilee: there shall ye see him, as he said unto you. And they went out quickly, and fled from the sepulchre; for they trembled and were amazed: neither said they any thing to any man; for they were afraid.</p>
+</div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Mark 16:1-8' style='display:none'>
+<p><span class='speaker-clergy'>Priest:</span> When the Sabbath was over, Mary Magdalene, and Mary the mother of James, and Salome, bought spices, so that they might come and anoint Him. Very early on the first day of the week, they *came to the tomb when the sun had risen. They were saying to one another, “Who will roll away the stone for us from the entrance of the tomb?” Looking up, they *saw that the stone had been rolled away, although it was extremely large. Entering the tomb, they saw a young man sitting at the right, wearing a white robe; and they were amazed. And he *said to them, “Do not be amazed; you are looking for Jesus the Nazarene, who has been crucified. He has risen; He is not here; behold, here is the place where they laid Him. But go, tell His disciples and Peter, ‘He is going ahead of you to Galilee; there you will see Him, just as He told you.’” They went out and fled from the tomb, for trembling and astonishment had gripped them; and they said nothing to anyone, for they were afraid.</p>
+</div>
+<div class='reading-bg' data-version='RSV' data-ref='Mark 16:1-8' style='display:none'>
+<p><span class='speaker-clergy'>Priest:</span> And when the sabbath was past, Mary Mag′dalene, and Mary the mother of James, and Salo′me, bought spices, so that they might go and anoint him. And very early on the first day of the week they went to the tomb when the sun had risen. And they were saying to one another, “Who will roll away the stone for us from the door of the tomb?” And looking up, they saw that the stone was rolled back—it was very large. And entering the tomb, they saw a young man sitting on the right side, dressed in a white robe; and they were amazed. And he said to them, “Do not be amazed; you seek Jesus of Nazareth, who was crucified. He has risen, he is not here; see the place where they laid him. But go, tell his disciples and Peter that he is going before you to Galilee; there you will see him, as he told you.” And they went out and fled from the tomb; for trembling and astonishment had come upon them; and they said nothing to any one, for they were afraid.</p>
+</div>
 <p><span class='speaker'>Choir:</span> Glory to thee, O Lord. Glory to thee.</p>
 <p><span class='speaker'>Reader:</span> In that we have beheld the resurrection of Christ, let us worship the holy Lord Jesus, the only sinless One. Thy cross do we adore, O Christ, and thy holy resurrection we praise and glorify; for thou art our God, and we know none other beside thee; we call upon thy name. O come, all ye faithful, let us adore Christ’s holy resurrection. For lo, through the cross is joy come into all the world. Ever blessing the Lord, let us sing his resurrection, for in that he endured the cross for us, he hath destroyed death by death.</p>
 <h2>Psalm 50</h2>
@@ -290,4 +305,58 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p class='label'>Troparion in Tone Eight</p>
 <p>After rising from the tomb and breaking the bonds of Hades asunder, Thou didst repeal the sentence of death, O Lord, thereby delivering all men from the snares of the enemy. After manifesting Thyself to Thine apostles, Thou didst send them forth to preach, and through them Thou didst grant peace to the whole world, O Thou Who alone art rich in mercy.</p>
 <p class='rubric'>(No dismissal is printed in the source file.)</p>
-<footer>Prototype assembled from the Antiochian Archdiocese Online Liturgical Guide: Orthros on Sunday, November 15, 2026 (Nov 15 2026 ORTHROS.pdf). Canon troparia are not printed in the source (katavasiae only). Portions of the Archdiocesan Service Texts include texts from The Menaion, The Great Horologion, The Pentecostarion, The Octoechos, The Triodion–Holy Week, and The Psalter of the Seventy, © Holy Transfiguration Monastery, Brookline, Massachusetts, used with permission; they may not be further reproduced beyond a single copy for personal non-commercial use without prior written authorization. Verify against parish practice before liturgical use.</footer></body></html>
+<script>
+function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); else localStorage.setItem(k,v); }catch(e){} }
+function _loadPref(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function toggleOpts(btn){ var p=document.getElementById('opts-panel'); if(!p) return; var open=p.style.display!=='none'; p.style.display=open?'none':'block'; btn.innerHTML=open?'⚙ Service options ▸':'⚙ Service options ▾'; }
+var patronMode = _loadPref('patron') || 'st-nicholas';
+var patronNames = {'st-innocent':'Saint Innocent','st-george':'Saint George','st-nicholas':'Saint Nicholas'};
+if(!patronNames[patronMode]) patronMode = 'st-nicholas';
+function applyPatronPrefs(){
+  document.querySelectorAll('.patron-block').forEach(e=>e.style.display = e.classList.contains('patron-'+patronMode) ? '' : 'none');
+  document.querySelectorAll('.patron-name').forEach(e=>e.textContent = patronNames[patronMode]);
+  var s = document.querySelector('.patron-select');
+  if(s && s.querySelector('option[value="'+patronMode+'"]')) s.value = patronMode;
+}
+function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
+var silentMode = _loadPref('silent') || 'summary';
+if(silentMode!=='summary' && silentMode!=='full') silentMode = 'summary';
+function applySilentPrefs(){
+  document.querySelectorAll('.silent-off').forEach(e=>e.style.display = silentMode==='summary' ? '' : 'none');
+  document.querySelectorAll('.silent-on').forEach(e=>e.style.display = silentMode==='full' ? '' : 'none');
+  document.querySelectorAll('.pray-btn').forEach(b=>b.classList.toggle('active', b.dataset.mode===silentMode));
+}
+function setSilentPrayers(m){ silentMode = m; applySilentPrefs(); _savePref('silent', m); }
+var thirdMode = _loadPref('third') || 'ps94';
+if(thirdMode!=='ps94' && thirdMode!=='beatitudes') thirdMode = 'ps94';
+function applyThirdPrefs(){
+  document.querySelectorAll('.third-ps94').forEach(e=>e.style.display = thirdMode==='ps94' ? '' : 'none');
+  document.querySelectorAll('.third-beatitudes').forEach(e=>e.style.display = thirdMode==='beatitudes' ? '' : 'none');
+  document.querySelectorAll('.third-btn').forEach(b=>b.classList.toggle('active', b.dataset.third===thirdMode));
+}
+function setThirdAntiphon(m){ thirdMode = m; applyThirdPrefs(); _savePref('third', m); }
+var readingSource = _loadPref('source') === 'biblegateway' ? 'bg' : 'antiochian';
+var bgVersion = _loadPref('version') || 'KJV';
+if(['KJV','NASB1995','RSV'].indexOf(bgVersion) < 0) bgVersion = 'KJV';
+function applyReadingPrefs(){
+  document.querySelectorAll('.reading-default').forEach(e=>e.style.display = readingSource==='antiochian' ? '' : 'none');
+  document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
+    (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-default').forEach(e=>e.style.display = '');
+  }
+  var rs = document.querySelector('.readings-select');
+  if(rs){
+    var want = readingSource==='antiochian' ? 'antiochian' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
+}
+function setScriptureReading(v){
+  if(v === 'antiochian'){ readingSource = 'antiochian'; }
+  else { readingSource = 'bg'; bgVersion = v; }
+  applyReadingPrefs();
+  _savePref('source', readingSource === 'antiochian' ? 'antiochian' : 'biblegateway');
+  _savePref('version', bgVersion);
+}
+document.addEventListener('DOMContentLoaded', function(){ applyPatronPrefs(); applySilentPrefs(); applyThirdPrefs(); applyReadingPrefs(); });</script>
+<footer>Prototype assembled from the Antiochian Archdiocese Online Liturgical Guide: Orthros on Sunday, November 15, 2026 (Nov 15 2026 ORTHROS.pdf). Canon troparia are not printed in the source (katavasiae only). Alternative Gospel translations (KJV, NASB 1995, RSV) from BibleGateway; the default is the Antiochian text as printed in the Orthros file. Portions of the Archdiocesan Service Texts include texts from The Menaion, The Great Horologion, The Pentecostarion, The Octoechos, The Triodion–Holy Week, and The Psalter of the Seventy, © Holy Transfiguration Monastery, Brookline, Massachusetts, used with permission; they may not be further reproduced beyond a single copy for personal non-commercial use without prior written authorization. Verify against parish practice before liturgical use.</footer></body></html>
