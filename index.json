@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T01:04:31Z",
+  "generated": "2026-11-25T01:11:51Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -85,7 +85,7 @@
   "feasts": [
     {
       "date": "2026-11-13",
-      "title": "St.",
+      "title": "St. John Chrysostom, Archbishop of Constantinople.",
       "tone": 4,
       "type": "feast",
       "liturgy": "2026-11-13-liturgy.html",
@@ -125,7 +125,7 @@
     },
     {
       "date": "2026-12-05",
-      "title": "Ven.",
+      "title": "Ven. Sabbas the Sanctified.",
       "tone": 5,
       "type": "feast",
       "liturgy": "2026-12-05-liturgy.html",
@@ -133,7 +133,7 @@
     },
     {
       "date": "2026-12-07",
-      "title": "St.",
+      "title": "St. Ambrose, Bishop of Milan.",
       "tone": 1,
       "type": "feast",
       "liturgy": "2026-12-07-liturgy.html",
