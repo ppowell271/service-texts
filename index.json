@@ -1,9 +1,9 @@
 {
-  "generated": "2026-11-25T11:30:43Z",
+  "generated": "2026-11-25T13:01:18Z",
   "sundays": [
     {
       "date": "2026-11-15",
-      "title": "24th Sunday after Pentecost (8th of Luke).",
+      "title": "24th Sunday after Pentecost (8th of Luke)",
       "tone": 7,
       "type": "sunday",
       "liturgy": "2026-11-15-liturgy.html",
@@ -19,7 +19,7 @@
     },
     {
       "date": "2026-11-22",
-      "title": "25th Sunday after Pentecost (9th of Luke).",
+      "title": "25th Sunday after Pentecost (9th of Luke)",
       "tone": 8,
       "type": "sunday",
       "liturgy": "2026-11-22-liturgy.html",
@@ -35,7 +35,7 @@
     },
     {
       "date": "2026-11-29",
-      "title": "26th Sunday after Pentecost (10th of Luke).",
+      "title": "26th Sunday after Pentecost (10th of Luke)",
       "tone": 1,
       "type": "sunday",
       "liturgy": "2026-11-29-liturgy.html",
@@ -51,7 +51,7 @@
     },
     {
       "date": "2026-12-06",
-      "title": "27th Sunday after Pentecost (11th of Luke).",
+      "title": "27th Sunday after Pentecost (11th of Luke)",
       "tone": 2,
       "type": "sunday",
       "liturgy": "2026-12-06-liturgy.html",
@@ -67,7 +67,7 @@
     },
     {
       "date": "2026-12-13",
-      "title": "28th Sunday after Pentecost (12th of Luke).",
+      "title": "28th Sunday after Pentecost (12th of Luke)",
       "tone": 3,
       "type": "sunday",
       "liturgy": "2026-12-13-liturgy.html",
@@ -85,7 +85,7 @@
   "feasts": [
     {
       "date": "2026-11-13",
-      "title": "St. John Chrysostom, Archbishop of Constantinople.",
+      "title": "St. John Chrysostom, Archbishop of Constantinople",
       "tone": 4,
       "type": "feast",
       "liturgy": "2026-11-13-liturgy.html",
@@ -93,7 +93,7 @@
     },
     {
       "date": "2026-11-14",
-      "title": "Holy and All-praised Apostle Philip.",
+      "title": "Holy and All-praised Apostle Philip",
       "tone": 6,
       "type": "feast",
       "liturgy": "2026-11-14-liturgy.html",
@@ -101,7 +101,7 @@
     },
     {
       "date": "2026-11-16",
-      "title": "Holy Apostle and Evangelist Matthew.",
+      "title": "Holy Apostle and Evangelist Matthew",
       "tone": 4,
       "type": "feast",
       "liturgy": "2026-11-16-liturgy.html",
@@ -109,7 +109,7 @@
     },
     {
       "date": "2026-11-30",
-      "title": "Holy and All-Praised Apostle Andrew the First-Called.",
+      "title": "Holy and All-Praised Apostle Andrew the First-Called",
       "tone": 4,
       "type": "feast",
       "liturgy": "2026-11-30-liturgy.html",
@@ -117,7 +117,7 @@
     },
     {
       "date": "2026-12-04",
-      "title": "Greatmartyr Barbara and Martyr Juliana.",
+      "title": "Greatmartyr Barbara and Martyr Juliana",
       "tone": 2,
       "type": "feast",
       "liturgy": "2026-12-04-liturgy.html",
@@ -125,7 +125,7 @@
     },
     {
       "date": "2026-12-05",
-      "title": "Ven. Sabbas the Sanctified.",
+      "title": "Ven. Sabbas the Sanctified",
       "tone": 5,
       "type": "feast",
       "liturgy": "2026-12-05-liturgy.html",
@@ -133,7 +133,7 @@
     },
     {
       "date": "2026-12-07",
-      "title": "St. Ambrose, Bishop of Milan.",
+      "title": "St. Ambrose, Bishop of Milan",
       "tone": 1,
       "type": "feast",
       "liturgy": "2026-12-07-liturgy.html",
@@ -141,7 +141,7 @@
     },
     {
       "date": "2026-12-09",
-      "title": "The Conception by Righteous Anna of the Most Holy Theotokos.",
+      "title": "The Conception by Righteous Anna of the Most Holy Theotokos",
       "tone": 4,
       "type": "feast",
       "liturgy": "2026-12-09-liturgy.html",
