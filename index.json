@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T01:11:51Z",
+  "generated": "2026-11-25T01:45:31Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -208,6 +208,26 @@
     {
       "title": "Akathist Hymn to the Spiritual Ladder, the Precious Cross",
       "file": "akathist-precious-cross.html"
+    },
+    {
+      "title": "Akathist Hymn to the Most Holy Theotokos",
+      "file": "akathist-theotokos.html"
+    },
+    {
+      "title": "Akathist of Thanksgiving (Glory to God for All Things)",
+      "file": "akathist-glory-to-god-for-all-things.html"
+    },
+    {
+      "title": "Akathist to St. John Chrysostom",
+      "file": "akathist-st-john-chrysostom.html"
+    },
+    {
+      "title": "Akathist to St. Panteleimon the Great Martyr",
+      "file": "akathist-st-panteleimon.html"
+    },
+    {
+      "title": "Akathist to the Guardian Angel",
+      "file": "akathist-guardian-angel.html"
     }
   ],
   "paraklesis": [
