@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T05:33:14Z",
+  "generated": "2026-11-25T06:21:49Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -330,6 +330,33 @@
     {
       "title": "Annunciation Paraklesis \u2014 Reader\u2019s Service",
       "file": "paraklesis-annunciation-paraklesis-readers.html"
+    }
+  ],
+  "prayers": [
+    {
+      "title": "Morning Prayers",
+      "short_title": "Morning Prayers",
+      "file": "prayer-morning-prayers.html"
+    },
+    {
+      "title": "Prayers during the Day",
+      "short_title": "Prayers during the Day",
+      "file": "prayer-prayers-during-the-day.html"
+    },
+    {
+      "title": "Prayers before Sleep",
+      "short_title": "Prayers before Sleep",
+      "file": "prayer-prayers-before-sleep.html"
+    },
+    {
+      "title": "The Order of Preparation for Holy Communion",
+      "short_title": "Preparation for Holy Communion",
+      "file": "prayer-preparation-for-holy-communion.html"
+    },
+    {
+      "title": "Prayers after Holy Communion",
+      "short_title": "Prayers after Holy Communion",
+      "file": "prayer-prayers-after-holy-communion.html"
     }
   ]
 }
