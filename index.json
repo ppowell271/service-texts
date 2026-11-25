@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T13:57:36Z",
+  "generated": "2026-11-25T14:06:04Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -405,67 +405,80 @@
     {
       "title": "Morning Prayers",
       "short_title": "Morning Prayers",
+      "category": "Daily Prayers",
       "file": "prayer-morning-prayers.html",
       "listen": "https://www.youtube.com/watch?v=u5reVA4E_0E"
     },
     {
       "title": "Prayers during the Day",
       "short_title": "Prayers during the Day",
+      "category": "Daily Prayers",
       "file": "prayer-prayers-during-the-day.html"
     },
     {
       "title": "Prayers before Sleep",
       "short_title": "Prayers before Sleep",
+      "category": "Daily Prayers",
       "file": "prayer-prayers-before-sleep.html"
     },
     {
       "title": "The Order of Preparation for Holy Communion",
       "short_title": "Preparation for Holy Communion",
+      "category": "Daily Prayers",
       "file": "prayer-preparation-for-holy-communion.html"
     },
     {
       "title": "Prayers after Holy Communion",
       "short_title": "Prayers after Holy Communion",
+      "category": "Daily Prayers",
       "file": "prayer-prayers-after-holy-communion.html"
     },
     {
       "title": "Sunday Troparia and Kontakia",
       "short_title": "Sunday Troparia and Kontakia",
+      "category": "Troparia & Kontakia",
       "file": "prayer-sunday-troparia-and-kontakia.html"
     },
     {
       "title": "Daily Troparia and Kontakia",
       "short_title": "Daily Troparia and Kontakia",
+      "category": "Troparia & Kontakia",
       "file": "prayer-daily-troparia-and-kontakia.html"
     },
     {
       "title": "Troparia and Kontakia of the Twelve",
       "short_title": "Troparia and Kontakia of the Twelve",
+      "category": "Troparia & Kontakia",
       "file": "prayer-troparia-and-kontakia-of-the-twelve-feasts.html"
     },
     {
       "title": "Troparia, Kontakia, Prayers, and Stichera from the Triodion",
       "short_title": "From the Triodion",
+      "category": "Troparia & Kontakia",
       "file": "prayer-troparia-and-kontakia-from-the-triodion.html"
     },
     {
       "title": "Passion Week Troparia",
       "short_title": "Passion Week Troparia",
+      "category": "Troparia & Kontakia",
       "file": "prayer-passion-week-troparia.html"
     },
     {
       "title": "The Paschal Hours",
       "short_title": "The Paschal Hours",
+      "category": "Other Prayers",
       "file": "prayer-paschal-hours.html"
     },
     {
       "title": "Troparia and Kontakia from the Pentecostarion",
       "short_title": "From the Pentecostarion",
+      "category": "Troparia & Kontakia",
       "file": "prayer-troparia-and-kontakia-from-the-pentecostarion.html"
     },
     {
       "title": "The Order for Reading Canons and Akathists When Alone",
       "short_title": "Order for Reading Canons and Akathists",
+      "category": "Other Prayers",
       "file": "prayer-order-for-reading-canons-and-akathists.html"
     }
   ],
