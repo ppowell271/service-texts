@@ -8,9 +8,13 @@ p{margin:.5em 0}
 .label{font-weight:bold;color:#7a1f1f;margin:1.1em 0 .25em}
 .verse{font-style:italic;margin:.12em 0}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
-.sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}</style></head><body>
+.sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
+.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
+.opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
+@media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Divine Liturgy of St. John Chrysostom — Sunday, November 15, 2026 (Tone 7)</h1>
 <p class='rubric'>24th Sunday after Pentecost (8th of Luke). Martyrs Guria, Shamuna and Habib the Deacon of Edessa; Thomas the New, patriarch of Constantinople; Venerable Paisios Velichkovsky. Nativity Fast. (Antiochian prototype — OLG sources.)</p>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent'>St. Innocent</option><option value='st-nicholas' selected>St. Nicholas</option></select></div><div class='src-toggle'><span class='rubric'>Third Antiphon:&nbsp;</span><button class='src-btn third-btn active' data-third='ps94' onclick="setThirdAntiphon('ps94')">Psalm 94 (Typical)</button><button class='src-btn third-btn' data-third='beatitudes' onclick="setThirdAntiphon('beatitudes')">Beatitudes</button></div><div class='src-toggle'><span class='rubric'>Scripture readings:&nbsp;</span><select class='src-select readings-select' onchange="setScriptureReading(this.value)"><option value='antiochian' selected>Antiochian (OLG)</option><option value='KJV'>KJV</option><option value='NASB1995'>NASB (1995)</option><option value='RSV'>RSV</option></select></div><div class='src-toggle'><span class='rubric'>Priest's silent prayers:&nbsp;</span><button class='src-btn pray-btn active' data-mode='summary' onclick="setSilentPrayers('summary')">Summaries</button><button class='src-btn pray-btn' data-mode='full' onclick="setSilentPrayers('full')">Full text</button></div></div>
 <hr class='sep'>
 <h2>The Opening</h2>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is the kingdom of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
@@ -40,9 +44,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Calling to remembrance our allholy, immaculate, most blessed and glorious Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God.</p>
 <p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
 <h2>The First Antiphon</h2>
-<p class='label'>The Prayer of the First Antiphon</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O Lord our God, whose might is beyond compare, whose glory is incomprehensible, whose mercy is boundless, and whose love toward mankind is ineffable: Do thou thyself, O Master, in thy tender compassion look down upon us and upon this holy house, and grant us and those 1</p>
-<p>who pray with us thy rich mercies and compassions. (Aloud) For unto thee are due all glory, honor and worship to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the First Antiphon.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the First Antiphon (the priest prays silently)</p>
+<p>O Lord our God, whose might is beyond compare, whose glory is incomprehensible, whose mercy is boundless, and whose love toward mankind is ineffable: Do thou thyself, O Master, in thy tender compassion look down upon us and upon this holy house, and grant us and those 1 who pray with us thy rich mercies and compassions.</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For unto thee are due all glory, honor and worship to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
 <p class='label'>First Typical Antiphon — Tone 2</p>
 <p class='verse'>Bless the Lord, O my soul, and all that is within me bless his holy name. (Ps. 102:1)</p>
 <p><span class='speaker'>Choir:</span> Through the intercessions of the Theotokos, O Savior, save us.</p>
@@ -60,9 +69,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Calling to remembrance our allholy, immaculate, most blessed and glorious Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God.</p>
 <p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
-<p class='label'>The Prayer of the Second Antiphon</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O Lord our God, save thy people, and bless thine inheritance;</p>
-<p>preserve the fulness of thy Church, sanctify those who love the beauty of thy house, glorify them in recompense by thy divine power, and forsake us not who hope on thee. (Aloud) For thine is the might, and thine is the kingdom and the power and the glory of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Second Antiphon.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Second Antiphon (the priest prays silently)</p>
+<p>O Lord our God, save thy people, and bless thine inheritance; preserve the fulness of thy Church, sanctify those who love the beauty of thy house, glorify them in recompense by thy divine power, and forsake us not who hope on thee.</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For thine is the might, and thine is the kingdom and the power and the glory of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
 <p class='label'>Second Typical Antiphon — Tone 2</p>
 <p class='verse'>Praise the Lord, O my soul. I will praise the Lord in my life; I will sing praises unto my God while I have my being. (Ps. 145:1-2)</p>
 <p><span class='speaker'>Choir:</span> Save us, O Son of God, who art risen from the dead, who sing to thee: Alleluia.</p>
@@ -79,9 +93,15 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Help us; save us; have mercy on us; and keep us, O God, by thy grace.</p>
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Calling to remembrance our allholy, immaculate, most blessed and glorious Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God.</p>
-<p><span class='speaker'>Choir:</span> To thee, O Lord. The Prayer of the Second Antiphon</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O Lord our God, save thy people, and bless thine inheritance;</p>
-<p>preserve the fulness of thy Church, sanctify those who love the beauty of thy house, glorify them in recompense by thy divine power, and forsake us not who hope on thee. (Aloud) For thine is the might, and thine is the kingdom and the power and the glory of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Second Antiphon.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Second Antiphon (the priest prays silently)</p>
+<p>O Lord our God, save thy people, and bless thine inheritance; preserve the fulness of thy Church, sanctify those who love the beauty of thy house, glorify them in recompense by thy divine power, and forsake us not who hope on thee.</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For thine is the might, and thine is the kingdom and the power and the glory of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen. THE SECOND ANTIPHON, IN TONE 2 Verse: The Lord is king, He is clothed with majesty; the Lord is clothed with strength and He hath girt himself. (Psalm 92:1a) Refrain: By the intercessions of Thy saints, save us, O Lord. Verse: For He established the world which shall not be shaken. (Psalm 92:1b) Refrain: By the intercessions of Thy saints, save us, O Lord. Verse: Holiness becometh Thy house, O Lord, unto length of days. (Psalm 92:7) Refrain: By the intercessions of Thy saints, save us, O Lord. Verse: Glory to the Father and to the Son and to the Holy Spirit; both now and ever and unto ages of ages. Amen.</p>
 <p><span class='speaker'>Choir:</span> Only-begotten Son and Word of God, who art immortal, who for our salvation willed to be incarnate of the Holy Theotokos and ever-virgin Mary, and without change became man; and wast crucified, O Christ our God, and trampled down death by death; who art one of the Holy Trinity, glorified together with the Father and the Holy Spirit: save us. LITTLE LITANY</p>
 <p><span class='speaker-clergy'>Deacon:</span> Again and again, in peace, let us pray to the Lord.</p>
@@ -90,14 +110,38 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Calling to remembrance our allholy, immaculate, most blessed and glorious 2</p>
 <p>Lady Theotokos and ever-virgin Mary, with all the saints, let us commend ourselves and each other and all our life unto Christ our God. Choir: To thee, O Lord.</p>
-<p class='label'>The Prayer of the Third Antiphon</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O thou who hast bestowed on us these common and united supplications and dost promise that when two or three are of one accord in thy name thou wilt grant their requests: do thou also now fulfil the desires and petitions of thy servants as may be most expedient for them, granting us in this age the knowledge of thy truth, and in the age to come, life everlasting. (Aloud) For thou art a good God and lovest mankind, and unto thee we ascribe glory to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Third Antiphon.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Third Antiphon (the priest prays silently)</p>
+<p>O thou who hast bestowed on us these common and united supplications and dost promise that when two or three are of one accord in thy name thou wilt grant their requests: do thou also now fulfil the desires and petitions of thy servants as may be most expedient for them, granting us in this age the knowledge of thy truth, and in the age to come, life everlasting.</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For thou art a good God and lovest mankind, and unto thee we ascribe glory to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
+<div class='third-ps94' style='display:'>
 <p>Verse: For in His hand are the end of the earth, and the heights of the mountains are His; for the sea is His, and He made it; and the dry land His hands have fashioned. (Psalm 94:4−5) Refrain: Save us, O Son of God, Who art wondrous in Thy saints, who sing to thee: Alleluia.</p>
 <p class='label'>Third Antiphon — Tone 7</p>
 <p class='verse'>This is the day which the Lord hath made; let us rejoice and be glad in it. (Ps. 117:24)</p>
 <p><span class='speaker'>Choir:</span> Thou didst abolish death by Thy Cross; Thou didst open Paradise to the thief; Thou didst transform the myrrh-bearers’ lamentation, and didst bid Thine Apostles to preach that Thou art risen, O Christ God, granting great mercy to the world.</p>
 <p class='verse'>Let the heavens and the earth praise Him. (Ps. 68:39)</p>
 <p><span class='speaker'>Choir:</span> Thou didst abolish death by Thy Cross; Thou didst open Paradise to the thief; Thou didst transform the myrrh-bearers’ lamentation, and didst bid Thine Apostles to preach that Thou art risen, O Christ God, granting great mercy to the world.</p>
+</div>
+<div class='third-beatitudes' style='display:none'>
+<p class='label'>The Beatitudes</p>
+<p class='verse'>In Thy Kingdom remember us, O Lord, when Thou comest in Thy Kingdom.</p>
+<p class='verse'>Blessed are the poor in spirit, for theirs is the Kingdom of Heaven.</p>
+<p class='verse'>Blessed are those who mourn, for they shall be comforted.</p>
+<p class='verse'>Blessed are the meek, for they shall inherit the earth.</p>
+<p class='verse'>Blessed are those who hunger and thirst after righteousness, for they shall be filled.</p>
+<p class='verse'>Blessed are the merciful, for they shall obtain mercy.</p>
+<p class='verse'>Blessed are the pure in heart, for they shall see God.</p>
+<p class='verse'>Blessed are the peacemakers, for they shall be called the children of God.</p>
+<p class='verse'>Blessed are those who are persecuted for righteousness' sake, for theirs is the Kingdom of Heaven.</p>
+<p class='verse'>Blessed are you when men shall revile you and persecute you, and shall say all manner of evil against you falsely, for My sake.</p>
+<p class='verse'>Rejoice and be exceedingly glad, for great is your reward in Heaven.</p>
+<p class='verse'>Glory to the Father, and to the Son, and to the Holy Spirit,</p>
+<p class='verse'>Both now and ever, and unto ages of ages. Amen.</p>
+</div>
 <h2>The Little Entrance</h2>
 <p class='rubric'>As the clergy prepare for the Little Entrance, the priest recites the following prayer quietly: O Master, Lord our God, who hast appointed in heaven orders and hosts of angels and archangels for the service of thy glory: Cause that with our entrance there may be an entrance of holy angels serving with us and glorifying thy goodness. For unto thee are due all glory, honor and worship to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages.. Amen.</p>
 <p class='label'>The Eisodikon</p>
@@ -110,6 +154,30 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p class='label'>Apolytikion for Ss. Guria, Shamuna and Habib — Tone 5</p>
 <p><span class='speaker'>Choir:</span> Since Thou hast given us the miracles of Thy holy Martyrs Guria, Shamuna and Habib as an invincible battlement, by their entreaties scatter the counsels of the heathen, O Christ our God, and strengthen the faith of Orthodox Christians, since Thou art good and the Lover of mankind. Now sing the apolytikion of the patron saint or feast of the temple.</p>
 <p class='rubric'>Now sing the apolytikion of the patron saint or feast of the temple.</p>
+<div class='patron-block patron-troparion patron-st-george' style='display:none'>
+<p class='label'>Tone 4 Troparion (St. George — Patron of the Temple)</p>
+<p>As the deliverer of captives and the protector of the poor, as the physician of the feeble and combatant of kings, holy champion and great martyr George, intercede with Christ our God to save our souls.</p>
+</div>
+<div class='patron-block patron-troparion patron-st-innocent' style='display:none'>
+<p class='label'>Tone 4 Troparion (St. Innocent — Patron of the Temple)</p>
+<p>O Holy Father Innocent, in obedience to the will of God, thou didst accept dangers and tribulations, bringing many peoples to the knowledge of truth. Thou didst show us the way; now by thy prayers help lead us into the Kingdom of Heaven.</p>
+</div>
+<div class='patron-block patron-troparion patron-st-nicholas' style='display:'>
+<p class='label'>Tone 4 Troparion (St. Nicholas — Patron of the Temple)</p>
+<p>Thy works of justice did reveal thee to thy community as a canon of faith, the likeness of humility and teacher of abstinence, O Father Bishop Nicholas. Wherefore, by humility thou hast achieved exaltation, and by thy meekness wealth. Intercede, therefore, with Christ God to save our souls.</p>
+</div>
+<div class='patron-block patron-kontakion patron-st-george' style='display:none'>
+<p class='label'>Tone 4 Kontakion (St. George — Patron of the Temple)</p>
+<p>Thou hast been tilled by God, becoming an honored and pious husbandman. The sheaves of virtue thou hast gathered unto thyself, O George; for having sowed with tears thou didst reap with joy; and didst struggle unto blood, attaining Christ. Wherefore, by thine intercessions, O Saint, thou dost grant to all remission of sins.</p>
+</div>
+<div class='patron-block patron-kontakion patron-st-innocent' style='display:none'>
+<p class='label'>Tone 2 Kontakion (St. Innocent — Patron of the Temple)</p>
+<p>Thy life is a true celebration of the Providence and Grace of God, O Holy Father Innocent, the Apostle to our land. For in hardships and toiling for the Gospel's sake, thou wast preserved unharmed and often delivered, while from obscurity thou wast highly exalted as an example to the faithful everywhere that the Lord truly guides a man in the way he should go.</p>
+</div>
+<div class='patron-block patron-kontakion patron-st-nicholas' style='display:'>
+<p class='label'>Tone 3 Kontakion (St. Nicholas — Patron of the Temple)</p>
+<p>Thou, O righteous Nicholas, in Myra truly wast shown forth as a sacred minister fulfilling Christ's holy Gospel; for thou didst lay down thy life for thy flock and people and, O Saint, didst save the innocent from unjust death. Wherefore, thou wast sanctified as a great initiate of the divine grace of God.</p>
+</div>
 <p class='label'>Kontakion of the Entrance of the Theotokos — Tone 4</p>
 <p><span class='speaker'>Choir:</span> The sacred treasury of God’s holy glory, * the greatly precious bridal chamber and Virgin, * the Savior’s most pure temple, free of stain and undefiled, * into the House of the Lord * on this day is brought forward * and bringeth with herself the grace * of the Most Divine Spirit; * her do God’s Angels hymn with songs of praise, * for she is truly the heavenly tabernacle.</p>
 <h2>The Trisagion</h2>
@@ -130,7 +198,18 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Wisdom!</p>
 <p><span class='speaker'>Reader:</span> The reading is from the Epistle of St. Paul to the Ephesians. (2:14-22)</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend!</p>
+<div class='reading-default' data-ref='Ephesians 2:14-22'>
 <p><span class='speaker'>Reader:</span> Brethren, Christ is our peace, Who has made us both one, and has broken down the dividing wall of hostility, by abolishing in His flesh the law of commandments and ordinances, that He might create in Himself one new man in place of the two, so making peace, and might reconcile us both to God in one body through the Cross, thereby bringing the hostility to an end. And He came and preached peace to you, who were far off, and peace to those who were near; for through Him we both have access in one Spirit to the Father. So then you are no longer strangers and sojourners, but you are fellow citizens with the saints and members of the household of God, built upon the foundation of the apostles and prophets, Christ Jesus Himself being the cornerstone, in Whom the whole structure is joined together and grows into a holy temple in the Lord; in Whom you also are built into it for a dwelling place of God in the Spirit.</p>
+</div>
+<div class='reading-bg' data-version='KJV' data-ref='Ephesians 2:14-22' style='display:none'>
+<p><span class='speaker'>Reader:</span> For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us; Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace; And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby: And came and preached peace to you which were afar off, and to them that were nigh. For through him we both have access by one Spirit unto the Father. Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God; And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone; In whom all the building fitly framed together groweth unto an holy temple in the Lord: In whom ye also are builded together for an habitation of God through the Spirit.</p>
+</div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Ephesians 2:14-22' style='display:none'>
+<p><span class='speaker'>Reader:</span> For He Himself is our peace, who made both groups into one and broke down the barrier of the dividing wall, by abolishing in His flesh the enmity, which is the Law of commandments contained in ordinances, so that in Himself He might make the two into one new man, thus establishing peace, and might reconcile them both in one body to God through the cross, by it having put to death the enmity. And He came and preached peace to you who were far away, and peace to those who were near ; for through Him we both have our access in one Spirit to the Father. So then you are no longer strangers and aliens, but you are fellow citizens with the saints, and are of God’s household, having been built on the foundation of the apostles and prophets, Christ Jesus Himself being the corner stone, in whom the whole building, being fitted together, is growing into a holy temple in the Lord, in whom you also are being built together into a dwelling of God in the Spirit.</p>
+</div>
+<div class='reading-bg' data-version='RSV' data-ref='Ephesians 2:14-22' style='display:none'>
+<p><span class='speaker'>Reader:</span> For he is our peace, who has made us both one, and has broken down the dividing wall of hostility, by abolishing in his flesh the law of commandments and ordinances, that he might create in himself one new man in place of the two, so making peace, and might reconcile us both to God in one body through the cross, thereby bringing the hostility to an end. And he came and preached peace to you who were far off and peace to those who were near; for through him we both have access in one Spirit to the Father. So then you are no longer strangers and sojourners, but you are fellow citizens with the saints and members of the household of God, built upon the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone, in whom the whole structure is joined together and grows into a holy temple in the Lord; in whom you also are built into it for a dwelling place of God in the Spirit.</p>
+</div>
 <p><span class='speaker-clergy'>Priest:</span> Peace to thee that readest.</p>
 <p><span class='speaker'>Reader:</span> And to thy spirit.</p>
 <p class='label'>Alleluia — Tone 7</p>
@@ -139,9 +218,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Alleluia, Alleluia, Alleluia.</p>
 <p class='verse'>To declare Thy mercy in the morning, and Thy truth by night. (Ps. 91:2a)</p>
 <p><span class='speaker'>Choir:</span> Alleluia, Alleluia, Alleluia.</p>
-<p class='label'>The Prayer before the Gospel</p>
 <p class='rubric'>The priest says the following prayer quietly:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) Illumine our hearts, O Master who lovest mankind, with the pure light of Thy divine knowledge, and open the eyes of our minds that we may understand the message of Thy Gospel. Instil in us also a reverence for Thy blessed commandments, that trampling down all carnal desires we may pursue a spiritual way of life, thinking and doing all that is well-pleasing unto Thee. For Thou art the illumination of our souls and bodies, O Christ our God, and unto Thee we ascribe glory, together with Thy Father who is without beginning, and Thine all-holy, good and life-giving Spirit, now and ever, and unto ages of ages. Amen.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer before the Gospel.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer before the Gospel (the priest prays silently)</p>
+<p>Illumine our hearts, O Master who lovest mankind, with the pure light of Thy divine knowledge, and open the eyes of our minds that we may understand the message of Thy Gospel. Instil in us also a reverence for Thy blessed commandments, that trampling down all carnal desires we may pursue a spiritual way of life, thinking and doing all that is well-pleasing unto Thee. For Thou art the illumination of our souls and bodies, O Christ our God, and unto Thee we ascribe glory, together with Thy Father who is without beginning, and Thine all-holy, good and life-giving Spirit, now and ever, and unto ages of ages. Amen.</p>
+</div>
 <p class='label'>The Gospel — Luke 10:25-37</p>
 <p><span class='speaker-clergy'>Deacon:</span> Wisdom! Attend! Let us hear the Holy Gospel.</p>
 <p><span class='speaker-clergy'>Priest:</span> Peace be to all.</p>
@@ -149,7 +233,18 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> The reading is from the Holy Gospel according to Saint Luke. (10:25-37)</p>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend!</p>
+<div class='reading-default' data-ref='Luke 10:25-37'>
 <p><span class='speaker-clergy'>Deacon:</span> At that time, a lawyer stood up to put Jesus to the test, saying, “Teacher, what shall I do to inherit eternal life?” Jesus said to him, “What is written in the Law? How do you read?” And the lawyer answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself.” And Jesus said to him, “You have answered right; do this, and you will live.” But the lawyer, desiring to justify himself, said to Jesus, “And who is my neighbor?” Jesus replied, “A man was going down from Jerusalem to Jericho, and he fell among robbers, who stripped him and beat him, and departed, leaving him half dead. Now by chance a priest was going down that road; and when he saw him he passed by on the other side. So likewise a Levite, when he came to the place and saw him, passed by on the other side. But a Samaritan, as he journeyed, came to where he was; and when he saw him, he had compassion, and went to him and bound up his wounds, pouring on oil and wine; then he set him on his own beast and brought him to an inn, and took care of him. And the next day he took out two denarii and gave them to the innkeeper, saying, ‘Take care of him; and whatever more you spend, I will repay you when I come back.’ Which of these three, do you think, proved neighbor to the man who fell among the robbers?” The lawyer said, “The one who showed mercy on him.” And Jesus said to him, “Go and do likewise.” The Divine Liturgy of St. John Chrysostom continues as usual.</p>
+</div>
+<div class='reading-bg' data-version='KJV' data-ref='Luke 10:25-37' style='display:none'>
+<p><span class='speaker-clergy'>Deacon:</span> And, behold, a certain lawyer stood up, and tempted him, saying, Master, what shall I do to inherit eternal life? He said unto him, What is written in the law? how readest thou? And he answering said, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbor as thyself. And he said unto him, Thou hast answered right: this do, and thou shalt live. But he, willing to justify himself, said unto Jesus, And who is my neighbor? And Jesus answering said, A certain man went down from Jerusalem to Jericho, and fell among thieves, which stripped him of his raiment, and wounded him, and departed, leaving him half dead. And by chance there came down a certain priest that way: and when he saw him, he passed by on the other side. And likewise a Levite, when he was at the place, came and looked on him, and passed by on the other side. But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him, And went to him, and bound up his wounds, pouring in oil and wine, and set him on his own beast, and brought him to an inn, and took care of him. And on the morrow when he departed, he took out two pence, and gave them to the host, and said unto him, Take care of him; and whatsoever thou spendest more, when I come again, I will repay thee. Which now of these three, thinkest thou, was neighbor unto him that fell among the thieves? And he said, He that shewed mercy on him. Then said Jesus unto him, Go, and do thou likewise.</p>
+</div>
+<div class='reading-bg' data-version='NASB1995' data-ref='Luke 10:25-37' style='display:none'>
+<p><span class='speaker-clergy'>Deacon:</span> And a lawyer stood up and put Him to the test, saying, “Teacher, what shall I do to inherit eternal life?” And He said to him, “What is written in the Law? How does it read to you?” And he answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself .” And He said to him, “You have answered correctly; do this and you will live .” But wishing to justify himself, he said to Jesus, “And who is my neighbor?” Jesus replied and said, “A man was going down from Jerusalem to Jericho, and fell among robbers, and they stripped him and beat him, and went away leaving him half dead. And by chance a priest was going down on that road, and when he saw him, he passed by on the other side. Likewise a Levite also, when he came to the place and saw him, passed by on the other side. But a Samaritan, who was on a journey, came upon him; and when he saw him, he felt compassion, and came to him and bandaged up his wounds, pouring oil and wine on them; and he put him on his own beast, and brought him to an inn and took care of him. On the next day he took out two denarii and gave them to the innkeeper and said, ‘Take care of him; and whatever more you spend, when I return I will repay you.’ Which of these three do you think proved to be a neighbor to the man who fell into the robbers’ hands?” And he said, “The one who showed mercy toward him.” Then Jesus said to him, “Go and do the same.”</p>
+</div>
+<div class='reading-bg' data-version='RSV' data-ref='Luke 10:25-37' style='display:none'>
+<p><span class='speaker-clergy'>Deacon:</span> And behold, a lawyer stood up to put him to the test, saying, “Teacher, what shall I do to inherit eternal life?” He said to him, “What is written in the law? How do you read?” And he answered, “You shall love the Lord your God with all your heart, and with all your soul, and with all your strength, and with all your mind; and your neighbor as yourself.” And he said to him, “You have answered right; do this, and you will live.” But he, desiring to justify himself, said to Jesus, “And who is my neighbor?” Jesus replied, “A man was going down from Jerusalem to Jericho, and he fell among robbers, who stripped him and beat him, and departed, leaving him half dead. Now by chance a priest was going down that road; and when he saw him he passed by on the other side. So likewise a Levite, when he came to the place and saw him, passed by on the other side. But a Samaritan, as he journeyed, came to where he was; and when he saw him, he had compassion, and went to him and bound up his wounds, pouring on oil and wine; then he set him on his own beast and brought him to an inn, and took care of him. And the next day he took out two denarii and gave them to the innkeeper, saying, ‘Take care of him; and whatever more you spend, I will repay you when I come back.’ Which of these three, do you think, proved neighbor to the man who fell among the robbers?” He said, “The one who showed mercy on him.” And Jesus said to him, “Go and do likewise.”</p>
+</div>
 <p><span class='speaker'>Choir:</span> Glory to Thee, O Lord, glory to Thee.</p>
 <p class='rubric'>The Homily may be said here.</p>
 <h2>The Litany of Fervent Supplication</h2>
@@ -169,7 +264,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Lord, have mercy. Lord, have mercy. Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Again we pray for those who bear fruit and do good works in this holy and all-venerable temple, those who serve and those who sing and all the people here present, who await thy great and rich mercy.</p>
 <p><span class='speaker'>Choir:</span> Lord, have mercy. Lord, have mercy. Lord, have mercy.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O Lord our God, receive this fervent supplication of thy servants, and have mercy on us according to the multitude of thy mercy, and send down thy compassions upon us and upon all thy people, who await thy great and rich mercy. (Aloud) For thou art a merciful God and lovest mankind, and unto thee we ascribe glory to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of Fervent Supplication.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of Fervent Supplication (the priest prays silently)</p>
+<p>O Lord our God, receive this fervent supplication of thy servants, and have mercy on us according to the multitude of thy mercy, and send down thy compassions upon us and upon all thy people, who await thy great and rich mercy.</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For thou art a merciful God and lovest mankind, and unto thee we ascribe glory to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
 <h2>The Litany for the Catechumens</h2>
 <p><span class='speaker-clergy'>Deacon:</span> Pray to the Lord, ye catechumens.</p>
@@ -186,7 +288,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Bow your heads to the Lord, ye catechumens.</p>
 <p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O Lord our God, who dwellest on high and regardest the humble, who hast sent forth as the salvation of the race of men thine only-begotten Son and God, our Lord Jesus Christ: Look down upon thy servants the catechumens, who have bowed their necks before thee; make them worthy in due season of the laver of regeneration, the forgiveness of sins and the robe of in-corruption. Unite them to thy holy, catholic and apostolic Church, and number them with thine elect flock: (Aloud) That with us they may glorify thine allhonorable and majestic name of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer for the Catechumens.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer for the Catechumens (the priest prays silently)</p>
+<p>O Lord our God, who dwellest on high and regardest the humble, who hast sent forth as the salvation of the race of men thine only-begotten Son and God, our Lord Jesus Christ: Look down upon thy servants the catechumens, who have bowed their necks before thee; make them worthy in due season of the laver of regeneration, the forgiveness of sins and the robe of in-corruption. Unite them to thy holy, catholic and apostolic Church, and number them with thine elect flock:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> That with us they may glorify thine allhonorable and majestic name of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
 <p><span class='speaker-clergy'>Deacon:</span> As many as are catechumens, depart. Depart, catechumens. As many as are catechumens, depart. Let none of the catechumens remain.</p>
 <h2>The First Litany of the Faithful</h2>
@@ -194,15 +303,28 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Help us; Save us, have mercy on us; and keep us, O God, by thy grace. Wisdom!</p>
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) We give thanks unto thee, O Lord God of hosts, who hast made us worthy to stand even now before thy holy altar and to fall down before thy compassions for our sins and the ignorance of the people. Receive our supplications, O God; make us worthy to offer unto thee prayers and supplications and bloodless sacrifices for all thy people. And enable us, whom thou hast placed in this thy ministry, by the power of thy Holy Spirit, blamelessly and without offense, in the pure witness of our conscience, to call upon thee at all times and in every place, that hearing us thou mayest show mercy upon us according to the fulness of thy goodness: (Aloud) For unto Thee are due all glory, honor and worship to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the First Prayer of the Faithful.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The First Prayer of the Faithful (the priest prays silently)</p>
+<p>We give thanks unto thee, O Lord God of hosts, who hast made us worthy to stand even now before thy holy altar and to fall down before thy compassions for our sins and the ignorance of the people. Receive our supplications, O God; make us worthy to offer unto thee prayers and supplications and bloodless sacrifices for all thy people. And enable us, whom thou hast placed in this thy ministry, by the power of thy Holy Spirit, blamelessly and without offense, in the pure witness of our conscience, to call upon thee at all times and in every place, that hearing us thou mayest show mercy upon us according to the fulness of thy goodness:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For unto Thee are due all glory, honor and worship to the Father and to the Son and to the Holy Spirit, now and ever, and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
 <h2>The Second Litany of the Faithful</h2>
 <p><span class='speaker-clergy'>Deacon:</span> Again and again in peace, let us pray to the Lord.</p>
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Help us; Save us, have mercy on us; and keep us, O God, by thy grace. Wisdom!</p>
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) Again and oftentimes we fall down before thee and beseech thee, O good One who lovest mankind, that looking down upon our petition thou wilt cleanse our souls and bodies from every defilement of flesh or spirit, and grant us to stand blamelessly and without condemnation before thy holy altar. Grant also, O God, to those who pray with us growth in life and faith and spiritual understanding. Grant them always blamelessly to serve thee with fear and love and to partake without condemnation of thy 6</p>
-<p>holy mysteries and to be accounted worthy of thy heavenly kingdom: (Aloud) That guarded always by thy might we may ascribe glory unto thee: to the Father, and to the Son, and to the Holy Spirit: now and ever, and unto ages of ages. Choir: Amen.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Second Prayer of the Faithful.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Second Prayer of the Faithful (the priest prays silently)</p>
+<p>Again and oftentimes we fall down before thee and beseech thee, O good One who lovest mankind, that looking down upon our petition thou wilt cleanse our souls and bodies from every defilement of flesh or spirit, and grant us to stand blamelessly and without condemnation before thy holy altar. Grant also, O God, to those who pray with us growth in life and faith and spiritual understanding. Grant them always blamelessly to serve thee with fear and love and to partake without condemnation of thy 6 holy mysteries and to be accounted worthy of thy heavenly kingdom:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> That guarded always by thy might we may ascribe glory unto thee: to the Father, and to the Son, and to the Holy Spirit: now and ever, and unto ages of ages. Choir: Amen.</p>
 <h2>The Cherubic Hymn and the Great Entrance</h2>
 <p class='rubric'>As the priest prepares to celebrate the dread ministry by reverent prayer, he censes the holy table, the altar area, the major icons and the faithful so that all are sanctified for their awesome ministry.</p>
 <p><span class='speaker'>Choir:</span> We who mystically represent the Cherubic, and sing to the life-giving Trinity the thrice-holy hymn, let us now lay aside all earthly care.</p>
@@ -239,8 +361,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Grant this, O Lord.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Calling to remembrance our allholy, immaculate, most blessed and glorious Lady Theotokos and ever-virgin Mary, with all the Saints, let us commend ourselves and each other, and all our life unto Christ our God.</p>
 <p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O Lord God Almighty, who alone art holy, who dost accept a sacrifice of praise from those who call upon thee with their whole heart: Receive also the prayer of us sinners, and lead us to thy holy altar, and enable us to offer unto thee gifts and spiritual sacrifices for our sins and for the ignorance of the people, and make us worthy to find grace in thy sight, that our sacrifice may be acceptable unto thee and that the good Spirit of thy grace may rest upon us and upon these gifts here spread forth and upon all thy people: (Aloud) Through the compassions of thine only-begotten Son, with whom thou art blessed, together with thine all-holy and good</p>
-<p>and life-giving Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Offering (Prothesis).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Offering (Prothesis) (the priest prays silently)</p>
+<p>O Lord God Almighty, who alone art holy, who dost accept a sacrifice of praise from those who call upon thee with their whole heart: Receive also the prayer of us sinners, and lead us to thy holy altar, and enable us to offer unto thee gifts and spiritual sacrifices for our sins and for the ignorance of the people, and make us worthy to find grace in thy sight, that our sacrifice may be acceptable unto thee and that the good Spirit of thy grace may rest upon us and upon these gifts here spread forth and upon all thy people:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Through the compassions of thine only-begotten Son, with whom thou art blessed, together with thine all-holy and good and life-giving Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
 <h2>The Kiss of Peace</h2>
 <p><span class='speaker-clergy'>Priest:</span> Peace be to all. Choir: And to thy spirit. Deacon: Let us love one another, that with one accord we may confess, Choir: Father, the Son and the Holy Spirit, the Trinity one in essence and undivided. Deacon: The Doors! The Doors! In Wisdom let us attend.</p>
 <h2>The Symbol of Faith</h2>
@@ -248,21 +376,84 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <h2>The Anaphora</h2>
 <p><span class='speaker-clergy'>Deacon:</span> Let us stand aright; let us stand with fear; let us attend, that we may offer the Holy Oblation in peace. Choir: A mercy of peace, a sacrifice of praise. Priest: The grace of our Lord Jesus Christ, and the love of God the Father, and the communion of the Holy Spirit, be with you all. Choir: And with thy spirit. Priest: Let us lift up our hearts. Choir: We lift them up unto the Lord. Priest: Let us give thanks unto the Lord. Choir: It is meet and right to worship Father, Son and Holy Spirit: the Trinity, one in Essence, and undivided:</p>
 <p class='rubric'>The Priest enters the Sanctuary while the choir is singing the above hymn and reads the following prayer:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) It is meet and right to hymn thee, to bless thee, to praise thee, to give thanks unto thee and to worship thee in every place of thy dominion; for thou art God ineffable, inconceivable, invisible, incomprehensible, ever-existing and eternally the same, thou and thine only-begotten Son and thy Holy Spirit. Thou it was who didst bring us from non-existence into being and when we had fallen away didst raise us up again, and didst not cease to do all things until thou hadst brought us up to heaven and hadst endowed us with thy kingdom which is to come. For all these things we give thanks unto thee, and to thine only-begotten Son and to thy Holy Spirit; for all things of which we know and of which we know not and for all the benefits bestowed upon us, both manifest and unseen. And we give thanks unto thee also for this ministry which thou dost vouchsafe to receive at our hands, even though there stand beside thee thousands of archangels and ten thousands of of archangels and ten thousands of angels, the cherubim and the seraphim, six-winged, many-eyed, soaring aloft, borne on their wings: (Aloud) Singing the Triumphal Hymn, shouting, proclaiming, and saying:</p>
-<p><span class='speaker'>Choir:</span> Holy, Holy, Holy, Lord of Sabaoth; heaven and earth are full of thy glory; Hosanna in the highest: Blessed is he that cometh in the name of the Lord. Hosanna in the highest.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Anaphora (before the Sanctus).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Anaphora (before the Sanctus) (the priest prays silently)</p>
+<p>It is meet and right to hymn thee, to bless thee, to praise thee, to give thanks unto thee and to worship thee in every place of thy dominion; for thou art God ineffable, inconceivable, invisible, incomprehensible, ever-existing and eternally the same, thou and thine only-begotten Son and thy Holy Spirit. Thou it was who didst bring us from non-existence into being and when we had fallen away didst raise us up again, and didst not cease to do all things until thou hadst brought us up to heaven and hadst endowed us with thy kingdom which is to come. For all these things we give thanks unto thee, and to thine only-begotten Son and to thy Holy Spirit; for all things of which we know and of which we know not and for all the benefits bestowed upon us, both manifest and unseen. And we give thanks unto thee also for this ministry which thou dost vouchsafe to receive at our hands, even though there stand beside thee thousands of archangels and ten thousands of of archangels and ten thousands of angels, the cherubim and the seraphim, six-winged, many-eyed, soaring aloft, borne on their wings:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Singing the Triumphal Hymn, shouting, proclaiming, and saying: Choir: Holy, Holy, Holy, Lord of Sabaoth; heaven and earth are full of thy glory; Hosanna in the highest: Blessed is he that cometh in the name of the Lord. Hosanna in the highest.</p>
 <p class='rubric'>While the choir is singing the above hymn, the Priest reads the following prayer:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) With these blessed powers we also, O Master who lovest mankind, cry aloud and say: Holy art thou and all-holy, thou and thine only-begotten Son and thy Holy Spirit; holy art thou and all-holy, and magnificent is thy glory, who hast so loved thy world as to give thine only-begotten Son, that all who believe in him should not perish but have everlasting life, who, when he had come and had fulfilled all the dispensation for us, in the night in which he was betrayed or, rather, gave himself up for the hie of the world, took bread in his holy and immaculate and blameless hands; and when he had given thanks and blessed it and hallowed it and broken it, he gave it to his holy disciples and apostles, saying: (Aloud) Take, eat. This is my Body which is broken for you, for the forgiveness of sins; Choir: Amen Priest: (Quietly) And likewise after supper, he took the cup, saying: (Aloud) Drink of this, all of you. This is my Blood of the new covenant, which is shed for you and for many, for the forgiveness of sins. Choir: Amen. (2x) Priest: (Quietly) Having in remembrance, therefore, this saving commandment and all those things which have come to pass for us: the cross, the grave, the third-day resurrection, the ascension into heaven, the sitting at the right hand, and the second and glorious coming:</p>
-<p>(Aloud) Thine own of thine own, we offer unto thee in behalf of all and for all. Choir: We praise thee, we bless thee, we give thanks unto thee, O Lord, and we pray unto thee, O our God.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Anaphora (after the Sanctus).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Anaphora (after the Sanctus) (the priest prays silently)</p>
+<p>With these blessed powers we also, O Master who lovest mankind, cry aloud and say: Holy art thou and all-holy, thou and thine only-begotten Son and thy Holy Spirit; holy art thou and all-holy, and magnificent is thy glory, who hast so loved thy world as to give thine only-begotten Son, that all who believe in him should not perish but have everlasting life, who, when he had come and had fulfilled all the dispensation for us, in the night in which he was betrayed or, rather, gave himself up for the hie of the world, took bread in his holy and immaculate and blameless hands; and when he had given thanks and blessed it and hallowed it and broken it, he gave it to his holy disciples and apostles, saying:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Take, eat. This is my Body which is broken for you, for the forgiveness of sins; Choir: Amen</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Anaphora (after the Sanctus, continued).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Anaphora (after the Sanctus, continued) (the priest prays silently)</p>
+<p>And likewise after supper, he took the cup, saying:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Drink of this, all of you. This is my Blood of the new covenant, which is shed for you and for many, for the forgiveness of sins. Choir: Amen. (2x)</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of the Anaphora (the Memorial).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of the Anaphora (the Memorial) (the priest prays silently)</p>
+<p>Having in remembrance, therefore, this saving commandment and all those things which have come to pass for us: the cross, the grave, the third-day resurrection, the ascension into heaven, the sitting at the right hand, and the second and glorious coming:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Thine own of thine own, we offer unto thee in behalf of all and for all. Choir: We praise thee, we bless thee, we give thanks unto thee, O Lord, and we pray unto thee, O our God.</p>
 <p class='rubric'>While the choir is singing the above, the Priest standing in the center of the Altar Table, makes one (1) prostration and says:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) O God, be gracious unto me a sinner, and have mercy on me... and reverently continues with the prayer.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) Again we offer unto thee this rational and bloodless worship and beseech thee and pray thee and supplicate thee: Send down thy Holy Spirit upon us and upon these gifts here spread forth: Priest: And make this bread the precious Body of thy Christ: All: Amen. Priest: And that which is in this cup, the precious Blood of thy Christ; All: Amen. Priest: Changing them by thy Holy Spirit: All: Amen, Amen, Amen. Priest: (Quietly) That to those who shall partake thereof they may be unto cleansing of soul, unto forgiveness of sins, unto the communion of thy Holy Spirit, unto the fulfillment of the kingdom of heaven and unto boldness toward thee, not unto judgment or unto condemnation. And again we offer unto thee this rational worship for all those who in faith have gone before us to their rest: forefathers, fathers, patriarchs, prophets, apostles, preachers, evangelists, martyrs, confessors, ascetics and every righteous spirit which has completed this life in faith: Censing the Gifts nine times, the priest says:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Aloud) Especially our all-holy, immaculate, most blessed and glorious Lady Theotokos and ever-virgin Mary:</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer at the Epiclesis.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer at the Epiclesis (the priest prays silently)</p>
+<p>O God, be gracious unto me a sinner, and have mercy on me... and reverently continues with the prayer.</p>
+</div>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Epiclesis.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Epiclesis (the priest prays silently)</p>
+<p>Again we offer unto thee this rational and bloodless worship and beseech thee and pray thee and supplicate thee: Send down thy Holy Spirit upon us and upon these gifts here spread forth: Priest: And make this bread the precious Body of thy Christ: All: Amen. Priest: And that which is in this cup, the precious Blood of thy Christ; All: Amen. Priest: Changing them by thy Holy Spirit: All: Amen, Amen, Amen.</p>
+</div>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Intercessions of the Anaphora (before “Especially”).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Intercessions of the Anaphora (before “Especially”) (the priest prays silently)</p>
+<p>That to those who shall partake thereof they may be unto cleansing of soul, unto forgiveness of sins, unto the communion of thy Holy Spirit, unto the fulfillment of the kingdom of heaven and unto boldness toward thee, not unto judgment or unto condemnation. And again we offer unto thee this rational worship for all those who in faith have gone before us to their rest: forefathers, fathers, patriarchs, prophets, apostles, preachers, evangelists, martyrs, confessors, ascetics and every righteous spirit which has completed this life in faith:</p>
+</div>
+<p class='rubric'>Censing the Gifts nine times, the priest says:</p>
+<p><span class='speaker-clergy'>Priest:</span> Especially our all-holy, immaculate, most blessed and glorious Lady Theotokos and ever-virgin Mary:</p>
 <h2>The Hymn to the Theotokos</h2>
 <p><span class='speaker'>Choir:</span> It is truly meet and right to bless thee, O Theotokos, who art ever blessed and all-blameless, and the Mother of our God. More honorable than the cherubim and more glorious beyond compare than the seraphim, thou who without corruption bearest God the Word and art truly Theotokos: We magnify thee.</p>
 <h2>The Intercessions</h2>
 <p class='rubric'>As the choir chants the above hymn to the Theotokos, the priest continues the intercessions of the Anaphora quietly:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) For the holy Prophet, Forerunner and Baptist John; the holy glorious and all-laudable apostles; (N. Saint, of the day) whose memory we celebrate, and all thy saints, at whose supplications visit us, O God. And be mindful of all those who have fallen asleep before us in the hope of resurrection unto life eternal, and grant them rest, O our God, where the light of thy countenance watcheth over them. And again we beseech thee: Be mindful, O Lord, of every bishop of the Orthodox, who rightly di-videth the word of thy truth, of all the presbytery, the diaconate in Christ and every priestly and monastic order. And again we offer unto thee this rational worship for the whole world, for the holy, catholic and apostolic Church, for those who live in chastity and lead a godly way of life and for all civil authorities, and our armed forces; grant them, O Lord, peaceful times, that we in their tranquility may lead a calm and peaceful life in all reverence and godliness. (Aloud) Among the first be mindful, O Lord, of our Metropolitan N., and our bishop N., whom do thou grant unto thy holy churches in peace, safety, honor, health and length of days, and rightly dividing the word of thy truth. Choir: And of all mankind. Priest: (Quietly) Be mindful, O Lord, of this city in which we dwell, and of every city and countryside, and of those who in faith dwell therein. Be mindful, O Lord, of those</p>
-<p>who travel by sea, by land and by air, the sick, the suffering, captives and their salvation. Be mindful, O Lord, of those who bear fruit and do good works in thy holy churches and who remember the poor; and upon us all send forth thy mercies: (Aloud) And grant us with one mouth and one heart to glorify and praise thine all-honorable and majestic name of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen. Priest: (Aloud) And the mercies of our great God and Savior Jesus Christ be with you all. Choir: And with thy spirit.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Intercessions of the Anaphora (after the Hymn to the Theotokos).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Intercessions of the Anaphora (after the Hymn to the Theotokos) (the priest prays silently)</p>
+<p>For the holy Prophet, Forerunner and Baptist John; the holy glorious and all-laudable apostles; (N. Saint, of the day) whose memory we celebrate, and all thy saints, at whose supplications visit us, O God. And be mindful of all those who have fallen asleep before us in the hope of resurrection unto life eternal, and grant them rest, O our God, where the light of thy countenance watcheth over them. And again we beseech thee: Be mindful, O Lord, of every bishop of the Orthodox, who rightly di-videth the word of thy truth, of all the presbytery, the diaconate in Christ and every priestly and monastic order. And again we offer unto thee this rational worship for the whole world, for the holy, catholic and apostolic Church, for those who live in chastity and lead a godly way of life and for all civil authorities, and our armed forces; grant them, O Lord, peaceful times, that we in their tranquility may lead a calm and peaceful life in all reverence and godliness.</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Among the first be mindful, O Lord, of our Metropolitan N., and our bishop N., whom do thou grant unto thy holy churches in peace, safety, honor, health and length of days, and rightly dividing the word of thy truth. Choir: And of all mankind.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Intercessions of the Anaphora (after the Hymn to the Theotokos, continued).]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Intercessions of the Anaphora (after the Hymn to the Theotokos, continued) (the priest prays silently)</p>
+<p>Be mindful, O Lord, of this city in which we dwell, and of every city and countryside, and of those who in faith dwell therein. Be mindful, O Lord, of those who travel by sea, by land and by air, the sick, the suffering, captives and their salvation. Be mindful, O Lord, of those who bear fruit and do good works in thy holy churches and who remember the poor; and upon us all send forth thy mercies:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> And grant us with one mouth and one heart to glorify and praise thine all-honorable and majestic name of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages. Choir: Amen.</p>
+<p><span class='speaker-clergy'>Priest:</span> And the mercies of our great God and Savior Jesus Christ be with you all. Choir: And with thy spirit.</p>
 <h2>The Ektenia before the Lord’s Prayer</h2>
 <p><span class='speaker-clergy'>Deacon:</span> Having commemorated all the saints, again and again, in peace let us pray to the Lord.</p>
 <p><span class='speaker'>Choir:</span> Lord, have mercy.</p>
@@ -289,7 +480,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> Grant this, O Lord.</p>
 <p><span class='speaker-clergy'>Deacon:</span> Asking for the unity of the faith, and the communion of the Holy Spirit, let us commend ourselves and each other, and all our life unto Christ our God.</p>
 <p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) Unto thee we commend our whole life and our hope, O Master who lovest mankind; and we beseech thee and pray thee and supplicate thee: Vouchsafe us to partake of thy heavenly and dread mysteries of this sacred and spiritual table, with a pure conscience, unto forgiveness of sins, unto pardon of transgressions, unto communion of the Holy Spirit, unto inheritance of the kingdom of heaven, unto boldness toward thee, not unto judgment nor unto condemnation: (Aloud) And vouchsafe, O Master, that with boldness and without condemnation we may dare to call upon thee, the heavenly God, as Father and to say:</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer before the Lord’s Prayer.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer before the Lord’s Prayer (the priest prays silently)</p>
+<p>Unto thee we commend our whole life and our hope, O Master who lovest mankind; and we beseech thee and pray thee and supplicate thee: Vouchsafe us to partake of thy heavenly and dread mysteries of this sacred and spiritual table, with a pure conscience, unto forgiveness of sins, unto pardon of transgressions, unto communion of the Holy Spirit, unto inheritance of the kingdom of heaven, unto boldness toward thee, not unto judgment nor unto condemnation:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> And vouchsafe, O Master, that with boldness and without condemnation we may dare to call upon thee, the heavenly God, as Father and to say:</p>
 <h2>The Lord’s Prayer</h2>
 <p><span class='speaker'>All:</span> Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us. And lead us not into temptation, but deliver us from the evil one.</p>
 <p><span class='speaker-clergy'>Priest:</span> For thine is the kingdom and the power and the glory of the Father and of the Son and of the Holy Spirit, now and ever, and unto ages of ages.</p>
@@ -297,13 +495,25 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <h2>The Peace and the Bowing of Heads</h2>
 <p><span class='speaker-clergy'>Priest:</span> Peace be to all. Choir: And to thy spirit. Deacon: Bow your heads unto the Lord. Choir: To thee, O Lord.</p>
 <p class='rubric'>While the Choir is singing the above, the Priest says the following quietly:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) We give thanks unto thee, O King invisible, who by thy boundless power hast made all things and in the multitude of thy mercy hast brought all things from nothingness into being. Do thou thyself, O Master, look down from heaven upon those who have bowed their heads unto thee; for they have not bowed down unto flesh and blood, but to thee, the fearful God. Therefore, O Master, do thou thyself distribute these gifts here spread forth, unto all of us for good, according to the individual need of each: voyage with those who sail by sea; journey with those who travel by land and air; heal the sick, thou who art the Physician of our souls and bodies: (Aloud) Through the grace and compassions and love toward mankind of thine onlybegotten Son, with whom thou art blessed, together with thine all-holy and good and lifegiving Spirit, now and ever, and unto ages of ages. Choir: Amen. (2x)</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of Bowing the Heads.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of Bowing the Heads (the priest prays silently)</p>
+<p>We give thanks unto thee, O King invisible, who by thy boundless power hast made all things and in the multitude of thy mercy hast brought all things from nothingness into being. Do thou thyself, O Master, look down from heaven upon those who have bowed their heads unto thee; for they have not bowed down unto flesh and blood, but to thee, the fearful God. Therefore, O Master, do thou thyself distribute these gifts here spread forth, unto all of us for good, according to the individual need of each: voyage with those who sail by sea; journey with those who travel by land and air; heal the sick, thou who art the Physician of our souls and bodies:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> Through the grace and compassions and love toward mankind of thine onlybegotten Son, with whom thou art blessed, together with thine all-holy and good and lifegiving Spirit, now and ever, and unto ages of ages. Choir: Amen. (2x)</p>
 <h2>The Elevation</h2>
 <p><span class='speaker-clergy'>Deacon:</span> Let us attend. The priest says the following prayer quietly:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) Hear us, O Lord Jesus Christ our God, from thy holy dwelling-place and from the throne of glory of thy kingdom; and come to sanctify us, O thou who sittest on high with the Father and art here invisibly present with us; and vouchsafe by thy mighty hand to impart unto us thine immaculate 12</p>
-<p>Body and precious Blood, and through us unto all the people.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer before the Elevation.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer before the Elevation (the priest prays silently)</p>
+<p>Hear us, O Lord Jesus Christ our God, from thy holy dwelling-place and from the throne of glory of thy kingdom; and come to sanctify us, O thou who sittest on high with the Father and art here invisibly present with us; and vouchsafe by thy mighty hand to impart unto us thine immaculate 12 Body and precious Blood, and through us unto all the people.</p>
+</div>
 <p class='rubric'>He then takes up the Lamb in both hands, elevates it slightly and makes therewith the sign of the cross over the diskos, saying:</p>
-<p><span class='speaker-clergy'>Priest:</span> (Aloud) The Holy Things are for the holy.</p>
+<p><span class='speaker-clergy'>Priest:</span> The Holy Things are for the holy.</p>
 <p><span class='speaker'>Choir:</span> One is holy, one is Lord, Jesus Christ, to the glory of God the Father. Amen.</p>
 <h2>The Pre-Communion Prayers</h2>
 <p><span class='speaker'>Priest &amp; People:</span> I stand before the doors of thy temple, and yet I refrain not from my terrible thoughts. But do thou, O Christ God, who didst justify the publican and hadst mercy on the Canaanite woman and didst open the gates of paradise to the thief: open unto me the compassion of thy love toward mankind, and receive me as I approach and touch thee, like the harlot and the woman with the issue of blood; for the one, by but touching the hem of thy garment, received healing, and the other, by embracing thine immaculate feet, received the forgiveness of her sins. And I, who am pitiful, dare to partake of thy whole Body. Let me not be consumed, but receive me as thou didst receive them, and enlighten the senses of my soul, burning up the accusations of my sins, through the intercessions of her that without seed gave thee birth and of the heavenly powers; for thou art blessed unto ages of ages. Amen. I believe, O Lord, and I confess that Thou art truly the Christ, the Son of the living God, Who didst come into the world to save sinners, of whom I am chief. And I believe that this is truly Thine own immaculate Body, and that this is truly Thine own precious Blood. Wherefore I pray Thee, have mercy upon me and forgive my transgressions both voluntary and involuntary, of word and of deed, of knowledge and of ignorance; and make me worthy to partake without condemnation of</p>
@@ -330,8 +540,14 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Deacon:</span> Asking that the whole day may be perfect, holy, peaceful and sinless, let us commend ourselves and each other, and all our life unto Christ our God.</p>
 <p><span class='speaker'>Choir:</span> To thee, O Lord.</p>
 <h2>The Thanksgiving Prayer</h2>
-<p><span class='speaker-clergy'>Priest:</span> (Quietly) We give thanks unto thee, O Master who lovest mankind, Benefactor of our souls, for that thou hast vouchsafed this day to feed us with thy heavenly and immortal mysteries. Make straight our path; establish us all in thy fear; guard our life; make firm our steps; through the prayers and intercessions of the glorious Theotokos and evervirgin Mary and of all thy saints: (Aloud) For thou art our Sanctification, and unto thee we ascribe glory to the Father and 14</p>
-<p>to the Son and to the Holy Spirit, now and ever, and unto ages of ages.</p>
+<div class='silent-off'>
+<p class='rubric'>[The priest prays silently: the Prayer of Thanksgiving.]</p>
+</div>
+<div class='silent-on' style='display:none'>
+<p class='label'>The Prayer of Thanksgiving (the priest prays silently)</p>
+<p>We give thanks unto thee, O Master who lovest mankind, Benefactor of our souls, for that thou hast vouchsafed this day to feed us with thy heavenly and immortal mysteries. Make straight our path; establish us all in thy fear; guard our life; make firm our steps; through the prayers and intercessions of the glorious Theotokos and evervirgin Mary and of all thy saints:</p>
+</div>
+<p><span class='speaker-clergy'>Priest:</span> For thou art our Sanctification, and unto thee we ascribe glory to the Father and 14 to the Son and to the Holy Spirit, now and ever, and unto ages of ages.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
 <p><span class='speaker-clergy'>Priest:</span> Let us depart in peace. Choir: In the name of the Lord. Priest: Let us pray to the Lord. Choir: Lord, have mercy.</p>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is our God, and aloud: Always, now and ever, and unto ages of ages. Choir: Amen. Let our mouths be filled with Thy praise, O Lord, that we may sing of Thy glory; for Thou hast made us worthy to partake of Thy holy, divine, immortal and lifecreating Mysteries. Keep us in Thy holiness, that all the day we may mediate upon Thy righteousness. Alleluia, alleluia, alleluia.</p>
@@ -339,7 +555,61 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker-clergy'>Priest:</span> O Lord, who blessest those who bless thee, and sanctifiest those who put their trust in thee: save thy people and bless thine inheritance; preserve the fullness of thy Church; sanctify those who love the beauty of thy House; glorify them in recompense by thy divine power, and forsake us not who hope on thee. Give peace to thy world, to thy Churches, to the priests, to all civil authorities, to our Armed Forces, and to all thy people: for every good and perfect gift is from above, and cometh down from thee, the Father of Lights, and unto thee we ascribe glory, thanksgiving, and worship: to the Father, and to the Son, and to the Holy Spirit: now and ever, and unto ages of ages. Choir: Amen. Blessed be the name of the Lord, henceforth and forevermore. (3x)</p>
 <h2>The Dismissal</h2>
 <p><span class='speaker-clergy'>Deacon:</span> Let us pray to the Lord. Choir: Lord, have mercy. Priest: The blessing of the Lord and his mercy come upon you through his divine grace and love toward mankind, always, now and ever, and unto ages of ages. Choir: Amen. Priest: Glory to thee, O Christ our God and our Hope, glory to thee. Choir: Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto ages of ages. Amen. Lord, have mercy. Lord, have mercy. Lord, have mercy. Father, bless.</p>
-<p><span class='speaker-clergy'>Priest:</span> May he who rose from the dead, Christ our true God, through the intercessions of his all-immaculate and all-blameless holy Mother; by the might of the precious and life-giving cross; by the protection of the honorable bodiless powers of heaven; at the supplication of the honorable, glorious Prophet, Forerunner and Baptist John; of the holy, glorious and all-laudable apostles; of our father among the saints, John Chrysostom, archbishop of Constantinople, whose Divine Liturgy we have now celebrated; of the holy, glorious and right-victorious martyrs; of our venerable and God-bearing fathers; of Saint N. (patron saint of the church); of the holy and righteous ancestors of God, Joachim and Anna; of the Martyrs and Confessors Guria, Shamuna and Habib the Deacon of Edessa, whose memory we celebrate; and of all the saints, have mercy on us and save us, forasmuch as he is good and loveth mankind.</p>
+<p><span class='speaker-clergy'>Priest:</span> May he who rose from the dead, Christ our true God, through the intercessions of his all-immaculate and all-blameless holy Mother; by the might of the precious and life-giving cross; by the protection of the honorable bodiless powers of heaven; at the supplication of the honorable, glorious Prophet, Forerunner and Baptist John; of the holy, glorious and all-laudable apostles; of our father among the saints, John Chrysostom, archbishop of Constantinople, whose Divine Liturgy we have now celebrated; of the holy, glorious and right-victorious martyrs; of our venerable and God-bearing fathers; of <span class='patron-name'>Saint Nicholas</span> (patron saint of the church); of the holy and righteous ancestors of God, Joachim and Anna; of the Martyrs and Confessors Guria, Shamuna and Habib the Deacon of Edessa, whose memory we celebrate; and of all the saints, have mercy on us and save us, forasmuch as he is good and loveth mankind.</p>
 <p><span class='speaker-clergy'>Priest:</span> Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy upon us and save us.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
-<footer>Prototype built for comparison. Variable hymns, readings and dismissal: Antiochian Archdiocese Online Liturgical Guide, Divine Liturgy Variables for November 15, 2026. Fixed frame: Orthodox Kansas (Antiochian) Divine Liturgy booklet, October 24, 2026, reproducing the Liturgikon; Sunday antiphons and the prayer before the Gospel from the same parish's Sunday booklet for November 1, 2026. Alleluia verses for Tone 7 from the OCA texts (the Antiochian variables file does not print them). The patron apolytikion is left as a rubric, as printed. The koinonikon tone is not stated in the variables file.</footer></body></html>
+<script>
+function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); else localStorage.setItem(k,v); }catch(e){} }
+function _loadPref(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function toggleOpts(btn){ var p=document.getElementById('opts-panel'); if(!p) return; var open=p.style.display!=='none'; p.style.display=open?'none':'block'; btn.innerHTML=open?'⚙ Service options ▸':'⚙ Service options ▾'; }
+var patronMode = _loadPref('patron') || 'st-nicholas';
+var patronNames = {'st-innocent':'Saint Innocent','st-george':'Saint George','st-nicholas':'Saint Nicholas'};
+if(!patronNames[patronMode]) patronMode = 'st-nicholas';
+function applyPatronPrefs(){
+  document.querySelectorAll('.patron-block').forEach(e=>e.style.display = e.classList.contains('patron-'+patronMode) ? '' : 'none');
+  document.querySelectorAll('.patron-name').forEach(e=>e.textContent = patronNames[patronMode]);
+  var s = document.querySelector('.patron-select');
+  if(s && s.querySelector('option[value="'+patronMode+'"]')) s.value = patronMode;
+}
+function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
+var silentMode = _loadPref('silent') || 'summary';
+if(silentMode!=='summary' && silentMode!=='full') silentMode = 'summary';
+function applySilentPrefs(){
+  document.querySelectorAll('.silent-off').forEach(e=>e.style.display = silentMode==='summary' ? '' : 'none');
+  document.querySelectorAll('.silent-on').forEach(e=>e.style.display = silentMode==='full' ? '' : 'none');
+  document.querySelectorAll('.pray-btn').forEach(b=>b.classList.toggle('active', b.dataset.mode===silentMode));
+}
+function setSilentPrayers(m){ silentMode = m; applySilentPrefs(); _savePref('silent', m); }
+var thirdMode = _loadPref('third') || 'ps94';
+if(thirdMode!=='ps94' && thirdMode!=='beatitudes') thirdMode = 'ps94';
+function applyThirdPrefs(){
+  document.querySelectorAll('.third-ps94').forEach(e=>e.style.display = thirdMode==='ps94' ? '' : 'none');
+  document.querySelectorAll('.third-beatitudes').forEach(e=>e.style.display = thirdMode==='beatitudes' ? '' : 'none');
+  document.querySelectorAll('.third-btn').forEach(b=>b.classList.toggle('active', b.dataset.third===thirdMode));
+}
+function setThirdAntiphon(m){ thirdMode = m; applyThirdPrefs(); _savePref('third', m); }
+var readingSource = _loadPref('source') === 'biblegateway' ? 'bg' : 'antiochian';
+var bgVersion = _loadPref('version') || 'KJV';
+if(['KJV','NASB1995','RSV'].indexOf(bgVersion) < 0) bgVersion = 'KJV';
+function applyReadingPrefs(){
+  document.querySelectorAll('.reading-default').forEach(e=>e.style.display = readingSource==='antiochian' ? '' : 'none');
+  document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
+    (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-default').forEach(e=>e.style.display = '');
+  }
+  var rs = document.querySelector('.readings-select');
+  if(rs){
+    var want = readingSource==='antiochian' ? 'antiochian' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
+}
+function setScriptureReading(v){
+  if(v === 'antiochian'){ readingSource = 'antiochian'; }
+  else { readingSource = 'bg'; bgVersion = v; }
+  applyReadingPrefs();
+  _savePref('source', readingSource === 'antiochian' ? 'antiochian' : 'biblegateway');
+  _savePref('version', bgVersion);
+}
+document.addEventListener('DOMContentLoaded', function(){ applyPatronPrefs(); applySilentPrefs(); applyThirdPrefs(); applyReadingPrefs(); });</script>
+<footer>Prototype built for comparison. Variable hymns, readings and dismissal: Antiochian Archdiocese Online Liturgical Guide, Divine Liturgy Variables for November 15, 2026. Fixed frame: Orthodox Kansas (Antiochian) Divine Liturgy booklet, October 24, 2026, reproducing the Liturgikon; Sunday antiphons and the prayer before the Gospel from the same parish's Sunday booklet for November 1, 2026. Alleluia verses for Tone 7 from the OCA texts (the Antiochian variables file does not print them). Patron hymns: St. Nicholas from the OLG Divine Liturgy Variables and Festal Orthros for December 6; St. Innocent from the OLG Divine Liturgy Variables and Festal Orthros for October 6; St. George from the Antiochian Archdiocese website's feast article (no OLG April 23 file found). Alternative scripture translations (KJV, NASB 1995, RSV) from BibleGateway; the default readings are the Antiochian texts as printed in the variables file. The koinonikon tone is not stated in the variables file.</footer></body></html>
