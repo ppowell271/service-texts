@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T07:37:07Z",
+  "generated": "2026-11-25T07:45:48Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -316,6 +316,12 @@
       "short_title": "Theotokos, the Inexhaustible Cup",
       "category": "theotokos",
       "file": "akathist-theotokos-inexhaustible-cup.html"
+    },
+    {
+      "title": "Akathist to Our Sweetest Lord Jesus",
+      "short_title": "Our Sweetest Lord Jesus",
+      "category": "lord",
+      "file": "akathist-akathist-to-our-sweetest-lord-jesus.html"
     }
   ],
   "paraklesis": [
