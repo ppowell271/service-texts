@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T00:09:24Z",
+  "generated": "2026-11-25T00:31:55Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -208,6 +208,20 @@
     {
       "title": "Akathist Hymn to the Spiritual Ladder, the Precious Cross",
       "file": "akathist-precious-cross.html"
+    }
+  ],
+  "paraklesis": [
+    {
+      "title": "The Paraklesis Service \u2014 Little Supplicatory Canon to the Most Holy Theotokos",
+      "file": "paraklesis-little-paraklesis.html"
+    },
+    {
+      "title": "The Paraklesis Service with the Little Supplicatory Canon",
+      "file": "paraklesis-little-paraklesis-dormition.html"
+    },
+    {
+      "title": "Annunciation Paraklesis \u2014 Reader\u2019s Service",
+      "file": "paraklesis-annunciation-paraklesis-readers.html"
     }
   ]
 }
