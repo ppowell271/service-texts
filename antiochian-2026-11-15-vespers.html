@@ -8,9 +8,13 @@ p{margin:.5em 0}
 .label{font-weight:bold;color:#7a1f1f;margin:1.1em 0 .25em}
 .verse{font-style:italic;margin:.12em 0}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
-.sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}</style></head><body>
+.sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
+.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
+.opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
+@media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
 <h1>Great Vespers — Sunday, November 15, 2026 (Tone 7)</h1>
 <p class='rubric'>24th Sunday after Pentecost (8th of Luke). Martyrs Guria, Shamuna and Habib the Deacon of Edessa; Thomas the New, patriarch of Constantinople; Venerable Paisios Velichkovsky. Nativity Fast. (Antiochian prototype — OLG sources.)</p>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Patron of the Temple:&nbsp;</span><select class='src-select patron-select' onchange="setPatron(this.value)"><option value='st-george'>St. George</option><option value='st-innocent'>St. Innocent</option><option value='st-nicholas' selected>St. Nicholas</option></select></div></div>
 <hr class='sep'>
 <h2>The Opening</h2>
 <p><span class='speaker-clergy'>Priest:</span> Blessed is our God, always, now and ever, and unto ages of ages.</p>
@@ -198,7 +202,61 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p><span class='speaker'>Choir:</span> More honorable than the cherubim and more glorious beyond compare than the Seraphim, thou who without corruption didst bear God the Word and art truly Theotokos: we magnify thee.</p>
 <p><span class='speaker-clergy'>Priest:</span> Glory to thee, O Christ our God and our Hope, glory to thee.</p>
 <p><span class='speaker'>Choir:</span> Glory to the Father and to the Son and to the Holy Spirit, both now and ever, and unto ages of ages. Amen. Lord, have mercy (3x). Father, bless.</p>
-<p><span class='speaker-clergy'>Priest:</span> May he who rose from the dead, Christ our true God, through the intercessions of his all-immaculate and all-blameless holy Mother; by the might of the precious and life-giving cross; by the protection of the honorable bodiless powers of heaven; at the supplication of the honorable, glorious Prophet, Forerunner and Baptist John; of the holy, glorious and all-laudable apostles; of the holy, glorious and right-victorious martyrs; of our venerable and God-bearing fathers; of Saint N. (patron saint of the church); of the holy and righteous ancestors of God, Joachim and Anna; of the Martyrs and Confessors Guria, Shamuna and Habib the Deacon of Edessa, whose memory we celebrate; and of all the saints, have mercy on us and save us, forasmuch as he is good and loveth mankind.</p>
+<p><span class='speaker-clergy'>Priest:</span> May he who rose from the dead, Christ our true God, through the intercessions of his all-immaculate and all-blameless holy Mother; by the might of the precious and life-giving cross; by the protection of the honorable bodiless powers of heaven; at the supplication of the honorable, glorious Prophet, Forerunner and Baptist John; of the holy, glorious and all-laudable apostles; of the holy, glorious and right-victorious martyrs; of our venerable and God-bearing fathers; of <span class='patron-name'>Saint Nicholas</span> (patron saint of the church); of the holy and righteous ancestors of God, Joachim and Anna; of the Martyrs and Confessors Guria, Shamuna and Habib the Deacon of Edessa, whose memory we celebrate; and of all the saints, have mercy on us and save us, forasmuch as he is good and loveth mankind.</p>
 <p><span class='speaker-clergy'>Priest:</span> Through the prayers of our holy fathers, Lord Jesus Christ our God, have mercy on us and save us.</p>
 <p><span class='speaker'>Choir:</span> Amen.</p>
+<script>
+function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); else localStorage.setItem(k,v); }catch(e){} }
+function _loadPref(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function toggleOpts(btn){ var p=document.getElementById('opts-panel'); if(!p) return; var open=p.style.display!=='none'; p.style.display=open?'none':'block'; btn.innerHTML=open?'⚙ Service options ▸':'⚙ Service options ▾'; }
+var patronMode = _loadPref('patron') || 'st-nicholas';
+var patronNames = {'st-innocent':'Saint Innocent','st-george':'Saint George','st-nicholas':'Saint Nicholas'};
+if(!patronNames[patronMode]) patronMode = 'st-nicholas';
+function applyPatronPrefs(){
+  document.querySelectorAll('.patron-block').forEach(e=>e.style.display = e.classList.contains('patron-'+patronMode) ? '' : 'none');
+  document.querySelectorAll('.patron-name').forEach(e=>e.textContent = patronNames[patronMode]);
+  var s = document.querySelector('.patron-select');
+  if(s && s.querySelector('option[value="'+patronMode+'"]')) s.value = patronMode;
+}
+function setPatron(k){ patronMode = k; applyPatronPrefs(); _savePref('patron', k); }
+var silentMode = _loadPref('silent') || 'summary';
+if(silentMode!=='summary' && silentMode!=='full') silentMode = 'summary';
+function applySilentPrefs(){
+  document.querySelectorAll('.silent-off').forEach(e=>e.style.display = silentMode==='summary' ? '' : 'none');
+  document.querySelectorAll('.silent-on').forEach(e=>e.style.display = silentMode==='full' ? '' : 'none');
+  document.querySelectorAll('.pray-btn').forEach(b=>b.classList.toggle('active', b.dataset.mode===silentMode));
+}
+function setSilentPrayers(m){ silentMode = m; applySilentPrefs(); _savePref('silent', m); }
+var thirdMode = _loadPref('third') || 'ps94';
+if(thirdMode!=='ps94' && thirdMode!=='beatitudes') thirdMode = 'ps94';
+function applyThirdPrefs(){
+  document.querySelectorAll('.third-ps94').forEach(e=>e.style.display = thirdMode==='ps94' ? '' : 'none');
+  document.querySelectorAll('.third-beatitudes').forEach(e=>e.style.display = thirdMode==='beatitudes' ? '' : 'none');
+  document.querySelectorAll('.third-btn').forEach(b=>b.classList.toggle('active', b.dataset.third===thirdMode));
+}
+function setThirdAntiphon(m){ thirdMode = m; applyThirdPrefs(); _savePref('third', m); }
+var readingSource = _loadPref('source') === 'biblegateway' ? 'bg' : 'antiochian';
+var bgVersion = _loadPref('version') || 'KJV';
+if(['KJV','NASB1995','RSV'].indexOf(bgVersion) < 0) bgVersion = 'KJV';
+function applyReadingPrefs(){
+  document.querySelectorAll('.reading-default').forEach(e=>e.style.display = readingSource==='antiochian' ? '' : 'none');
+  document.querySelectorAll('.reading-bg').forEach(e=>e.style.display =
+    (readingSource==='bg' && e.dataset.version===bgVersion) ? '' : 'none');
+  if(readingSource==='bg' && !document.querySelector('.reading-bg[data-version="'+bgVersion+'"]')){
+    document.querySelectorAll('.reading-default').forEach(e=>e.style.display = '');
+  }
+  var rs = document.querySelector('.readings-select');
+  if(rs){
+    var want = readingSource==='antiochian' ? 'antiochian' : bgVersion;
+    if(rs.querySelector('option[value="'+want+'"]')) rs.value = want;
+  }
+}
+function setScriptureReading(v){
+  if(v === 'antiochian'){ readingSource = 'antiochian'; }
+  else { readingSource = 'bg'; bgVersion = v; }
+  applyReadingPrefs();
+  _savePref('source', readingSource === 'antiochian' ? 'antiochian' : 'biblegateway');
+  _savePref('version', bgVersion);
+}
+document.addEventListener('DOMContentLoaded', function(){ applyPatronPrefs(); applySilentPrefs(); applyThirdPrefs(); applyReadingPrefs(); });</script>
 <footer>Prototype assembled from the Antiochian Archdiocese Online Liturgical Guide: Great Vespers of Sunday, November 15, 2026 (Nov 14 2026 VESP.pdf). Portions of the Archdiocesan Service Texts include texts from The Menaion, The Great Horologion, The Pentecostarion, The Octoechos, The Triodion–Holy Week, and The Psalter of the Seventy, © Holy Transfiguration Monastery, Brookline, Massachusetts, used with permission; they may not be further reproduced beyond a single copy for personal non-commercial use without prior written authorization. Verify against parish practice before liturgical use.</footer></body></html>
