@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T03:43:34Z",
+  "generated": "2026-11-25T03:55:29Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -151,94 +151,140 @@
   "akathists": [
     {
       "title": "Akathist to All Saints of North America",
+      "short_title": "All Saints of North America",
+      "category": "saint",
       "file": "akathist-all-north-american-saints.html"
     },
     {
       "title": "Akathist to St. Herman of Alaska",
+      "short_title": "St. Herman of Alaska",
+      "category": "saint",
       "file": "akathist-st-herman-of-alaska.html"
     },
     {
       "title": "Akathist to St. Innocent of Moscow",
+      "short_title": "St. Innocent of Moscow",
+      "category": "saint",
       "file": "akathist-st-innocent-of-moscow.html"
     },
     {
       "title": "Akathist to St. Jacob of Alaska",
+      "short_title": "St. Jacob of Alaska",
+      "category": "saint",
       "file": "akathist-st-jacob-of-alaska.html"
     },
     {
       "title": "Akathist to the Theotokos, Joy of All Who Sorrow",
+      "short_title": "The Theotokos, Joy of All Who Sorrow",
+      "category": "theotokos",
       "file": "akathist-theotokos-joy-of-all-who-sorrow.html"
     },
     {
       "title": "Akathist to the Wonderworking Tikhvin Icon of the Mother of God",
+      "short_title": "The Wonderworking Tikhvin Icon of the Mother of God",
+      "category": "theotokos",
       "file": "akathist-tikhvin-icon.html"
     },
     {
       "title": "Akathist to Our Lady of Sitka",
+      "short_title": "Our Lady of Sitka",
+      "category": "theotokos",
       "file": "akathist-our-lady-of-sitka.html"
     },
     {
       "title": "Akathist Hymn of Forgiveness Sunday",
+      "short_title": "Forgiveness Sunday",
+      "category": "feast",
       "file": "akathist-forgiveness-sunday.html"
     },
     {
       "title": "Akathist Hymn in Preparation for the Nativity in the Flesh of our Lord, God and Savior Jesus Christ",
+      "short_title": "Preparation for the Nativity",
+      "category": "lord",
       "file": "akathist-preparation-for-nativity.html"
     },
     {
       "title": "Akathist Hymn to the Nativity of Christ",
+      "short_title": "Nativity of Christ",
+      "category": "lord",
       "file": "akathist-nativity-of-christ.html"
     },
     {
       "title": "Akathist Hymn to the Nativity of Christ",
+      "short_title": "Nativity of Christ (Archaic Text)",
+      "category": "lord",
       "file": "akathist-nativity-of-christ-archaic.html"
     },
     {
       "title": "Akathist to St. Nicholas of Myra",
+      "short_title": "St. Nicholas of Myra",
+      "category": "saint",
       "file": "akathist-st-nicholas.html"
     },
     {
       "title": "The Akathist Hymn to Saint Innocent of Moscow",
+      "short_title": "St. Innocent of Moscow (Life)",
+      "category": "saint",
       "file": "akathist-st-innocent-life.html"
     },
     {
       "title": "Akathist to the Spiritual Ladder, the Precious Cross",
+      "short_title": "Elevation of the Cross",
+      "category": "cross",
       "file": "akathist-elevation-of-the-cross.html"
     },
     {
       "title": "Akathist Hymn to the Spiritual Ladder, the Precious Cross",
+      "short_title": "The Precious Cross",
+      "category": "cross",
       "file": "akathist-precious-cross.html"
     },
     {
       "title": "Akathist Hymn to the Most Holy Theotokos",
+      "short_title": "The Most Holy Theotokos",
+      "category": "theotokos",
       "file": "akathist-theotokos.html"
     },
     {
       "title": "Akathist of Thanksgiving (Glory to God for All Things)",
+      "short_title": "Thanksgiving (Glory to God for All Things)",
+      "category": "lord",
       "file": "akathist-glory-to-god-for-all-things.html"
     },
     {
       "title": "Akathist to St. John Chrysostom",
+      "short_title": "St. John Chrysostom",
+      "category": "saint",
       "file": "akathist-st-john-chrysostom.html"
     },
     {
       "title": "Akathist to St. Panteleimon the Great Martyr",
+      "short_title": "St. Panteleimon the Great Martyr",
+      "category": "saint",
       "file": "akathist-st-panteleimon.html"
     },
     {
       "title": "Akathist to the Guardian Angel",
+      "short_title": "The Guardian Angel",
+      "category": "angel",
       "file": "akathist-guardian-angel.html"
     },
     {
       "title": "Akathist to the Holy Apostle James the Brother of the Lord",
+      "short_title": "St. James the Brother of the Lord",
+      "category": "saint",
       "file": "akathist-st-james-brother-of-the-lord.html"
     },
     {
       "title": "Akathist to St. Daniel the Prophet",
+      "short_title": "St. Daniel the Prophet",
+      "category": "saint",
       "file": "akathist-st-daniel-the-prophet.html"
     },
     {
       "title": "Akathist to St. Elizabeth the New Martyr",
+      "short_title": "St. Elizabeth the New Martyr",
+      "category": "saint",
       "file": "akathist-st-elizabeth-new-martyr.html"
     }
   ],
