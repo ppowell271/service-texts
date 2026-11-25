@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T10:12:30Z",
+  "generated": "2026-11-25T11:30:43Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -243,7 +243,8 @@
       "title": "Akathist Hymn to the Most Holy Theotokos",
       "short_title": "The Most Holy Theotokos",
       "category": "theotokos",
-      "file": "akathist-theotokos.html"
+      "file": "akathist-theotokos.html",
+      "listen": "https://www.youtube.com/watch?v=Zo_ikZz9xSc"
     },
     {
       "title": "Akathist of Thanksgiving (Glory to God for All Things)",
@@ -321,7 +322,8 @@
       "title": "Akathist to Our Sweetest Lord Jesus",
       "short_title": "Our Sweetest Lord Jesus",
       "category": "lord",
-      "file": "akathist-akathist-to-our-sweetest-lord-jesus.html"
+      "file": "akathist-akathist-to-our-sweetest-lord-jesus.html",
+      "listen": "https://www.youtube.com/watch?v=hgyRV60Sl9s"
     },
     {
       "title": "Akathist Hymn to Saint Mary of Egypt, Desert Mother",
@@ -357,7 +359,8 @@
   "paraklesis": [
     {
       "title": "The Paraklesis Service \u2014 Little Supplicatory Canon to the Most Holy Theotokos",
-      "file": "paraklesis-little-paraklesis.html"
+      "file": "paraklesis-little-paraklesis.html",
+      "listen": "https://youtu.be/c3k0wTCHKCg"
     },
     {
       "title": "The Paraklesis Service with the Little Supplicatory Canon",
@@ -372,7 +375,8 @@
     {
       "title": "Morning Prayers",
       "short_title": "Morning Prayers",
-      "file": "prayer-morning-prayers.html"
+      "file": "prayer-morning-prayers.html",
+      "listen": "https://www.youtube.com/watch?v=u5reVA4E_0E"
     },
     {
       "title": "Prayers during the Day",
@@ -454,7 +458,8 @@
     {
       "title": "Canon of Repentance to Our Lord Jesus Christ",
       "short_title": "Repentance to Our Lord Jesus Christ",
-      "file": "canon-canon-of-repentance-to-our-lord-jesus-christ.html"
+      "file": "canon-canon-of-repentance-to-our-lord-jesus-christ.html",
+      "listen": "https://www.youtube.com/watch?v=TsfTPiiOBQU"
     }
   ]
 }
