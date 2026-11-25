@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T01:45:31Z",
+  "generated": "2026-11-25T03:43:34Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -228,6 +228,18 @@
     {
       "title": "Akathist to the Guardian Angel",
       "file": "akathist-guardian-angel.html"
+    },
+    {
+      "title": "Akathist to the Holy Apostle James the Brother of the Lord",
+      "file": "akathist-st-james-brother-of-the-lord.html"
+    },
+    {
+      "title": "Akathist to St. Daniel the Prophet",
+      "file": "akathist-st-daniel-the-prophet.html"
+    },
+    {
+      "title": "Akathist to St. Elizabeth the New Martyr",
+      "file": "akathist-st-elizabeth-new-martyr.html"
     }
   ],
   "paraklesis": [
