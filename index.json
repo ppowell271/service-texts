@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T07:45:48Z",
+  "generated": "2026-11-25T07:52:37Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -363,6 +363,28 @@
       "title": "Prayers after Holy Communion",
       "short_title": "Prayers after Holy Communion",
       "file": "prayer-prayers-after-holy-communion.html"
+    }
+  ],
+  "canons": [
+    {
+      "title": "Supplicatory Canon to Our Lord Jesus Christ",
+      "short_title": "Our Lord Jesus Christ",
+      "file": "canon-supplicatory-canon-to-our-lord-jesus-christ.html"
+    },
+    {
+      "title": "Supplicatory Canon to the Most Holy Theotokos",
+      "short_title": "The Most Holy Theotokos",
+      "file": "canon-supplicatory-canon-to-the-most-holy-theotokos.html"
+    },
+    {
+      "title": "Canon to the Guardian Angel",
+      "short_title": "The Guardian Angel",
+      "file": "canon-canon-to-the-guardian-angel.html"
+    },
+    {
+      "title": "Canon of Repentance to Our Lord Jesus Christ",
+      "short_title": "Repentance to Our Lord Jesus Christ",
+      "file": "canon-canon-of-repentance-to-our-lord-jesus-christ.html"
     }
   ]
 }
