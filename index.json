@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T07:52:37Z",
+  "generated": "2026-11-25T09:55:55Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -322,6 +322,36 @@
       "short_title": "Our Sweetest Lord Jesus",
       "category": "lord",
       "file": "akathist-akathist-to-our-sweetest-lord-jesus.html"
+    },
+    {
+      "title": "Akathist Hymn to Saint Mary of Egypt, Desert Mother",
+      "short_title": "St. Mary of Egypt",
+      "category": "saint",
+      "file": "akathist-st-mary-of-egypt.html"
+    },
+    {
+      "title": "Akathist to the Holy Hierarch Gregory Palamas, Archbishop of Thessalonica",
+      "short_title": "St. Gregory Palamas",
+      "category": "saint",
+      "file": "akathist-st-gregory-palamas.html"
+    },
+    {
+      "title": "Akathist Hymn to the Holy Myrrhbearers",
+      "short_title": "Holy Myrrhbearers",
+      "category": "saint",
+      "file": "akathist-holy-myrrhbearers.html"
+    },
+    {
+      "title": "Akathist to the Righteous Joachim and Anna",
+      "short_title": "Sts. Joachim and Anna",
+      "category": "saint",
+      "file": "akathist-joachim-and-anna.html"
+    },
+    {
+      "title": "Akathist Commemorating Three Holy Hierarchs: Basil the Great, Gregory the Theologian, John Chrysostom",
+      "short_title": "Three Holy Hierarchs",
+      "category": "saint",
+      "file": "akathist-three-holy-hierarchs.html"
     }
   ],
   "paraklesis": [
@@ -363,6 +393,46 @@
       "title": "Prayers after Holy Communion",
       "short_title": "Prayers after Holy Communion",
       "file": "prayer-prayers-after-holy-communion.html"
+    },
+    {
+      "title": "Sunday Troparia and Kontakia",
+      "short_title": "Sunday Troparia and Kontakia",
+      "file": "prayer-sunday-troparia-and-kontakia.html"
+    },
+    {
+      "title": "Daily Troparia and Kontakia",
+      "short_title": "Daily Troparia and Kontakia",
+      "file": "prayer-daily-troparia-and-kontakia.html"
+    },
+    {
+      "title": "Troparia and Kontakia of the Twelve",
+      "short_title": "Troparia and Kontakia of the Twelve",
+      "file": "prayer-troparia-and-kontakia-of-the-twelve-feasts.html"
+    },
+    {
+      "title": "Troparia, Kontakia, Prayers, and Stichera from the Triodion",
+      "short_title": "From the Triodion",
+      "file": "prayer-troparia-and-kontakia-from-the-triodion.html"
+    },
+    {
+      "title": "Passion Week Troparia",
+      "short_title": "Passion Week Troparia",
+      "file": "prayer-passion-week-troparia.html"
+    },
+    {
+      "title": "The Paschal Hours",
+      "short_title": "The Paschal Hours",
+      "file": "prayer-paschal-hours.html"
+    },
+    {
+      "title": "Troparia and Kontakia from the Pentecostarion",
+      "short_title": "From the Pentecostarion",
+      "file": "prayer-troparia-and-kontakia-from-the-pentecostarion.html"
+    },
+    {
+      "title": "The Order for Reading Canons and Akathists When Alone",
+      "short_title": "Order for Reading Canons and Akathists",
+      "file": "prayer-order-for-reading-canons-and-akathists.html"
     }
   ],
   "canons": [
