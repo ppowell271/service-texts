@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T23:29:44Z",
+  "generated": "2026-11-26T00:00:47Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -121,6 +121,14 @@
       "type": "feast",
       "liturgy": "2026-11-16-liturgy.html",
       "vespers": "2026-11-16-vespers.html"
+    },
+    {
+      "date": "2026-11-21",
+      "title": "The Entrance of the Most Holy Theotokos into the Temple",
+      "tone": 1,
+      "type": "feast",
+      "liturgy": "2026-11-21-liturgy.html",
+      "vespers": "2026-11-21-vespers.html"
     },
     {
       "date": "2026-11-30",
