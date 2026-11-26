@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T00:00:47Z",
+  "generated": "2026-11-26T07:15:51Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -412,6 +412,12 @@
       "short_title": "St. Macarius the Great",
       "category": "saint",
       "file": "akathist-st-macarius-the-great.html"
+    },
+    {
+      "title": "Akathist to Jesus, the Conqueror of Death",
+      "short_title": "Jesus, Conqueror of Death",
+      "category": "lord",
+      "file": "akathist-jesus-conqueror-of-death.html"
     }
   ],
   "paraklesis": [
