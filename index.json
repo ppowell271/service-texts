@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T19:19:26Z",
+  "generated": "2026-11-27T19:31:55Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -562,6 +562,30 @@
       "short_title": "Varus the Martyr",
       "category": "saint",
       "file": "akathist-st-varus-the-martyr.html"
+    },
+    {
+      "title": "Akathist to Jesus, Light to Those in Darkness",
+      "short_title": "Light to Those in Darkness",
+      "category": "lord",
+      "file": "akathist-light-to-those-in-darkness.html"
+    },
+    {
+      "title": "Akathist to the Life-bearing Tomb of Christ",
+      "short_title": "Life-bearing Tomb",
+      "category": "lord",
+      "file": "akathist-life-bearing-tomb.html"
+    },
+    {
+      "title": "Akathist to the Divine Passion of Christ",
+      "short_title": "Divine Passion",
+      "category": "lord",
+      "file": "akathist-divine-passion.html"
+    },
+    {
+      "title": "Akathist Hymn of Intercessory Prayer",
+      "short_title": "Intercessory Prayer",
+      "category": "lord",
+      "file": "akathist-intercessory-prayer.html"
     }
   ],
   "paraklesis": [
