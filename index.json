@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T18:58:26Z",
+  "generated": "2026-11-27T19:06:34Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -478,6 +478,36 @@
       "short_title": "Peter and Paul",
       "category": "saint",
       "file": "akathist-ss-peter-and-paul.html"
+    },
+    {
+      "title": "Akathist to St. Demetrius the Myrrh-Streamer",
+      "short_title": "Demetrios the Great Martyr",
+      "category": "saint",
+      "file": "akathist-st-demetrios-the-great-martyr.html"
+    },
+    {
+      "title": "Akathist Hymn to Saint Mary Magdalene, Equal of the Apostles",
+      "short_title": "Mary Magdalene",
+      "category": "saint",
+      "file": "akathist-st-mary-magdalene.html"
+    },
+    {
+      "title": "Akathist to St. Nektarios, Wonderworker of Aegina",
+      "short_title": "Nektarios of Aegina",
+      "category": "saint",
+      "file": "akathist-st-nektarios-of-aegina.html"
+    },
+    {
+      "title": "Akathist to Saint Xenia of St. Petersburg",
+      "short_title": "Xenia of St. Petersburg",
+      "category": "saint",
+      "file": "akathist-st-xenia-of-st-petersburg.html"
+    },
+    {
+      "title": "Akathist to the Most Holy Theotokos in Honor of Her Dormition",
+      "short_title": "Dormition of the Theotokos",
+      "category": "theotokos",
+      "file": "akathist-dormition-of-the-theotokos.html"
     }
   ],
   "paraklesis": [
