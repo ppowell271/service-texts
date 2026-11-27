@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T19:12:32Z",
+  "generated": "2026-11-27T19:19:26Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -538,6 +538,30 @@
       "short_title": "Hymn of Gratitude",
       "category": "lord",
       "file": "akathist-hymn-of-gratitude.html"
+    },
+    {
+      "title": "Akathist to St. Nikiforos the Leper and Wonderworker",
+      "short_title": "Nikiforos the Leper",
+      "category": "saint",
+      "file": "akathist-st-nikiforos-the-leper.html"
+    },
+    {
+      "title": "Akathist to St. Sophia and Her Daughters Faith, Hope and Love",
+      "short_title": "Sophia, Faith, Hope and Love",
+      "category": "saint",
+      "file": "akathist-st-sophia-faith-hope-and-love.html"
+    },
+    {
+      "title": "Akathist Hymn to the Holy Twelve Apostles",
+      "short_title": "Twelve Apostles",
+      "category": "saint",
+      "file": "akathist-twelve-apostles.html"
+    },
+    {
+      "title": "Akathist to Martyr Varus and the Blessed Cleopatra and John",
+      "short_title": "Varus the Martyr",
+      "category": "saint",
+      "file": "akathist-st-varus-the-martyr.html"
     }
   ],
   "paraklesis": [
