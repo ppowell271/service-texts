@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T07:15:51Z",
+  "generated": "2026-11-27T07:17:54Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -418,6 +418,36 @@
       "short_title": "Jesus, Conqueror of Death",
       "category": "lord",
       "file": "akathist-jesus-conqueror-of-death.html"
+    },
+    {
+      "title": "Akathist to the Holy Apostle and Evangelist Luke",
+      "short_title": "St. Luke the Evangelist",
+      "category": "saint",
+      "file": "akathist-st-luke-the-evangelist.html"
+    },
+    {
+      "title": "Akathist to St. John the Theologian, Evangelist and Apostle",
+      "short_title": "St. John the Theologian",
+      "category": "saint",
+      "file": "akathist-st-john-the-theologian.html"
+    },
+    {
+      "title": "Akathist Hymn to Saint John of Kronstadt",
+      "short_title": "St. John of Kronstadt",
+      "category": "saint",
+      "file": "akathist-st-john-of-kronstadt.html"
+    },
+    {
+      "title": "Akathist to Saint Paisios the Athonite",
+      "short_title": "St. Paisios the Athonite",
+      "category": "saint",
+      "file": "akathist-st-paisios-the-athonite.html"
+    },
+    {
+      "title": "Akathist to St. Maximos the Hut-Burner",
+      "short_title": "St. Maximos the Hut-Burner",
+      "category": "saint",
+      "file": "akathist-st-maximos-the-hut-burner.html"
     }
   ],
   "paraklesis": [
