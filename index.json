@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T18:00:37Z",
+  "generated": "2026-11-27T18:58:26Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -448,6 +448,36 @@
       "short_title": "St. Maximos the Hut-Burner",
       "category": "saint",
       "file": "akathist-st-maximos-the-hut-burner.html"
+    },
+    {
+      "title": "Akathist to David, Prophet and King and Ancestor of God",
+      "short_title": "David the King and Prophet",
+      "category": "saint",
+      "file": "akathist-st-david-the-king-and-prophet.html"
+    },
+    {
+      "title": "Akathist Hymn to the Righteous Joseph, the Betrothed of the All-holy Virgin Mary",
+      "short_title": "Joseph the Betrothed",
+      "category": "saint",
+      "file": "akathist-st-joseph-the-betrothed.html"
+    },
+    {
+      "title": "Akathist to St. Raphael of Brooklyn",
+      "short_title": "Raphael of Brooklyn",
+      "category": "saint",
+      "file": "akathist-st-raphael-of-brooklyn.html"
+    },
+    {
+      "title": "Akathist to Saint Sava, First Archbishop of Serbia",
+      "short_title": "Sava of Serbia",
+      "category": "saint",
+      "file": "akathist-st-sava-of-serbia.html"
+    },
+    {
+      "title": "Akathist to Saints Peter and Paul",
+      "short_title": "Peter and Paul",
+      "category": "saint",
+      "file": "akathist-ss-peter-and-paul.html"
     }
   ],
   "paraklesis": [
