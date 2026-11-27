@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T19:06:34Z",
+  "generated": "2026-11-27T19:12:32Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -508,6 +508,36 @@
       "short_title": "Dormition of the Theotokos",
       "category": "theotokos",
       "file": "akathist-dormition-of-the-theotokos.html"
+    },
+    {
+      "title": "Akathist to St. Charalampos the Hieromartyr of Magnesia",
+      "short_title": "Charalampos (Haralambos)",
+      "category": "saint",
+      "file": "akathist-st-charalampos.html"
+    },
+    {
+      "title": "Akathist to Righteous Simeon the God-Receiver and Righteous Anna the Prophetess",
+      "short_title": "Simeon and Anna",
+      "category": "saint",
+      "file": "akathist-ss-simeon-and-anna.html"
+    },
+    {
+      "title": "Akathist to St. Sophrony of Essex",
+      "short_title": "Sophrony of Essex",
+      "category": "saint",
+      "file": "akathist-st-sophrony-of-essex.html"
+    },
+    {
+      "title": "Akathist Hymn to Our Lady of Kazan",
+      "short_title": "Our Lady of Kazan",
+      "category": "theotokos",
+      "file": "akathist-our-lady-of-kazan.html"
+    },
+    {
+      "title": "Akathist Hymn of Gratitude to Jesus Christ",
+      "short_title": "Hymn of Gratitude",
+      "category": "lord",
+      "file": "akathist-hymn-of-gratitude.html"
     }
   ],
   "paraklesis": [
