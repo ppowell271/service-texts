@@ -254,6 +254,11 @@ function applyComplineInsert(){
   var title=complineInsert;
   var sel = kind==='canon' ? csel : asel;
   if(sel){ var o=sel.querySelector('option[value="'+complineInsert+'"]'); if(o) title=o.textContent; }
+  // The link begins "Canon to ..." / "Akathist to ..." (v1.48.2, per
+  // Philip). Canon short titles are bare ("The Guardian Angel",
+  // "Repentance to Our Lord Jesus Christ"), so prefix accordingly.
+  if(kind==='canon') title = (title.indexOf(' to ')>=0 ? 'Canon of ' : 'Canon to ') + title;
+  else title = 'Akathist to ' + title;
   slot.innerHTML="<p class='rubric'>Read: <a class='insert-link' href='#' onclick=\"openComplineInsert(); return false;\">"+title+" ▸</a></p>";
 }
 function openComplineInsert(){
@@ -261,9 +266,22 @@ function openComplineInsert(){
 }
 function _complineInsertChanged(){
   _savePref('compline_insert', complineInsert);
+  // Keep the options panel open across the reload (v1.48.2, per
+  // Philip): the app reapplies this flag on load, and it clears
+  // itself, so a fresh open of Compline still starts collapsed.
+  _savePref('compline_opts_open', '1');
   // The app recomposes the page (embedded splice / slot state) and
   // reloads it, restoring the scroll position.
   try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
+}
+// App-applied on load: reopen the panel after an option-change reload.
+function setComplineOptsOpen(v){
+  if(v!=='1') return;
+  var p=document.getElementById('opts-panel');
+  var b=document.querySelector('.opts-btn');
+  if(p) p.style.display='block';
+  if(b) b.innerHTML='⚙ Service options ▾';
+  _savePref('compline_opts_open', '0');
 }
 function setComplineInsert(v, fromUser){
   complineInsert=v; applyComplineInsert();
@@ -308,6 +326,7 @@ function setComplineMode(v, fromUser){
   applyComplineInsert();
   if(fromUser){
     _savePref('compline_mode', v);
+    _savePref('compline_opts_open', '1');
     try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
   }
 }
