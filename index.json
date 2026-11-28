@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-28T08:20:47Z",
+  "generated": "2026-11-28T14:59:35Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -95,6 +95,22 @@
         "third_sixth": "2026-12-13-third-sixth-hours.html"
       },
       "matins": "2026-12-13-matins.html"
+    },
+    {
+      "date": "2026-12-20",
+      "title": "29th Sunday after Pentecost (13th of Luke)",
+      "tone": 4,
+      "type": "sunday",
+      "liturgy": "2026-12-20-liturgy.html",
+      "vespers": "2026-12-20-vespers.html",
+      "hours": {
+        "first": "2026-12-20-first-hour.html",
+        "third": "2026-12-20-third-hour.html",
+        "sixth": "2026-12-20-sixth-hour.html",
+        "ninth": "2026-12-20-ninth-hour.html",
+        "third_sixth": "2026-12-20-third-sixth-hours.html"
+      },
+      "matins": "2026-12-20-matins.html"
     }
   ],
   "feasts": [
@@ -169,6 +185,14 @@
       "type": "feast",
       "liturgy": "2026-12-09-liturgy.html",
       "vespers": "2026-12-09-vespers.html"
+    },
+    {
+      "date": "2026-12-26",
+      "title": "Second Day of the Feast of the Nativity",
+      "tone": 2,
+      "type": "feast",
+      "liturgy": "2026-12-26-liturgy.html",
+      "vespers": "2026-12-26-vespers.html"
     }
   ],
   "akathists": [
