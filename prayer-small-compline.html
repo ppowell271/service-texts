@@ -218,6 +218,9 @@ function applyComplineInsert(){
   if(row) row.style.display = complineInsert!=='none' ? '' : 'none';
   var slot=document.getElementById('compline-insert');
   if(!slot) return;
+  // Embedded mode: the app spliced the text in natively and marked
+  // the slot; never touch its content (option changes reload).
+  if(slot.getAttribute('data-embedded')==='1') return;
   if(complineInsert==='none'){ slot.innerHTML=''; return; }
   if(complineMode==='embedded') return; // the app splices the text in natively
   var title=complineInsert;
@@ -240,6 +243,7 @@ function setComplineMode(v, fromUser){
   complineMode=v;
   var sel=document.getElementById('compline-mode-select');
   if(sel) sel.value=v;
+  applyComplineInsert();
   if(fromUser){
     _savePref('compline_mode', v);
     try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
