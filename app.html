@@ -629,11 +629,17 @@ function updateNextBar(){
   bar.hidden = false;
   bar.onclick = () => openReader(cur.day, n);
 }
+let frameFile = null;
 function loadPage(file){
   hideFindBar();
   const f = frame();
-  if (f.getAttribute('src') === file) f.contentWindow.location.reload();
-  else f.src = file;
+  if (frameFile === file){ f.contentWindow.location.reload(); return; }
+  frameFile = file;
+  // location.replace (not src=) so page changes inside the reader
+  // do not pile up browser-history entries: Back should leave the
+  // reader in one step, as in the Android app.
+  try{ f.contentWindow.location.replace(file); }
+  catch(e){ f.src = file; }
 }
 function scrollKey(){
   if (!cur) return null;
