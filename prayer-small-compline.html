@@ -5,9 +5,14 @@ p{margin:.5em 0}
 .rubric{color:#a33;font-style:italic;font-size:.92em}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
 .sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
-@media print{.src-toggle,.opts-btn{display:none}}</style></head><body>
+@media print{.src-toggle,.opts-btn{display:none}}
+.src-toggle{margin:1em 0}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
+.opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
+.insert-link{color:#7a1f1f;font-weight:bold}
+@media print{.opts-panel{display:none}}</style></head><body>
 <h1>Small Compline</h1>
 <hr class='sep'>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Troparion:&nbsp;</span><select class='src-select' id='compline-trop-select' onchange="setComplineTroparion(this.value, true)"><option value='default' selected>Default troparia</option><option value='day'>Troparion of the day</option></select></div><div class='src-toggle'><span class='rubric'>Canon or Akathist:&nbsp;</span><select class='src-select' id='compline-insert-select' onchange="setComplineInsert(this.value, true)"><option value='none' selected>None</option><optgroup label='Canons'><option value='canon-supplicatory-canon-to-our-lord-jesus-christ.html'>Our Lord Jesus Christ</option><option value='canon-supplicatory-canon-to-the-most-holy-theotokos.html'>The Most Holy Theotokos</option><option value='canon-canon-to-the-guardian-angel.html'>The Guardian Angel</option><option value='canon-canon-of-repentance-to-our-lord-jesus-christ.html'>Repentance to Our Lord Jesus Christ</option></optgroup><optgroup label='Akathists — Our Lord'><option value='akathist-preparation-for-nativity.html'>Preparation for the Nativity</option><option value='akathist-nativity-of-christ.html'>Nativity of Christ</option><option value='akathist-nativity-of-christ-archaic.html'>Nativity of Christ (Archaic Text)</option><option value='akathist-glory-to-god-for-all-things.html'>Thanksgiving (Glory to God for All Things)</option><option value='akathist-akathist-to-our-sweetest-lord-jesus.html'>Our Sweetest Lord Jesus</option><option value='akathist-jesus-conqueror-of-death.html'>Jesus, Conqueror of Death</option><option value='akathist-hymn-of-gratitude.html'>Hymn of Gratitude</option><option value='akathist-light-to-those-in-darkness.html'>Light to Those in Darkness</option><option value='akathist-life-bearing-tomb.html'>Life-bearing Tomb</option><option value='akathist-divine-passion.html'>Divine Passion</option><option value='akathist-intercessory-prayer.html'>Intercessory Prayer</option></optgroup><optgroup label='Akathists — The Theotokos'><option value='akathist-theotokos-joy-of-all-who-sorrow.html'>The Theotokos, Joy of All Who Sorrow</option><option value='akathist-tikhvin-icon.html'>The Wonderworking Tikhvin Icon of the Mother of God</option><option value='akathist-our-lady-of-sitka.html'>Our Lady of Sitka</option><option value='akathist-theotokos.html'>The Most Holy Theotokos</option><option value='akathist-theotokos-nurturer-of-children.html'>Theotokos, Nurturer of Children</option><option value='akathist-theotokos-inexhaustible-cup.html'>Theotokos, the Inexhaustible Cup</option><option value='akathist-dormition-of-the-theotokos.html'>Dormition of the Theotokos</option><option value='akathist-our-lady-of-kazan.html'>Our Lady of Kazan</option></optgroup><optgroup label='Akathists — Saints'><option value='akathist-all-north-american-saints.html'>All Saints of North America</option><option value='akathist-st-herman-of-alaska.html'>St. Herman of Alaska</option><option value='akathist-st-innocent-of-moscow.html'>St. Innocent of Moscow</option><option value='akathist-st-jacob-of-alaska.html'>St. Jacob of Alaska</option><option value='akathist-st-nicholas.html'>St. Nicholas of Myra</option><option value='akathist-st-innocent-life.html'>St. Innocent of Moscow (Life)</option><option value='akathist-st-john-chrysostom.html'>St. John Chrysostom</option><option value='akathist-st-panteleimon.html'>St. Panteleimon the Great Martyr</option><option value='akathist-st-james-brother-of-the-lord.html'>St. James the Brother of the Lord</option><option value='akathist-st-daniel-the-prophet.html'>St. Daniel the Prophet</option><option value='akathist-st-elizabeth-new-martyr.html'>St. Elizabeth the New Martyr</option><option value='akathist-st-tikhon-patriarch-of-moscow.html'>St. Tikhon, Patriarch of Moscow</option><option value='akathist-st-john-the-forerunner.html'>St. John the Forerunner</option><option value='akathist-st-andrew-first-called.html'>St. Andrew the First-Called</option><option value='akathist-st-mary-of-egypt.html'>St. Mary of Egypt</option><option value='akathist-st-gregory-palamas.html'>St. Gregory Palamas</option><option value='akathist-holy-myrrhbearers.html'>Holy Myrrhbearers</option><option value='akathist-joachim-and-anna.html'>Sts. Joachim and Anna</option><option value='akathist-three-holy-hierarchs.html'>Three Holy Hierarchs</option><option value='akathist-st-matthew.html'>St. Matthew</option><option value='akathist-st-anthony-the-great.html'>St. Anthony the Great</option><option value='akathist-st-alexis-of-wilkes-barre.html'>St. Alexis of Wilkes-Barre</option><option value='akathist-st-john-of-chicago.html'>St. John of Chicago</option><option value='akathist-st-macarius-the-great.html'>St. Macarius the Great</option><option value='akathist-st-luke-the-evangelist.html'>St. Luke the Evangelist</option><option value='akathist-st-john-the-theologian.html'>St. John the Theologian</option><option value='akathist-st-john-of-kronstadt.html'>St. John of Kronstadt</option><option value='akathist-st-paisios-the-athonite.html'>St. Paisios the Athonite</option><option value='akathist-st-maximos-the-hut-burner.html'>St. Maximos the Hut-Burner</option><option value='akathist-st-david-the-king-and-prophet.html'>David the King and Prophet</option><option value='akathist-st-joseph-the-betrothed.html'>Joseph the Betrothed</option><option value='akathist-st-raphael-of-brooklyn.html'>Raphael of Brooklyn</option><option value='akathist-st-sava-of-serbia.html'>Sava of Serbia</option><option value='akathist-ss-peter-and-paul.html'>Peter and Paul</option><option value='akathist-st-demetrios-the-great-martyr.html'>Demetrios the Great Martyr</option><option value='akathist-st-mary-magdalene.html'>Mary Magdalene</option><option value='akathist-st-nektarios-of-aegina.html'>Nektarios of Aegina</option><option value='akathist-st-xenia-of-st-petersburg.html'>Xenia of St. Petersburg</option><option value='akathist-st-charalampos.html'>Charalampos (Haralambos)</option><option value='akathist-ss-simeon-and-anna.html'>Simeon and Anna</option><option value='akathist-st-sophrony-of-essex.html'>Sophrony of Essex</option><option value='akathist-st-nikiforos-the-leper.html'>Nikiforos the Leper</option><option value='akathist-st-sophia-faith-hope-and-love.html'>Sophia, Faith, Hope and Love</option><option value='akathist-twelve-apostles.html'>Twelve Apostles</option><option value='akathist-st-varus-the-martyr.html'>Varus the Martyr</option></optgroup><optgroup label='Akathists — Other'><option value='akathist-forgiveness-sunday.html'>Forgiveness Sunday</option><option value='akathist-elevation-of-the-cross.html'>Elevation of the Cross</option><option value='akathist-precious-cross.html'>The Precious Cross</option><option value='akathist-guardian-angel.html'>The Guardian Angel</option></optgroup></select></div><div class='src-toggle' id='compline-mode-row' style='display:none'><span class='rubric'>Display:&nbsp;</span><select class='src-select' id='compline-mode-select' onchange="setComplineMode(this.value, true)"><option value='linked' selected>Linked</option><option value='embedded'>Embedded</option></select></div></div>
 <p>Through the prayers of our holy Fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen.</p>
 <h2>Trisagion Prayers</h2>
 <p>Glory to Thee, our God, glory to Thee.</p>
@@ -104,6 +109,7 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p>I look for the Resurrection of the dead.</p>
 <p>And the Life of the world to come. Amen.</p>
 <p class='rubric'>Here may be read a Canon or Akathist, after which we complete the Service of Small Compline.</p>
+<div id='compline-insert'></div>
 <p>It is truly meet to call thee blessed, O Theotokos, ever-blessed and most blameless and the Mother of our God. More honorable than the Cherubim, and more glorious beyond compare than the Seraphim. Without corruption thou gavest birth to God the Word. True Theotokos, we magnify Thee.</p>
 <h2>Trisagion Prayers</h2>
 <p>Holy God, Holy Mighty, Holy Immortal, have mercy on us. (3x)</p>
@@ -117,8 +123,11 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p class='rubric'>But if there is no priest:</p>
 <p>Through the prayers of our holy Fathers, Lord Jesus Christ our God, have mercy on us. Amen.</p>
 <p class='rubric'>Then the Troparion of the day, or the following:</p>
+<div id='compline-trop-default'>
 <p>O God of our Fathers, ever dealing with us according to Thy gentleness: take not Thy mercy from us, but by their entreaties guide our life in peace.</p>
 <p>Adorned in the blood of Thy Martyrs throughout all the world as in purple and fine linen, Thy Church, through them, doth cry unto Thee, O Christ God: Send down Thy compassions upon Thy people; grant peace to Thy commonwealth, and great mercy to our souls.</p>
+</div>
+<div id='compline-trop-day' style='display:none'><div class='compline-day-trop' data-day='mon' style='display:none'><p class='rubric'>Monday — The Bodiless Hosts, Troparion — Fourth Tone</p><p>Supreme Commanders of the heavenly hosts, we unworthy ones implore you that by your supplications ye will encircle us with the shelter of the wings of your immaterial glory, and guard us who fall down before you and fervently cry: Deliver us from dangers since ye are the Marshals of the Hosts on high.</p></div><div class='compline-day-trop' data-day='tue' style='display:none'><p class='rubric'>Tuesday — St. John the Forerunner, Troparion — Second Tone</p><p>The memory of the righteous is celebrated with hymns of praise, but the Lord’s testimony is sufficient for thee, O Forerunner; for thou hast proved to be truly even more venerable than the prophets, since thou wast granted to baptize in the running waters Him Whom they proclaimed. Wherefore, having contested for the truth, thou didst rejoice to announce the good tidings even to those in hades: that God hath appeared in the flesh, taking away the sin of the world and granting us great mercy.</p></div><div class='compline-day-trop' data-day='wed' style='display:none'><p class='rubric'>Wednesday — The Cross, Troparion — First Tone</p><p>Save, O Lord, Thy people, and bless Thine inheritance; grant Thou unto Orthodox Christians victory over enemies; and by the power of Thy Cross do Thou preserve Thy commonwealth.</p></div><div class='compline-day-trop' data-day='thu' style='display:none'><p class='rubric'>Thursday — Troparion to the Apostles, Third Tone</p><p>O holy Apostles, intercede with the merciful God, that He grant unto our souls forgiveness of offenses.</p><p class='rubric'>Troparion to Saint Nicholas, Fourth Tone</p><p>The truth of things revealed thee to thy flock as a rule of faith, an icon of meekness and a teacher of temperance; therefore thou hast achieved the heights by humility, riches by poverty. O Father and Hierarch Nicholas, intercede with Christ God that our souls be saved.</p></div><div class='compline-day-trop' data-day='fri' style='display:none'><p class='rubric'>Friday — The Cross, Troparion — First Tone</p><p>Save, O Lord, Thy people, and bless Thine inheritance; grant Thou unto Orthodox Christians victory over enemies; and by the power of Thy Cross do Thou preserve Thy commonwealth.</p></div><div class='compline-day-trop' data-day='sat' style='display:none'><p class='rubric'>Saturday — Troparion to All Saints, Second Tone</p><p>O Apostles, Martyrs, and Prophets, Hierarchs, Monastics, and Righteous Ones; ye that have accomplished a good labor and kept the Faith, that have boldness before the Savior; O Good Ones, intercede for us, we pray, that our souls be saved.</p><p class='rubric'>Troparion for the Departed, Eighth Tone</p><p>O Thou Who by the depth of Thy wisdom, out of love for mankind, dost provide all things, and grantest unto all that which is profitable, O only Creator: Grant rest, O Lord, to the souls of Thy servants, for in Thee have they placed their hope, O our Creator and Fashioner and God.</p></div><div class='compline-day-trop' data-day='sun1' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 1</p><p>When the stone had been sealed by the Jews, and the soldiers were guarding Thine immaculate Body, Thou didst arise on the third day, O Savior, granting life unto the world. Wherefore, the Hosts of the heavens cried out to Thee, O Life-giver: Glory to Thy Resurrection, O Christ. Glory to Thy kingdom. Glory to Thy dispensation, O only Lover of mankind.</p></div><div class='compline-day-trop' data-day='sun2' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 2</p><p>When Thou didst descend unto death, O Life Immortal, then didst Thou slay hades with the lightning of Thy Divinity. And when Thou didst also raise the dead out of the nethermost depths, all the Hosts of the heavens cried out: O Life-giver, Christ our God, glory be to Thee.</p></div><div class='compline-day-trop' data-day='sun3' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 3</p><p>Let the heavens be glad; let earthly things rejoice; for the Lord hath wrought might with His arm. He hath trampled down death by death; the firstborn of the dead hath He become. From the belly of hades hath He delivered us and hath granted to the world great mercy.</p></div><div class='compline-day-trop' data-day='sun4' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 4</p><p>Having learned the joyful proclamation of the Resurrection from the angel, and having cast off the ancestral condemnation, the women disciples of the Lord spake to the apostles exultantly: Death is despoiled and Christ God is risen, granting to the world great mercy.</p></div><div class='compline-day-trop' data-day='sun5' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 5</p><p>Let us, O faithful, praise and worship the Word Who is co-unoriginate with the Father and the Spirit, and Who was born of the Virgin for our salvation; for He was pleased to ascend the Cross in the flesh and to endure death, and to raise the dead by His glorious Resurrection.</p></div><div class='compline-day-trop' data-day='sun6' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 6</p><p>Angelic Hosts were above Thy tomb, and they that guarded Thee became as dead. And Mary stood by the grave seeking Thine immaculate Body. Thou didst despoil hades and wast not tempted by it. Thou didst meet the Virgin and didst grant us life. O Thou Who didst rise from the dead, O Lord, glory be to Thee.</p></div><div class='compline-day-trop' data-day='sun7' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 7</p><p>Thou didst destroy death by Thy Cross, Thou didst open Paradise to the thief. Thou didst change the lamentation of the Myrrh-bearers, and Thou didst command Thine Apostles to proclaim that Thou didst arise, O Christ God, and grantest to the world great mercy.</p></div><div class='compline-day-trop' data-day='sun8' style='display:none'><p class='rubric'>Sunday — Resurrectional Troparion, Tone 8</p><p>From on high didst Thou descend, O Compassionate One; to burial of three days hast Thou submitted that Thou mightest free us from our passions. O our Life and Resurrection, O Lord, glory be to Thee.</p></div></div>
 <p>Glory to the Father and to the Son and to the Holy Spirit.</p>
 <p>With the Saints grant rest, O Christ, to the souls of Thy servants, where there is neither pain, nor sorrow, nor sighing, but life everlasting.</p>
 <p>Both now and ever and unto ages of ages. Amen.</p>
@@ -147,4 +156,95 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <p class='rubric'>Then the following Theotokion in the Third Tone:</p>
 <p>Awed by the beauty of thy virginity and the exceeding radiance of thy purity, Gabriel called out unto thee, O Theotokos: What worthy hymn of praise can I offer unto thee? And what shall I name thee? I am in doubt and stand in awe. Wherefore, as commanded, I cry to thee: Rejoice, O Full of Grace.</p>
 <p>Through the prayers of our holy Fathers, Lord Jesus Christ our God, have mercy on us. Amen.</p>
-<footer>Text: Small Compline, Orthodox Church in America — from an OCA service book, copied by Philip Powell<br>Corrections (Nov 27, 2026): “Thy” for “They” and “mightest” for “mightiest” (Psalm 50); “teach me” for “teach my” and “statutes” for “statues” (Doxology); “forever” for “for ever”; “hast borne” for “has borne”; pronouns for God capitalized in “Thou, who at all times” and the Guardian Angel prayer. Repeat counts shown as (3x), (12x), (40x).</footer></body></html>
+<footer>Text: Small Compline, Orthodox Church in America — from an OCA service book, copied by Philip Powell<br>Corrections (Nov 27, 2026): “Thy” for “They” and “mightest” for “mightiest” (Psalm 50); “teach me” for “teach my” and “statutes” for “statues” (Doxology); “forever” for “for ever”; “hast borne” for “has borne”; pronouns for God capitalized in “Thou, who at all times” and the Guardian Angel prayer. Repeat counts shown as (3x), (12x), (40x).</footer>
+<script>
+var complineTroparion = 'default';
+var complineInsert = 'none';
+var complineMode = 'linked';
+function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
+function toggleOpts(btn){ var p=document.getElementById('opts-panel'); if(!p) return; var open=p.style.display!=='none'; p.style.display=open?'none':'block'; btn.innerHTML=open?'⚙ Service options ▸':'⚙ Service options ▾'; }
+// Orthodox Pascha (Julian computus, +13 days for 1900-2099) and the
+// tone of the week: Tone 1 from Thomas Sunday (Pascha + 7), cycling
+// 1-8. Verified against the OCA Sunday tones (Nov 15/22/29, Dec 6/13,
+// 2026: 7/8/1/2/3). Returns 0 during Bright Week (no tone appointed),
+// when the caller falls back to the default troparia.
+function orthodoxPascha(y){
+  var a=y%4, b=y%7, c=y%19;
+  var d=(19*c+15)%30;
+  var e=(2*a+4*b-d+34)%7;
+  var month=Math.floor((d+e+114)/31);
+  var day=((d+e+114)%31)+1;
+  var dt=new Date(y, month-1, day);
+  dt.setDate(dt.getDate()+13);
+  return dt;
+}
+function toneOfWeek(d){
+  var p=orthodoxPascha(d.getFullYear());
+  if(d<p) p=orthodoxPascha(d.getFullYear()-1);
+  var thomas=new Date(p.getFullYear(), p.getMonth(), p.getDate()+7);
+  var weeks=Math.floor((d-thomas)/604800000);
+  if(weeks<0) return 0;
+  return weeks%8+1;
+}
+function applyComplineTroparion(){
+  var def=document.getElementById('compline-trop-default');
+  var day=document.getElementById('compline-trop-day');
+  var sel=document.getElementById('compline-trop-select');
+  if(sel) sel.value=complineTroparion;
+  if(!def || !day) return;
+  if(complineTroparion!=='day'){ def.style.display=''; day.style.display='none'; return; }
+  var now=new Date();
+  var d=new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var keys=['sun','mon','tue','wed','thu','fri','sat'];
+  var key=keys[d.getDay()];
+  if(key==='sun'){
+    var t=toneOfWeek(d);
+    if(t===0){ def.style.display=''; day.style.display='none'; return; }
+    key='sun'+t;
+  }
+  def.style.display='none'; day.style.display='';
+  day.querySelectorAll('.compline-day-trop').forEach(function(el){
+    el.style.display = el.getAttribute('data-day')===key ? '' : 'none';
+  });
+}
+function setComplineTroparion(v, fromUser){
+  complineTroparion=v; applyComplineTroparion();
+  if(fromUser) _savePref('compline_troparion', v);
+}
+function applyComplineInsert(){
+  var sel=document.getElementById('compline-insert-select');
+  if(sel) sel.value=complineInsert;
+  var row=document.getElementById('compline-mode-row');
+  if(row) row.style.display = complineInsert!=='none' ? '' : 'none';
+  var slot=document.getElementById('compline-insert');
+  if(!slot) return;
+  if(complineInsert==='none'){ slot.innerHTML=''; return; }
+  if(complineMode==='embedded') return; // the app splices the text in natively
+  var title=complineInsert;
+  if(sel){ var o=sel.querySelector('option[value="'+complineInsert+'"]'); if(o) title=o.textContent; }
+  slot.innerHTML="<p class='rubric'>Read: <a class='insert-link' href='#' onclick=\"openComplineInsert(); return false;\">"+title+" ▸</a></p>";
+}
+function openComplineInsert(){
+  try{ if(window.ServiceApp && ServiceApp.openComplineInsert) ServiceApp.openComplineInsert(complineInsert); }catch(e){}
+}
+function setComplineInsert(v, fromUser){
+  complineInsert=v; applyComplineInsert();
+  if(fromUser){
+    _savePref('compline_insert', v);
+    // The app recomposes the page (embedded splice / slot state) and
+    // reloads it, restoring the scroll position.
+    try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
+  }
+}
+function setComplineMode(v, fromUser){
+  complineMode=v;
+  var sel=document.getElementById('compline-mode-select');
+  if(sel) sel.value=v;
+  if(fromUser){
+    _savePref('compline_mode', v);
+    try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){ applyComplineTroparion(); applyComplineInsert(); });
+</script>
+</body></html>
