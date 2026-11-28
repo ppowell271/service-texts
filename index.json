@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-28T03:42:40Z",
+  "generated": "2026-11-28T04:18:27Z",
   "sundays": [
     {
       "date": "2026-11-15",
@@ -624,6 +624,12 @@
       "category": "Daily Prayers",
       "file": "prayer-prayers-before-sleep.html",
       "listen": "https://www.youtube.com/watch?v=imeJWj1Pcu4"
+    },
+    {
+      "title": "Small Compline",
+      "short_title": "Small Compline",
+      "category": "Daily Prayers",
+      "file": "prayer-small-compline.html"
     },
     {
       "title": "The Order of Preparation for Holy Communion",
