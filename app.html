@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Liturgical Texts</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#7a1f1f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Liturgical Texts">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{
+  --burg:#7a1f1f; --ink:#1a1a1a; --bg:#ffffff; --line:#e6e0d5;
+  --darkbg:#171310; --darktext:#e9e2d4; --darkrose:#e2a3a3; --darkbtn:#2e2620;
+  --pdfbg:#f4ede1; --pdfedge:#c9b896;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--ink);background:var(--bg);height:100vh;height:100dvh;
+  display:flex;flex-direction:column;overflow:hidden}
+.screen{display:flex;flex-direction:column;height:100%;min-height:0}
+[hidden]{display:none!important}
+button{font:inherit;background:none;border:none;color:inherit;cursor:pointer;
+  -webkit-tap-highlight-color:transparent}
+.btn{border:1px solid var(--pdfedge);background:var(--pdfbg);border-radius:6px;
+  padding:8px 14px;font-size:15px}
+.btn:disabled{opacity:.55}
+.btn.square{width:48px;height:48px;padding:0;font-size:20px;display:flex;
+  align-items:center;justify-content:center}
+/* ---- list screen ---- */
+.list-header{display:flex;align-items:center;gap:8px;
+  padding:calc(10px + env(safe-area-inset-top)) 12px 6px}
+.list-header .title{flex:1;font-size:20px;color:var(--burg);font-weight:600}
+.tab-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:4px 12px 8px}
+.tab-scroll::-webkit-scrollbar{display:none}
+.tab-bar{display:inline-flex;border:2px solid var(--burg);border-radius:4px;overflow:hidden}
+.tab-bar button{padding:9px 16px;font-size:15px;color:var(--burg);white-space:nowrap;
+  border-left:1px solid var(--burg)}
+.tab-bar button:first-child{border-left:none}
+.tab-bar button.active{background:var(--burg);color:#fff}
+.trad-bar{display:flex;justify-content:center;gap:0;margin:0 12px 8px}
+.trad-bar button{padding:6px 22px;font-size:15px;color:var(--burg);
+  border:1px solid var(--burg)}
+.trad-bar button:first-child{border-radius:4px 0 0 4px}
+.trad-bar button:last-child{border-radius:0 4px 4px 0;border-left:none}
+.trad-bar button.active{background:var(--burg);color:#fff}
+.this-sunday{margin:0 12px 8px;padding:10px;color:var(--burg);font-size:16px;
+  border:1px solid var(--pdfedge);background:var(--pdfbg);border-radius:6px;text-align:left}
+.sync-status{padding:0 16px 6px;font-size:13px;color:#6b6252;min-height:18px}
+.list{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
+.row{display:flex;align-items:center;gap:8px;width:100%;text-align:left;
+  padding:13px 16px;font-size:16px;border-bottom:1px solid var(--line)}
+.row .grow{flex:1}
+.row.header{color:var(--burg);font-weight:700}
+.row.day.bold{font-weight:700}
+.row .spk{flex:none;color:var(--burg)}
+.install-tip{padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  font-size:13px;color:#6b6252;border-top:1px solid var(--line)}
+/* ---- reader screen ---- */
+.reader-toolbar{display:flex;align-items:center;gap:8px;
+  padding:calc(8px + env(safe-area-inset-top)) 12px 4px}
+.reader-toolbar .spacer{flex:1}
+.listen-wrap{position:relative;display:flex}
+.listen-plus{position:absolute;top:-2px;right:-2px;font-size:12px;font-weight:700;
+  color:var(--burg)}
+.seg-bar{display:flex;margin:4px 12px 6px;border:2px solid var(--burg);border-radius:4px;overflow:hidden}
+.seg-bar button{flex:1;padding:8px 2px;font-size:14px;color:var(--burg);white-space:nowrap;
+  border-left:1px solid var(--burg)}
+.seg-bar button:first-child{border-left:none}
+.seg-bar button.active{background:var(--burg);color:#fff}
+.return-bar{margin:0 12px 6px;padding:9px;color:var(--burg);font-size:15px;
+  border:1px solid var(--pdfedge);background:var(--pdfbg);border-radius:6px;text-align:left}
+#reader-frame{flex:1;width:100%;border:0;min-height:0;background:#fff}
+.find-bar{display:flex;align-items:center;gap:4px;padding:4px 8px;
+  border-top:1px solid var(--line)}
+.find-bar .count{flex:1;font-size:13px;padding-left:6px}
+.find-bar button{min-width:44px;padding:8px;font-size:16px}
+.next-bar{padding:12px;font-size:16px;color:var(--burg);text-align:center;
+  border-top:1px solid var(--line);padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+/* dark reader chrome (mirrors the Android app's dark mode) */
+.reader-dark{background:var(--darkbg);color:var(--darktext)}
+.reader-dark .btn{background:var(--darkbtn);border-color:#4a3f34;color:var(--darktext)}
+.reader-dark .seg-bar{border-color:var(--darkrose)}
+.reader-dark .seg-bar button{color:var(--darkrose);border-left-color:var(--darkrose)}
+.reader-dark .seg-bar button.active{background:var(--burg);color:#fff}
+.reader-dark .next-bar{color:var(--darkrose);border-top-color:#3a322a}
+.reader-dark .find-bar{border-top-color:#3a322a}
+.reader-dark .listen-plus{color:var(--darkrose)}
+.reader-dark .listen-wrap svg{fill:var(--darkrose)}
+.reader-dark #reader-frame{background:var(--darkbg)}
+/* ---- search screen ---- */
+.search-header{display:flex;align-items:center;gap:8px;
+  padding:calc(10px + env(safe-area-inset-top)) 12px 6px}
+.search-header input{flex:1;font-size:16px;padding:10px;border:1px solid var(--pdfedge);
+  border-radius:6px;background:#fff;color:var(--ink)}
+.search-status{padding:4px 16px;font-size:13px;color:#6b6252}
+.search-results{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding-bottom:env(safe-area-inset-bottom)}
+.hit{display:block;width:100%;text-align:left;padding:11px 16px;
+  border-bottom:1px solid var(--line)}
+.hit .t{font-size:15px;font-weight:600}
+.hit .s{font-size:13px;color:#4c463c;margin-top:2px;line-height:1.35}
+.hit .n{font-size:12px;color:#8a8172}
+/* ---- sheets, toast ---- */
+#sheet-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:40;
+  display:flex;align-items:flex-end;justify-content:center}
+#sheet{background:#fff;width:100%;max-width:560px;max-height:75dvh;overflow-y:auto;
+  border-radius:12px 12px 0 0;padding:10px 0 calc(10px + env(safe-area-inset-bottom))}
+#sheet .sheet-title{padding:8px 18px;font-weight:700;color:var(--burg);font-size:16px}
+#sheet .sheet-item{display:flex;width:100%;text-align:left;padding:13px 18px;font-size:16px;
+  border-top:1px solid var(--line);align-items:center;gap:8px}
+#sheet .sheet-item .check{margin-left:auto;color:var(--burg);font-weight:700}
+#sheet .sheet-body{padding:6px 18px 12px;font-size:14px;line-height:1.45}
+#sheet input[type=text]{width:100%;font-size:16px;padding:10px;margin:8px 0;
+  border:1px solid var(--pdfedge);border-radius:6px}
+#sheet .sheet-actions{display:flex;gap:8px;padding:6px 18px 10px;justify-content:flex-end}
+#sheet pre{white-space:pre-wrap;font-size:12px;margin:0}
+#toast{position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(24px + env(safe-area-inset-bottom));background:#2b2620;color:#f5efe2;
+  padding:10px 16px;border-radius:8px;font-size:14px;z-index:60;opacity:0;
+  pointer-events:none;transition:opacity .25s;max-width:88vw;text-align:center}
+#toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<div id="list-screen" class="screen">
+  <div class="list-header">
+    <div class="title">Liturgical Texts</div>
+    <button class="btn square" id="search-btn" aria-label="Search"></button>
+    <button class="btn" id="sync-btn">Sync</button>
+  </div>
+  <div class="tab-scroll" id="tab-scroll"><div class="tab-bar" id="tab-bar"></div></div>
+  <div class="trad-bar" id="trad-bar">
+    <button id="trad-oca">OCA</button><button id="trad-antiochian">Antiochian</button>
+  </div>
+  <button class="this-sunday" id="this-sunday-btn" hidden></button>
+  <div class="sync-status" id="sync-status"></div>
+  <div class="list" id="main-list"></div>
+  <div class="install-tip" id="install-tip" hidden>
+    Tip: tap the Share button, then “Add to Home Screen”, to install this as an app.
+  </div>
+</div>
+
+<div id="reader-screen" class="screen" hidden>
+  <div class="reader-toolbar">
+    <button class="btn square" id="back-btn" aria-label="Back">‹</button>
+    <div class="spacer"></div>
+    <div class="listen-wrap">
+      <button class="btn square" id="listen-btn" aria-label="Listen"></button>
+      <span class="listen-plus" id="listen-plus" hidden>+</span>
+    </div>
+    <button class="btn" id="pdf-btn">PDF</button>
+    <button class="btn square" id="menu-btn" aria-label="Reader options">⋮</button>
+  </div>
+  <div class="seg-bar" id="seg-bar">
+    <button id="seg-vespers">Vespers</button>
+    <button id="seg-matins">Matins</button>
+    <button id="seg-liturgy">Liturgy</button>
+    <button id="seg-hours">Hours</button>
+  </div>
+  <button class="return-bar" id="return-bar" hidden>← Return to Small Compline</button>
+  <iframe id="reader-frame" title="Service text"></iframe>
+  <div class="find-bar" id="find-bar" hidden>
+    <div class="count" id="find-count"></div>
+    <button id="find-prev" aria-label="Previous match">↑</button>
+    <button id="find-next" aria-label="Next match">↓</button>
+    <button id="find-close" aria-label="Close find">✕</button>
+  </div>
+  <button class="next-bar" id="next-bar" hidden></button>
+</div>
+
+<div id="search-screen" class="screen" hidden>
+  <div class="search-header">
+    <button class="btn square" id="search-back-btn" aria-label="Back">‹</button>
+    <input type="search" id="search-input" placeholder="Search service texts…"
+      autocomplete="off" autocorrect="off" autocapitalize="off">
+  </div>
+  <div class="search-status" id="search-status"></div>
+  <div class="search-results" id="search-results"></div>
+</div>
+
+<div id="sheet-backdrop" hidden><div id="sheet"></div></div>
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* Liturgical Texts — web (PWA) shell. Mirrors the Android app:
+   same index.json, same page files, same localStorage keys as the
+   app's SharedPreferences ("page_*", "scroll_*", "listen_*", ...). */
+
+// ---------- prefs ----------
+const P = {
+  get(k, d){ const v = localStorage.getItem(k);
+    return v === null ? (d === undefined ? null : d) : v; },
+  set(k, v){ try{ localStorage.setItem(k, v); }catch(e){} },
+  del(k){ localStorage.removeItem(k); }
+};
+const $ = id => document.getElementById(id);
+const BURG = '#7a1f1f';
+const SPEAKER_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="' + BURG +
+  '" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8' +
+  'a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';
+const SEARCH_SVG = '<svg width="20" height="20" viewBox="0 0 24 24" fill="' + BURG +
+  '" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>';
+
+// ---------- state ----------
+let sundays = [], akathists = [], paraklesis = [], prayers = [], canons = [];
+let listTab = P.get('list_tab', 'services');
+let tradition = P.get('tradition', 'oca');
+let expandedAkathistGroups = new Set(JSON.parse(P.get('expanded_akathist_groups', '[]')));
+let expandedPrayerGroups = new Set(JSON.parse(P.get('expanded_prayer_groups', '[]')));
+let darkMode = P.get('dark_mode', '0') === '1';
+let zoom = parseInt(P.get('zoom', '100'), 10) || 100;
+let upcomingDate = null, thisSunday = null;
+let syncing = false;
+let cur = null;            // open page descriptor
+let currentService = null; // for day pages
+let returnToCompline = false, returnToSearch = false;
+let pendingFind = null, pendingPrint = false;
+let sections = [];
+let findMatches = [], findIdx = 0;
+let searchGen = 0, currentQuery = '';
+let wakeLock = null;
+
+const TABS = [['services','Services'],['akathists','Akathists'],
+  ['paraklesis','Paraklesis'],['prayers','Prayers'],['canons','Canons'],
+  ['archive','Archive']];
+const GROUP_MIN = 3;
+const PAGES_CACHE = 'pages-v1';
+
+// ---------- small helpers ----------
+function esc(s){ return String(s).replace(/[&<>"']/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function toast(msg){
+  const t = $('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 3200);
+}
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') +
+    '-' + String(d.getDate()).padStart(2,'0');
+}
+function fmtDate(iso, withYear){
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-US', withYear
+    ? {weekday:'short', month:'short', day:'numeric', year:'numeric'}
+    : {weekday:'short', month:'short', day:'numeric'});
+}
+function sortKey(t){
+  t = t.trim();
+  if (t.startsWith('St. ')) return t.slice(4);
+  if (t.startsWith('The ')) return t.slice(4);
+  return t;
+}
+function isAntiochian(){ return tradition === 'antiochian'; }
+function dayAvailable(s){ return !isAntiochian() || !!s.antiochian; }
+function serviceFile(s, service){
+  if (isAntiochian()) return s.antiochian ? s.antiochian[service] : null;
+  if (service === 'vespers') return s.vespers;
+  if (service === 'liturgy') return s.liturgy;
+  if (service === 'matins') return s.matins || null;
+  return s.hours ? s.hours[service] : null;
+}
+function hasHours(s){ return !isAntiochian() && !!s.hours; }
+function hasMatins(s){
+  return isAntiochian() ? !!(s.antiochian && s.antiochian.matins) : !!s.matins;
+}
+function dayFile(s){ return isAntiochian() ? (s.antiochian ? s.antiochian.liturgy : null) : s.liturgy; }
+function serviceName(service){
+  return {vespers:'Vespers', matins:'Sunday Matins', liturgy:'Divine Liturgy',
+    first:'First Hour', third:'Third Hour', sixth:'Sixth Hour',
+    ninth:'Ninth Hour', third_sixth:'Third and Sixth Hours'}[service] || 'Service';
+}
+function nextServiceFor(service, hh, hm){
+  switch(service){
+    case 'vespers': return hh ? 'first' : 'liturgy';
+    case 'first': return hm ? 'matins' : 'third_sixth';
+    case 'matins': return hh ? 'third_sixth' : 'liturgy';
+    case 'third': return 'sixth';
+    case 'sixth': case 'third_sixth': return 'liturgy';
+    case 'ninth': return 'vespers';
+    default: return null;
+  }
+}
+function userListen(file){
+  if (!file) return null;
+  const v = P.get('listen_' + file);
+  return v ? v : null;
+}
+
+// ---------- index ----------
+function parseIndex(text){
+  const root = JSON.parse(text);
+  const days = [];
+  for (const key of ['sundays','feasts']){
+    for (const o of (root[key] || [])){
+      days.push({date:o.date, title:o.title, tone:o.tone, liturgy:o.liturgy,
+        vespers:o.vespers, hours:o.hours || null,
+        kind:o.type || (key === 'feasts' ? 'feast' : 'sunday'),
+        matins:o.matins || null, listen:o.listen || null,
+        antiochian:o.antiochian || null});
+    }
+  }
+  days.sort((a,b) => a.date < b.date ? -1 : a.date > b.date ? 1 :
+    ((a.kind === 'sunday' ? 0 : 1) - (b.kind === 'sunday' ? 0 : 1)));
+  sundays = days;
+  akathists = (root.akathists || []).map(o => ({title:o.title,
+    shortTitle:o.short_title || o.title, category:o.category || 'other',
+    file:o.file, listen:o.listen || null}));
+  paraklesis = (root.paraklesis || []).map(o => ({title:o.title, file:o.file,
+    listen:o.listen || null}));
+  prayers = (root.prayers || []).map(o => ({title:o.title,
+    shortTitle:o.short_title || o.title,
+    category:o.category || 'Other Prayers', file:o.file,
+    listen:o.listen || null}));
+  canons = (root.canons || []).map(o => ({title:o.title,
+    shortTitle:o.short_title || o.title, file:o.file,
+    listen:o.listen || null}));
+}
+function loadIndex(){
+  const text = P.get('index_text');
+  if (text){ try{ parseIndex(text); }catch(e){} }
+  const cal = new Date();
+  while (cal.getDay() !== 0) cal.setDate(cal.getDate() + 1);
+  upcomingDate = cal.getFullYear() + '-' + String(cal.getMonth()+1).padStart(2,'0') +
+    '-' + String(cal.getDate()).padStart(2,'0');
+  thisSunday = sundays.find(s => s.date === upcomingDate) || null;
+  const btn = $('this-sunday-btn');
+  if (thisSunday){
+    btn.textContent = (thisSunday.kind === 'feast' ? 'Feast · ' : 'This Sunday · ') +
+      fmtDate(thisSunday.date, false) + ' — ' + thisSunday.title;
+  }
+  refreshList();
+}
+
+// ---------- list ----------
+function buildTabs(){
+  const bar = $('tab-bar'); bar.innerHTML = '';
+  for (const [tab, label] of TABS){
+    const b = document.createElement('button');
+    b.textContent = label; b.dataset.tab = tab;
+    if (tab === listTab) b.classList.add('active');
+    b.onclick = () => setListTab(tab);
+    bar.appendChild(b);
+  }
+  const active = bar.querySelector('.active');
+  if (active) active.scrollIntoView({inline:'center', block:'nearest'});
+}
+function setListTab(tab){
+  listTab = tab; P.set('list_tab', tab); refreshList();
+}
+function setTradition(t){
+  tradition = t; P.set('tradition', t); refreshList();
+}
+function hasAudioDay(s){
+  return (!isAntiochian() && !!s.listen) || !!userListen(dayFile(s));
+}
+function refreshList(){
+  buildTabs();
+  $('trad-oca').classList.toggle('active', !isAntiochian());
+  $('trad-antiochian').classList.toggle('active', isAntiochian());
+  $('trad-bar').style.display =
+    (listTab === 'services' || listTab === 'archive') ? 'flex' : 'none';
+  $('this-sunday-btn').hidden =
+    !(listTab === 'services' && thisSunday && dayAvailable(thisSunday));
+  const today = todayStr();
+  const list = $('main-list'); list.innerHTML = '';
+  const addRow = (html, cls, onclick) => {
+    const b = document.createElement('button');
+    b.className = 'row ' + cls; b.innerHTML = html; b.onclick = onclick;
+    list.appendChild(b);
+  };
+  const spk = '<span class="spk">' + SPEAKER_SVG + '</span>';
+  if (listTab === 'akathists'){
+    const byCat = {};
+    for (const a of akathists) (byCat[a.category] = byCat[a.category] || []).push(a);
+    const order = [['lord','lord','Our Lord'],['theotokos','theotokos','The Theotokos'],
+      ['saint','saints','Saints']];
+    const secs = [], other = [];
+    for (const [cat, id, label] of order){
+      const items = byCat[cat] || [];
+      if (items.length >= GROUP_MIN)
+        secs.push([id, label, items.slice().sort((x,y) => sortKey(x.shortTitle).localeCompare(sortKey(y.shortTitle)))]);
+      else other.push(...items);
+    }
+    for (const cat in byCat)
+      if (!order.some(o => o[0] === cat)) other.push(...byCat[cat]);
+    if (other.length)
+      secs.push(['other','Other', other.sort((x,y) => sortKey(x.shortTitle).localeCompare(sortKey(y.shortTitle)))]);
+    for (const [id, label, items] of secs){
+      const exp = expandedAkathistGroups.has(id);
+      addRow('<span class="grow">' + (exp ? '▾ ' : '▸ ') + esc(label) +
+        ' (' + items.length + ')</span>', 'header', () => {
+          exp ? expandedAkathistGroups.delete(id) : expandedAkathistGroups.add(id);
+          P.set('expanded_akathist_groups', JSON.stringify([...expandedAkathistGroups]));
+          refreshList();
+        });
+      if (exp) for (const a of items)
+        addRow('<span class="grow">' + esc(a.shortTitle) + '</span>' +
+          ((a.listen || userListen(a.file)) ? spk : ''), '',
+          () => openAkathist(a));
+    }
+  } else if (listTab === 'prayers'){
+    const order = ['Daily Prayers','Troparia & Kontakia','Other Prayers'];
+    for (const label of order){
+      const items = label === 'Other Prayers'
+        ? prayers.filter(p => !order.slice(0,2).includes(p.category))
+        : prayers.filter(p => p.category === label);
+      const exp = expandedPrayerGroups.has(label);
+      addRow('<span class="grow">' + (exp ? '▾ ' : '▸ ') + esc(label) +
+        ' (' + items.length + ')</span>', 'header', () => {
+          exp ? expandedPrayerGroups.delete(label) : expandedPrayerGroups.add(label);
+          P.set('expanded_prayer_groups', JSON.stringify([...expandedPrayerGroups]));
+          refreshList();
+        });
+      if (exp) for (const p of items)
+        addRow('<span class="grow">' + esc(p.shortTitle) + '</span>' +
+          ((p.listen || userListen(p.file)) ? spk : ''), '',
+          () => openPrayer(p));
+    }
+  } else if (listTab === 'paraklesis'){
+    for (const p of paraklesis)
+      addRow('<span class="grow">' + esc(p.title) + '</span>' +
+        ((p.listen || userListen(p.file)) ? spk : ''), '',
+        () => openParaklesis(p));
+  } else if (listTab === 'canons'){
+    for (const c of canons)
+      addRow('<span class="grow">' + esc(c.shortTitle) + '</span>' +
+        ((c.listen || userListen(c.file)) ? spk : ''), '',
+        () => openCanon(c));
+  } else {
+    const days = sundays.filter(s => dayAvailable(s) &&
+      (listTab === 'archive' ? s.date < today : s.date >= today));
+    for (const s of days)
+      addRow('<span class="grow">' + esc(fmtDate(s.date, true)) + ' — ' +
+        esc(s.title) + '</span>' + (hasAudioDay(s) ? spk : ''),
+        'day' + (s.date === upcomingDate ? ' bold' : ''),
+        () => openDay(s, new Date().getDay() === 6 ? 'vespers' : 'liturgy'));
+  }
+}
+
+// ---------- sync ----------
+function collectFiles(root){
+  const files = [];
+  const add = f => { if (f) files.push(f); };
+  const days = [...(root.sundays || []), ...(root.feasts || [])];
+  for (const s of days){
+    const fs = [s.liturgy, s.vespers, s.matins,
+      ...Object.values(s.hours || {}), ...Object.values(s.antiochian || {})]
+      .filter(Boolean);
+    for (const f of fs){ add(f); add(f.replace(/\.html$/, '.pdf')); }
+  }
+  for (const key of ['akathists','paraklesis','prayers','canons'])
+    for (const o of (root[key] || [])){ add(o.file); add(o.file.replace(/\.html$/, '.pdf')); }
+  return files;
+}
+function appendSyncLog(block){
+  let log = P.get('sync_log', '');
+  log += block;
+  if (log.length > 20000) log = log.slice(-20000);
+  P.set('sync_log', log);
+}
+async function sync(silent){
+  if (syncing) return;
+  syncing = true;
+  const btn = $('sync-btn'), status = $('sync-status');
+  btn.disabled = true; btn.textContent = 'Syncing…';
+  const before = sundays.length ? sundays[sundays.length-1].date : null;
+  const log = [];
+  let downloaded = 0, failures = 0, indexWritten = false;
+  const stamp = () => new Date().toISOString().slice(0,19).replace('T',' ');
+  try{
+    const remoteText = await (await fetch('index.json', {cache:'reload'})).text();
+    const remote = JSON.parse(remoteText);
+    const localGen = P.get('index_generated', '');
+    const refreshAll = (remote.generated || '') !== localGen;
+    log.push('=== ' + stamp() + ' ' + (silent ? 'auto' : 'manual') + ' sync');
+    log.push('remote generated: ' + (remote.generated || '') +
+      '  local generated: ' + localGen + '  refreshAll: ' + refreshAll);
+    P.set('index_text', remoteText);
+    P.set('index_generated', remote.generated || '');
+    indexWritten = true;
+    const cache = await caches.open(PAGES_CACHE);
+    const files = collectFiles(remote);
+    let done = 0;
+    for (const f of files){
+      done++;
+      const url = new URL(f, location.href).href;
+      if (refreshAll || !(await cache.match(url))){
+        try{
+          const r = await fetch(url, {cache:'reload'});
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          await cache.put(url, r); downloaded++;
+        }catch(e){ failures++; log.push('FAIL ' + f + ' — ' + e.message); }
+      }
+      if (done % 20 === 0) btn.textContent = 'Syncing… ' + done + '/' + files.length;
+    }
+    log.push('downloaded ' + downloaded + ', failed ' + failures + ', index written: yes');
+    loadIndex();
+    const after = sundays.length ? sundays[sundays.length-1].date : null;
+    const msg = after ? 'Synced — through ' + after : 'Synced';
+    status.textContent = failures > 0
+      ? msg + ' (' + failures + ' files failed — tap Sync to retry)' : msg;
+    if (!silent || after !== before) toast(status.textContent);
+  }catch(e){
+    log.push((indexWritten ? 'ERROR' : 'FAIL index.json') + ' — ' + e.message);
+    if (!silent) toast('Sync failed: ' + e.message);
+    if (!P.get('index_text'))
+      status.textContent = 'Could not download the service texts — check your connection and tap Sync.';
+  }finally{
+    appendSyncLog(log.join('\n') + '\n\n');
+    syncing = false; btn.disabled = false; btn.textContent = 'Sync';
+  }
+}
+async function getPageText(file){
+  try{
+    const cache = await caches.open(PAGES_CACHE);
+    const hit = await cache.match(new URL(file, location.href).href);
+    if (hit) return await hit.text();
+    const r = await fetch(file);
+    return r.ok ? await r.text() : null;
+  }catch(e){ return null; }
+}
+
+// ---------- screens / navigation ----------
+function showScreen(name){
+  $('list-screen').hidden = name !== 'list';
+  $('reader-screen').hidden = name !== 'reader';
+  $('search-screen').hidden = name !== 'search';
+  if (name !== 'reader') releaseWakeLock();
+}
+function navTo(name){
+  if (history.state && history.state.screen === name){ showScreen(name); return; }
+  history.pushState({screen:name}, '');
+  showScreen(name);
+}
+window.addEventListener('popstate', e => {
+  const s = (e.state && e.state.screen) || 'list';
+  if (s === 'list') { saveScrollNow(); showScreen('list'); }
+  else if (s === 'search') { saveScrollNow(); showScreen('search'); }
+  else showScreen('reader');
+});
+function goBack(){
+  if (history.state && history.state.screen !== 'list') history.back();
+  else { saveScrollNow(); showScreen('list'); }
+}
+async function requestWakeLock(){
+  try{ if ('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen'); }
+  catch(e){}
+}
+function releaseWakeLock(){
+  try{ if (wakeLock) wakeLock.release(); }catch(e){}
+  wakeLock = null;
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && !$('reader-screen').hidden)
+    requestWakeLock();
+});
+
+// ---------- reader ----------
+const frame = () => $('reader-frame');
+function onOpenPage(){
+  returnToCompline = false; updateReturnBar();
+}
+function updateReturnBar(){ $('return-bar').hidden = !returnToCompline; }
+function openDay(s, service){
+  if (isAntiochian() && !s.antiochian){
+    toast(s.kind === 'feast'
+      ? "Antiochian texts for this feast aren't available yet"
+      : "Antiochian texts for this Sunday aren't available yet");
+    return;
+  }
+  openReader(s, service);
+}
+function openReader(s, service){
+  saveScrollNow(); onOpenPage();
+  const file = serviceFile(s, service);
+  if (!file){ toast("That page isn't available yet — tap Sync to download it."); return false; }
+  cur = {kind:'day', day:s, file:file,
+    listen: isAntiochian() ? null : s.listen, listenFile: dayFile(s)};
+  currentService = service;
+  $('seg-bar').style.display = 'flex';
+  $('seg-hours').style.display = hasHours(s) ? '' : 'none';
+  $('seg-matins').style.display = hasMatins(s) ? '' : 'none';
+  updateSegments(); updateNextBar(); updateListenButton();
+  navTo('reader'); requestWakeLock();
+  loadPage(file);
+  return true;
+}
+function openStandalone(kind, item){
+  saveScrollNow(); onOpenPage();
+  cur = {kind:kind, item:item, file:item.file,
+    listen:item.listen, listenFile:item.file};
+  currentService = null;
+  $('seg-bar').style.display = 'none';
+  $('next-bar').hidden = true;
+  updateListenButton();
+  navTo('reader'); requestWakeLock();
+  loadPage(item.file);
+  return true;
+}
+function openAkathist(a){ return openStandalone('akathist', a); }
+function openParaklesis(p){ return openStandalone('paraklesis', p); }
+function openCanon(c){ return openStandalone('canon', c); }
+function openPrayer(p){ return openStandalone('prayer', p); }
+function isCompline(p){ return p && p.file === 'prayer-small-compline.html'; }
+function openCompline(){
+  const p = prayers.find(isCompline);
+  if (p){ returnToCompline = false; openPrayer(p); }
+}
+function updateSegments(){
+  const map = {vespers:'seg-vespers', matins:'seg-matins', liturgy:'seg-liturgy'};
+  for (const k in map) $(map[k]).classList.toggle('active', currentService === k);
+  $('seg-hours').classList.toggle('active',
+    !['vespers','matins','liturgy'].includes(currentService));
+}
+function updateNextBar(){
+  const n = cur && cur.kind === 'day'
+    ? nextServiceFor(currentService, hasHours(cur.day), hasMatins(cur.day)) : null;
+  const bar = $('next-bar');
+  if (!n){ bar.hidden = true; return; }
+  bar.textContent = 'Next: ' + serviceName(n) + ' ▸';
+  bar.hidden = false;
+  bar.onclick = () => openReader(cur.day, n);
+}
+function loadPage(file){
+  hideFindBar();
+  const f = frame();
+  if (f.getAttribute('src') === file) f.contentWindow.location.reload();
+  else f.src = file;
+}
+function scrollKey(){
+  if (!cur) return null;
+  if (cur.kind === 'canon') return 'scroll_canon_' + cur.file.replace(/^canon-/,'').replace(/\.html$/,'');
+  if (cur.kind === 'prayer') return 'scroll_prayer_' + cur.file.replace(/^prayer-/,'').replace(/\.html$/,'');
+  if (cur.kind === 'paraklesis') return 'scroll_paraklesis_' + cur.file.replace(/^paraklesis-/,'').replace(/\.html$/,'');
+  if (cur.kind === 'akathist') return 'scroll_akathist_' + cur.file.replace(/^akathist-/,'').replace(/\.html$/,'');
+  if (cur.kind === 'day') return 'scroll_' + cur.day.date + '_' + currentService;
+  return null;
+}
+let scrollSaveTimer = null;
+function scheduleScrollSave(y){
+  const key = scrollKey(); if (!key) return;
+  clearTimeout(scrollSaveTimer);
+  scrollSaveTimer = setTimeout(() => P.set(key, String(y)), 400);
+}
+function saveScrollNow(){
+  const key = scrollKey(); if (!key) return;
+  try{
+    const y = frame().contentWindow.scrollY;
+    if (y > 0){ clearTimeout(scrollSaveTimer); P.set(key, String(y)); }
+  }catch(e){}
+}
+function restoreScroll(){
+  const key = scrollKey(); if (!key) return;
+  const y = parseInt(P.get(key, '0'), 10) || 0;
+  if (y > 0) try{ frame().contentWindow.scrollTo(0, y); }catch(e){}
+}
+// The body of a canon/akathist page, for the Compline Embedded
+// splice (same transform as the Android app): h1 -> h2, footer and
+// scripts removed.
+function extractBody(html){
+  let s = html;
+  const b = s.indexOf('<body');
+  if (b >= 0){ const gt = s.indexOf('>', b); if (gt >= 0) s = s.slice(gt + 1); }
+  const f = s.indexOf('<footer>');
+  if (f >= 0) s = s.slice(0, f);
+  s = s.replace(/<script[\s\S]*?<\/script>/g, '');
+  s = s.replace(/<h1>([\s\S]*?)<\/h1>/, '<h2>$1</h2>');
+  s = s.replace("<hr class='sep'>", '');
+  return s;
+}
+const DARK_CSS = '@media screen{' +
+  'body{background:#171310!important;color:#e9e2d4!important}' +
+  'h1{color:#e9e2d4!important}h2{color:#e2a3a3!important}' +
+  '.rubric{color:#e08e8e!important}.speaker{color:#e9e2d4!important}' +
+  '.speaker-clergy{color:#e2a3a3!important}.label{color:#e2a3a3!important}' +
+  '.verse{color:#e9e2d4!important}' +
+  'footer{color:#a89e8a!important;border-top-color:#555!important}' +
+  '.sep{border-top-color:#9c5a5a!important}' +
+  '.src-btn{border-color:#c98d8d!important;color:#eecfcf!important}' +
+  '.src-btn.active{background:#7a1f1f!important;color:#fff!important}}';
+function applyDarkMode(){
+  try{
+    const doc = frame().contentDocument;
+    const old = doc.getElementById('darkmode'); if (old) old.remove();
+    if (darkMode){
+      const s = doc.createElement('style'); s.id = 'darkmode';
+      s.textContent = DARK_CSS; doc.head.appendChild(s);
+    }
+  }catch(e){}
+  $('reader-screen').classList.toggle('reader-dark', darkMode);
+}
+function applyZoom(){
+  try{ frame().contentDocument.body.style.zoom = (zoom / 100); }catch(e){}
+}
+function setZoom(delta){
+  zoom = Math.max(50, Math.min(250, zoom + delta));
+  P.set('zoom', String(zoom)); applyZoom();
+}
+function applySavedPrefs(){
+  let win;
+  try{ win = frame().contentWindow; }catch(e){ return; }
+  const call = (fn, key) => {
+    const v = P.get('page_' + key);
+    if (v !== null && typeof win[fn] === 'function'){ try{ win[fn](v); }catch(e){} }
+  };
+  call('setPatron', 'patron');
+  call('setBgVersion', 'version');       // before source (see Android note)
+  call('setReadingSource', 'source');
+  call('setSilentPrayers', 'silent');
+  call('setThirdAntiphon', 'third');
+  call('setComplinePriest', 'compline_priest');
+  call('setComplineNight', 'compline_night');
+  call('setComplineEphraim', 'compline_ephraim');
+  call('setComplineMode', 'compline_mode');
+  call('setComplineCanonFile', 'compline_canon');
+  call('setComplineAkathistFile', 'compline_akathist');
+  call('setComplineInsert', 'compline_insert');
+  call('setComplineOptsOpen', 'compline_opts_open');
+}
+function injectBridges(){
+  let win;
+  try{ win = frame().contentWindow; }catch(e){ return; }
+  win.ServicePrefs = { save(k, v){ P.set('page_' + k, v); } };
+  win.ServiceApp = {
+    addPatron(){ toast('Adding saints is not available in the web version yet.'); },
+    addTranslation(){ toast('Adding translations is not available in the web version yet.'); },
+    complineReload(){
+      if (cur && cur.kind === 'prayer' && isCompline(cur.item)){
+        saveScrollNow(); loadPage(cur.file);
+      }
+    },
+    openComplineInsert(file){
+      const c = canons.find(x => x.file === file);
+      const a = akathists.find(x => x.file === file);
+      if (c){ openCanon(c); returnToCompline = true; updateReturnBar(); }
+      else if (a){ openAkathist(a); returnToCompline = true; updateReturnBar(); }
+      else toast("That page isn't downloaded yet — tap Sync to download it.");
+    }
+  };
+}
+async function onPageFinished(){
+  injectBridges();
+  // Small Compline, Embedded mode: splice the chosen canon/akathist
+  // into the page before applying saved options.
+  if (cur && cur.kind === 'prayer' && isCompline(cur.item)){
+    const insert = P.get('page_compline_insert');
+    const mode = P.get('page_compline_mode', 'linked');
+    if (mode === 'embedded' && insert && insert !== 'none'){
+      const html = await getPageText(insert);
+      if (html) try{
+        const slot = frame().contentDocument.getElementById('compline-insert');
+        if (slot){ slot.setAttribute('data-embedded', '1'); slot.innerHTML = extractBody(html); }
+      }catch(e){}
+    }
+  }
+  applySavedPrefs();
+  applyDarkMode(); applyZoom();
+  try{
+    const doc = frame().contentDocument;
+    sections = [...doc.querySelectorAll('h2')].map(h => h.textContent.trim());
+    doc.addEventListener('click', e => {
+      const a = e.target.closest('a');
+      if (a && /^https?:/.test(a.href) && !a.href.startsWith(location.origin)){
+        e.preventDefault(); window.open(a.href, '_blank');
+      }
+    });
+    frame().contentWindow.addEventListener('scroll',
+      () => scheduleScrollSave(frame().contentWindow.scrollY), {passive:true});
+  }catch(e){}
+  if (pendingFind){ const q = pendingFind; pendingFind = null; findInPage(q); }
+  else restoreScroll();
+  if (pendingPrint){ pendingPrint = false; printCurrent(); }
+}
+
+// ---------- find in page ----------
+function hideFindBar(){ $('find-bar').hidden = true; clearFind(); }
+function clearFind(){
+  findMatches = []; findIdx = 0;
+  try{
+    const doc = frame().contentDocument;
+    doc.querySelectorAll('mark.lt-find').forEach(m => {
+      m.replaceWith(doc.createTextNode(m.textContent));
+    });
+    doc.body.normalize();
+  }catch(e){}
+}
+function findInPage(q){
+  clearFind();
+  let doc;
+  try{ doc = frame().contentDocument; }catch(e){ return; }
+  if (!doc.getElementById('lt-find-style')){
+    const s = doc.createElement('style'); s.id = 'lt-find-style';
+    s.textContent = 'mark.lt-find{background:#ffe58a;color:inherit;padding:0}' +
+      'mark.lt-find.cur{background:#ffb347}';
+    doc.head.appendChild(s);
+  }
+  const ql = q.toLowerCase();
+  const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(n){
+      const p = n.parentElement;
+      if (!p || p.closest('script,style,select,mark.lt-find'))
+        return NodeFilter.FILTER_REJECT;
+      return n.textContent.toLowerCase().includes(ql)
+        ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }});
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes){
+    const text = node.textContent, tl = text.toLowerCase();
+    const frag = doc.createDocumentFragment();
+    let i = 0, idx;
+    while ((idx = tl.indexOf(ql, i)) >= 0){
+      if (idx > i) frag.appendChild(doc.createTextNode(text.slice(i, idx)));
+      const m = doc.createElement('mark'); m.className = 'lt-find';
+      m.textContent = text.slice(idx, idx + ql.length);
+      frag.appendChild(m);
+      i = idx + ql.length;
+    }
+    if (i < text.length) frag.appendChild(doc.createTextNode(text.slice(i)));
+    node.replaceWith(frag);
+  }
+  findMatches = [...doc.querySelectorAll('mark.lt-find')];
+  findIdx = 0;
+  $('find-bar').hidden = false;
+  updateFindBar();
+  if (findMatches.length) scrollToMatch(0);
+}
+function updateFindBar(){
+  $('find-count').textContent = findMatches.length === 0 ? 'No matches'
+    : (findIdx + 1) + ' of ' + findMatches.length;
+  findMatches.forEach((m, i) => m.classList.toggle('cur', i === findIdx));
+}
+function scrollToMatch(i){
+  if (!findMatches.length) return;
+  findIdx = (i + findMatches.length) % findMatches.length;
+  findMatches[findIdx].scrollIntoView({block:'center'});
+  updateFindBar();
+}
+
+// ---------- PDF / print ----------
+function isDefaultState(){
+  const source = P.get('page_source');
+  if (source !== null && source !== 'oca') return false;
+  const patron = P.get('page_patron');
+  if (patron !== null && patron !== 'st-innocent') return false;
+  const silent = P.get('page_silent');
+  if (silent !== null && silent !== 'summary') return false;
+  const third = P.get('page_third');
+  if (third !== null && third !== 'beatitudes') return false;
+  return true;
+}
+function complineDefaultState(){
+  const priest = P.get('page_compline_priest');
+  if (priest !== null && priest !== 'reader') return false;
+  const night = P.get('page_compline_night');
+  if (night !== null && night !== 'auto') return false;
+  const ephraim = P.get('page_compline_ephraim');
+  if (ephraim !== null && ephraim !== 'omit') return false;
+  const ins = P.get('page_compline_insert');
+  if (ins && ins !== 'none') return false;
+  return true;
+}
+function printCurrent(){
+  try{ frame().contentWindow.focus(); frame().contentWindow.print(); }catch(e){}
+}
+function onPdf(){
+  if (!cur) return;
+  let def = true;
+  if (cur.kind === 'day') def = isDefaultState();
+  else if (cur.kind === 'prayer' && isCompline(cur.item)) def = complineDefaultState();
+  if (def) window.open(cur.file.replace(/\.html$/, '.pdf'), '_blank');
+  else printCurrent();
+}
+
+// ---------- listen ----------
+function effectiveListen(){ return cur ? (userListen(cur.listenFile) || cur.listen) : null; }
+function updateListenButton(){
+  $('listen-plus').hidden = !!effectiveListen();
+}
+function openListen(){
+  const url = effectiveListen();
+  if (!url){ showAudioLinkDialog(); return; }
+  window.open(url, '_blank');
+}
+function showAudioLinkDialog(){
+  if (!cur) return;
+  const file = cur.listenFile;
+  const user = userListen(file);
+  const body = user ? 'Your link is used for this page.'
+    : cur.listen ? 'This page uses the default recording. Paste your own link to use it instead — saved on this device only.'
+    : 'Paste a link to a recording of this page — saved on this device only.';
+  const actions = [{label:'Cancel', fn:closeSheet}];
+  if (user) actions.push({label:'Remove', fn(){
+    P.del('listen_' + file); closeSheet(); updateListenButton(); refreshList();
+  }});
+  actions.push({label:'Save', fn(){
+    const v = $('audio-input').value.trim();
+    if (v) P.set('listen_' + file, v); else P.del('listen_' + file);
+    closeSheet(); updateListenButton(); refreshList();
+  }});
+  openSheet('Audio link',
+    '<div class="sheet-body">' + esc(body) +
+    '<input type="text" id="audio-input" placeholder="https://…" value="' +
+    esc(user || '') + '"></div>', actions);
+}
+
+// ---------- sheets & reader menu ----------
+function openSheet(title, bodyHtml, actions){
+  const sheet = $('sheet');
+  sheet.innerHTML = '<div class="sheet-title">' + esc(title) + '</div>' + bodyHtml +
+    (actions ? '<div class="sheet-actions">' +
+      actions.map((a,i) => '<button class="btn" data-act="' + i + '">' +
+        esc(a.label) + '</button>').join('') + '</div>' : '');
+  if (actions) sheet.querySelectorAll('[data-act]').forEach(b =>
+    b.onclick = () => actions[+b.dataset.act].fn());
+  $('sheet-backdrop').hidden = false;
+}
+function openSheetList(title, items){
+  const sheet = $('sheet');
+  sheet.innerHTML = '<div class="sheet-title">' + esc(title) + '</div>' +
+    items.map((it,i) => '<button class="sheet-item" data-i="' + i + '">' +
+      esc(it.label) + (it.check ? '<span class="check">✓</span>' : '') +
+      '</button>').join('');
+  sheet.querySelectorAll('.sheet-item').forEach(b =>
+    b.onclick = () => { closeSheet(); items[+b.dataset.i].fn(); });
+  $('sheet-backdrop').hidden = false;
+}
+function closeSheet(){ $('sheet-backdrop').hidden = true; }
+function showReaderMenu(){
+  openSheetList('Reader options', [
+    {label:'Jump to section…', fn:showSectionsDialog},
+    {label:'Dark mode', check:darkMode, fn(){
+      darkMode = !darkMode; P.set('dark_mode', darkMode ? '1' : '0'); applyDarkMode();
+    }},
+    {label:'Larger text', fn:() => setZoom(10)},
+    {label:'Smaller text', fn:() => setZoom(-10)},
+    {label:'Reset reading options', fn:resetReadingPrefs},
+    {label:'Audio link…', fn:showAudioLinkDialog}
+  ]);
+}
+function showSectionsDialog(){
+  if (!sections.length){ toast('No sections in this page.'); return; }
+  openSheetList('Jump to section', sections.map((t, i) => ({label:t, fn(){
+    try{ frame().contentDocument.querySelectorAll('h2')[i].scrollIntoView(); }catch(e){}
+  }})));
+}
+function resetReadingPrefs(){
+  for (const k of ['page_source','page_version','page_patron','page_silent','page_third'])
+    P.del(k);
+  try{
+    const win = frame().contentWindow;
+    if (typeof win.setPatron === 'function') win.setPatron('st-innocent');
+    if (typeof win.setReadingSource === 'function') win.setReadingSource('oca');
+    if (typeof win.setSilentPrayers === 'function') win.setSilentPrayers('summary');
+    if (typeof win.setThirdAntiphon === 'function') win.setThirdAntiphon('beatitudes');
+  }catch(e){}
+  toast('Reading options reset to defaults');
+}
+function showHoursDialog(s){
+  const hours = s.hours;
+  if (!hours){
+    toast(s.kind === 'feast'
+      ? 'Feasts have Vespers and Liturgy only — no Hours pages.'
+      : 'No Hours pages for this Sunday yet — tap Sync to download them.');
+    return;
+  }
+  const items = [['First Hour','first'],['Third and Sixth Hours','third_sixth'],
+    ['Third Hour','third'],['Sixth Hour','sixth'],['Ninth Hour','ninth']]
+    .filter(([,k]) => hours[k]);
+  if (!items.length){
+    toast('No Hours pages for this Sunday yet — tap Sync to download them.');
+    return;
+  }
+  openSheetList('Hours — ' + s.date,
+    items.map(([label,k]) => ({label, fn:() => openReader(s, k)})));
+}
+function showSyncLog(){
+  openSheet('Sync log', '<div class="sheet-body"><pre>' +
+    esc(P.get('sync_log', '(no syncs yet)')) + '</pre></div>',
+    [{label:'Clear', fn(){ P.del('sync_log'); closeSheet(); }},
+     {label:'Close', fn:closeSheet}]);
+}
+
+// ---------- search ----------
+function searchDocs(){
+  const docs = [];
+  for (const s of sundays)
+    for (const service of ['vespers','matins','liturgy','first','third','sixth','ninth','third_sixth']){
+      const f = serviceFile(s, service);
+      if (f) docs.push({file:f, title:s.title + ' — ' + serviceName(service),
+        section:'Services', order:0, open:() => openReader(s, service)});
+    }
+  for (const a of akathists)
+    docs.push({file:a.file, title:a.shortTitle, section:'Akathists', order:1,
+      open:() => openAkathist(a)});
+  for (const p of paraklesis)
+    docs.push({file:p.file, title:p.title, section:'Paraklesis', order:2,
+      open:() => openParaklesis(p)});
+  for (const p of prayers)
+    docs.push({file:p.file, title:p.shortTitle, section:'Prayers', order:3,
+      open:() => openPrayer(p)});
+  for (const c of canons)
+    docs.push({file:c.file, title:c.shortTitle, section:'Canons', order:4,
+      open:() => openCanon(c)});
+  return docs;
+}
+function pageText(html){
+  const d = new DOMParser().parseFromString(html, 'text/html');
+  d.querySelectorAll('script,style,select').forEach(e => e.remove());
+  return (d.body ? d.body.textContent : '').replace(/\s+/g, ' ').trim();
+}
+function boldQuery(text, q){
+  const tl = text.toLowerCase(), ql = q.toLowerCase();
+  let out = '', i = 0, idx;
+  while ((idx = tl.indexOf(ql, i)) >= 0){
+    out += esc(text.slice(i, idx)) + '<b>' + esc(text.slice(idx, idx + ql.length)) + '</b>';
+    i = idx + ql.length;
+  }
+  return out + esc(text.slice(i));
+}
+async function runSearch(qRaw){
+  const q = qRaw.trim();
+  currentQuery = q;
+  const gen = ++searchGen;
+  const status = $('search-status'), results = $('search-results');
+  if (q.length < 2){
+    results.innerHTML = '';
+    status.textContent = q ? 'Type at least 2 characters' : '';
+    return;
+  }
+  status.textContent = 'Searching…';
+  const ql = q.toLowerCase();
+  const hits = [];
+  for (const doc of searchDocs()){
+    if (gen !== searchGen) return;
+    const html = await getPageText(doc.file);
+    if (!html) continue;
+    const text = pageText(html), tl = text.toLowerCase();
+    const idx = tl.indexOf(ql);
+    if (idx < 0) continue;
+    let count = 0, i = idx;
+    while (i >= 0){ count++; i = tl.indexOf(ql, i + ql.length); }
+    const from = Math.max(0, idx - 60), to = Math.min(text.length, idx + ql.length + 60);
+    const snippet = (from > 0 ? '…' : '') + text.slice(from, to).trim() +
+      (to < text.length ? '…' : '');
+    hits.push({doc, snippet, count, titleHit:doc.title.toLowerCase().includes(ql)});
+  }
+  if (gen !== searchGen) return;
+  hits.sort((a,b) => (b.titleHit - a.titleHit) || (a.doc.order - b.doc.order) ||
+    a.doc.title.toLowerCase().localeCompare(b.doc.title.toLowerCase()));
+  results.innerHTML = '';
+  for (const h of hits){
+    const b = document.createElement('button');
+    b.className = 'hit';
+    b.innerHTML = '<div class="t">' + boldQuery(h.doc.title, q) +
+      ' <span class="n">' + h.count + '×</span></div><div class="s">' +
+      boldQuery(h.snippet, q) + '</div>';
+    b.onclick = () => {
+      pendingFind = q; returnToSearch = true;
+      if (h.doc.open()) history.replaceState({screen:'reader'}, '');
+    };
+    results.appendChild(b);
+  }
+  status.textContent = hits.length === 0 ? 'No matches for “' + q + '”'
+    : hits.length === 1 ? '1 page' : hits.length + ' pages';
+}
+
+// ---------- wiring ----------
+$('search-btn').innerHTML = SEARCH_SVG;
+$('listen-btn').innerHTML = SPEAKER_SVG;
+$('sync-btn').onclick = () => sync(false);
+let syncPressTimer = null;
+$('sync-btn').addEventListener('touchstart', () => {
+  syncPressTimer = setTimeout(showSyncLog, 600);
+}, {passive:true});
+$('sync-btn').addEventListener('touchend', () => clearTimeout(syncPressTimer));
+$('sync-btn').addEventListener('contextmenu', e => { e.preventDefault(); showSyncLog(); });
+$('trad-oca').onclick = () => setTradition('oca');
+$('trad-antiochian').onclick = () => setTradition('antiochian');
+$('this-sunday-btn').onclick = () => {
+  if (thisSunday)
+    openDay(thisSunday, new Date().getDay() === 6 ? 'vespers' : 'liturgy');
+};
+$('search-btn').onclick = () => {
+  navTo('search');
+  setTimeout(() => $('search-input').focus(), 50);
+};
+$('search-back-btn').onclick = goBack;
+let searchTimer = null;
+$('search-input').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  const v = e.target.value;
+  searchTimer = setTimeout(() => runSearch(v), 300);
+});
+$('back-btn').onclick = () => {
+  if (returnToSearch){
+    returnToSearch = false; saveScrollNow();
+    history.replaceState({screen:'search'}, ''); showScreen('search');
+  } else goBack();
+};
+$('return-bar').onclick = openCompline;
+$('listen-btn').onclick = openListen;
+$('pdf-btn').onclick = onPdf;
+$('menu-btn').onclick = showReaderMenu;
+$('seg-vespers').onclick = () => cur && openReader(cur.day, 'vespers');
+$('seg-matins').onclick = () => cur && openReader(cur.day, 'matins');
+$('seg-liturgy').onclick = () => cur && openReader(cur.day, 'liturgy');
+$('seg-hours').onclick = () => cur && showHoursDialog(cur.day);
+$('find-prev').onclick = () => scrollToMatch(findIdx - 1);
+$('find-next').onclick = () => scrollToMatch(findIdx + 1);
+$('find-close').onclick = hideFindBar;
+$('sheet-backdrop').addEventListener('click', e => {
+  if (e.target === $('sheet-backdrop')) closeSheet();
+});
+frame().addEventListener('load', () => { if (cur) onPageFinished(); });
+
+// ---------- init ----------
+history.replaceState({screen:'list'}, '');
+loadIndex();
+applyDarkMode();
+if (!window.matchMedia('(display-mode: standalone)').matches &&
+    /iPhone|iPad|iPod/.test(navigator.userAgent))
+  $('install-tip').hidden = false;
+if ('serviceWorker' in navigator)
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+if (!P.get('index_text')){
+  $('sync-status').textContent = 'Downloading service texts…';
+  sync(false);
+} else {
+  sync(true);
+}
+</script>
+</body>
+</html>
