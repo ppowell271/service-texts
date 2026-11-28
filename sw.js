@@ -1,9 +1,9 @@
 // Liturgical Texts service worker: offline shell + page cache.
-// 20261128T172117Z is replaced by publish_site.py with the index
+// 20261128T172854Z is replaced by publish_site.py with the index
 // 'generated' stamp on every publish, so each publish rolls the
 // shell cache. The pages cache is managed by the app's own sync
 // (it re-downloads everything when the index stamp changes).
-const SHELL_CACHE = 'shell-20261128T172117Z';
+const SHELL_CACHE = 'shell-20261128T172854Z';
 const PAGES_CACHE = 'pages-v1';
 const SHELL = ['./app.html', './manifest.webmanifest', './icon-192.png',
                './icon-512.png', './apple-touch-icon.png'];
