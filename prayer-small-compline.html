@@ -6,13 +6,13 @@ p{margin:.5em 0}
 footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;padding-top:1em}
 .sep{border:none;border-top:4px double #7a1f1f;margin:1.2em 0 .2em}
 @media print{.src-toggle,.opts-btn{display:none}}
-.src-toggle{margin:1em 0}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
+.src-toggle{margin:1em 0}.src-btn{font:inherit;font-size:.85em;padding:.25em .8em;margin-right:.4em;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.src-btn.active{background:#7a1f1f;color:#fff}.src-select{font:inherit;font-size:.85em;padding:.25em .4em;border:1px solid #7a1f1f;background:#fff;color:#7a1f1f;border-radius:1em;cursor:pointer}
 .opts-btn{font:inherit;font-size:.85em;padding:.25em .9em;margin:.4em 0;border:1px solid #7a1f1f;background:transparent;color:#7a1f1f;border-radius:1em;cursor:pointer}.opts-panel{margin:.2em 0}
 .insert-link{color:#7a1f1f;font-weight:bold}
 @media print{.opts-panel{display:none}}</style></head><body>
 <h1>Small Compline</h1>
 <hr class='sep'>
-<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Troparion:&nbsp;</span><select class='src-select' id='compline-trop-select' onchange="setComplineTroparion(this.value, true)"><option value='default' selected>Default troparia</option><option value='day'>Troparion of the day</option></select></div><div class='src-toggle'><span class='rubric'>Canon or Akathist:&nbsp;</span><select class='src-select' id='compline-insert-select' onchange="setComplineInsert(this.value, true)"><option value='none' selected>None</option><optgroup label='Canons'><option value='canon-supplicatory-canon-to-our-lord-jesus-christ.html'>Our Lord Jesus Christ</option><option value='canon-supplicatory-canon-to-the-most-holy-theotokos.html'>The Most Holy Theotokos</option><option value='canon-canon-to-the-guardian-angel.html'>The Guardian Angel</option><option value='canon-canon-of-repentance-to-our-lord-jesus-christ.html'>Repentance to Our Lord Jesus Christ</option></optgroup><optgroup label='Akathists — Our Lord'><option value='akathist-preparation-for-nativity.html'>Preparation for the Nativity</option><option value='akathist-nativity-of-christ.html'>Nativity of Christ</option><option value='akathist-nativity-of-christ-archaic.html'>Nativity of Christ (Archaic Text)</option><option value='akathist-glory-to-god-for-all-things.html'>Thanksgiving (Glory to God for All Things)</option><option value='akathist-akathist-to-our-sweetest-lord-jesus.html'>Our Sweetest Lord Jesus</option><option value='akathist-jesus-conqueror-of-death.html'>Jesus, Conqueror of Death</option><option value='akathist-hymn-of-gratitude.html'>Hymn of Gratitude</option><option value='akathist-light-to-those-in-darkness.html'>Light to Those in Darkness</option><option value='akathist-life-bearing-tomb.html'>Life-bearing Tomb</option><option value='akathist-divine-passion.html'>Divine Passion</option><option value='akathist-intercessory-prayer.html'>Intercessory Prayer</option></optgroup><optgroup label='Akathists — The Theotokos'><option value='akathist-theotokos-joy-of-all-who-sorrow.html'>The Theotokos, Joy of All Who Sorrow</option><option value='akathist-tikhvin-icon.html'>The Wonderworking Tikhvin Icon of the Mother of God</option><option value='akathist-our-lady-of-sitka.html'>Our Lady of Sitka</option><option value='akathist-theotokos.html'>The Most Holy Theotokos</option><option value='akathist-theotokos-nurturer-of-children.html'>Theotokos, Nurturer of Children</option><option value='akathist-theotokos-inexhaustible-cup.html'>Theotokos, the Inexhaustible Cup</option><option value='akathist-dormition-of-the-theotokos.html'>Dormition of the Theotokos</option><option value='akathist-our-lady-of-kazan.html'>Our Lady of Kazan</option></optgroup><optgroup label='Akathists — Saints'><option value='akathist-all-north-american-saints.html'>All Saints of North America</option><option value='akathist-st-herman-of-alaska.html'>St. Herman of Alaska</option><option value='akathist-st-innocent-of-moscow.html'>St. Innocent of Moscow</option><option value='akathist-st-jacob-of-alaska.html'>St. Jacob of Alaska</option><option value='akathist-st-nicholas.html'>St. Nicholas of Myra</option><option value='akathist-st-innocent-life.html'>St. Innocent of Moscow (Life)</option><option value='akathist-st-john-chrysostom.html'>St. John Chrysostom</option><option value='akathist-st-panteleimon.html'>St. Panteleimon the Great Martyr</option><option value='akathist-st-james-brother-of-the-lord.html'>St. James the Brother of the Lord</option><option value='akathist-st-daniel-the-prophet.html'>St. Daniel the Prophet</option><option value='akathist-st-elizabeth-new-martyr.html'>St. Elizabeth the New Martyr</option><option value='akathist-st-tikhon-patriarch-of-moscow.html'>St. Tikhon, Patriarch of Moscow</option><option value='akathist-st-john-the-forerunner.html'>St. John the Forerunner</option><option value='akathist-st-andrew-first-called.html'>St. Andrew the First-Called</option><option value='akathist-st-mary-of-egypt.html'>St. Mary of Egypt</option><option value='akathist-st-gregory-palamas.html'>St. Gregory Palamas</option><option value='akathist-holy-myrrhbearers.html'>Holy Myrrhbearers</option><option value='akathist-joachim-and-anna.html'>Sts. Joachim and Anna</option><option value='akathist-three-holy-hierarchs.html'>Three Holy Hierarchs</option><option value='akathist-st-matthew.html'>St. Matthew</option><option value='akathist-st-anthony-the-great.html'>St. Anthony the Great</option><option value='akathist-st-alexis-of-wilkes-barre.html'>St. Alexis of Wilkes-Barre</option><option value='akathist-st-john-of-chicago.html'>St. John of Chicago</option><option value='akathist-st-macarius-the-great.html'>St. Macarius the Great</option><option value='akathist-st-luke-the-evangelist.html'>St. Luke the Evangelist</option><option value='akathist-st-john-the-theologian.html'>St. John the Theologian</option><option value='akathist-st-john-of-kronstadt.html'>St. John of Kronstadt</option><option value='akathist-st-paisios-the-athonite.html'>St. Paisios the Athonite</option><option value='akathist-st-maximos-the-hut-burner.html'>St. Maximos the Hut-Burner</option><option value='akathist-st-david-the-king-and-prophet.html'>David the King and Prophet</option><option value='akathist-st-joseph-the-betrothed.html'>Joseph the Betrothed</option><option value='akathist-st-raphael-of-brooklyn.html'>Raphael of Brooklyn</option><option value='akathist-st-sava-of-serbia.html'>Sava of Serbia</option><option value='akathist-ss-peter-and-paul.html'>Peter and Paul</option><option value='akathist-st-demetrios-the-great-martyr.html'>Demetrios the Great Martyr</option><option value='akathist-st-mary-magdalene.html'>Mary Magdalene</option><option value='akathist-st-nektarios-of-aegina.html'>Nektarios of Aegina</option><option value='akathist-st-xenia-of-st-petersburg.html'>Xenia of St. Petersburg</option><option value='akathist-st-charalampos.html'>Charalampos (Haralambos)</option><option value='akathist-ss-simeon-and-anna.html'>Simeon and Anna</option><option value='akathist-st-sophrony-of-essex.html'>Sophrony of Essex</option><option value='akathist-st-nikiforos-the-leper.html'>Nikiforos the Leper</option><option value='akathist-st-sophia-faith-hope-and-love.html'>Sophia, Faith, Hope and Love</option><option value='akathist-twelve-apostles.html'>Twelve Apostles</option><option value='akathist-st-varus-the-martyr.html'>Varus the Martyr</option></optgroup><optgroup label='Akathists — Other'><option value='akathist-forgiveness-sunday.html'>Forgiveness Sunday</option><option value='akathist-elevation-of-the-cross.html'>Elevation of the Cross</option><option value='akathist-precious-cross.html'>The Precious Cross</option><option value='akathist-guardian-angel.html'>The Guardian Angel</option></optgroup></select></div><div class='src-toggle' id='compline-mode-row' style='display:none'><span class='rubric'>Display:&nbsp;</span><select class='src-select' id='compline-mode-select' onchange="setComplineMode(this.value, true)"><option value='linked' selected>Linked</option><option value='embedded'>Embedded</option></select></div></div>
+<button class='opts-btn' onclick="toggleOpts(this)">⚙ Service options ▸</button><div class='opts-panel' id='opts-panel' style='display:none'><div class='src-toggle'><span class='rubric'>Troparion:&nbsp;</span><button class='src-btn active' id='compline-trop-default-btn' onclick="setComplineTroparion('default', true)">Default troparia</button><button class='src-btn' id='compline-trop-day-btn' onclick="setComplineTroparion('day', true)">Troparion of the day</button></div><div class='src-toggle'><span class='rubric'>Canon or Akathist:&nbsp;</span><button class='src-btn active' id='compline-kind-none' onclick="setComplineKind('none', true)">None</button><button class='src-btn' id='compline-kind-canon' onclick="setComplineKind('canon', true)">Canon</button><button class='src-btn' id='compline-kind-akathist' onclick="setComplineKind('akathist', true)">Akathist</button></div><div class='src-toggle' id='compline-canon-row' style='display:none'><span class='rubric'>Canon:&nbsp;</span><select class='src-select' id='compline-canon-select' onchange="setComplineCanon(this.value, true)"><option value='canon-supplicatory-canon-to-our-lord-jesus-christ.html'>Our Lord Jesus Christ</option><option value='canon-supplicatory-canon-to-the-most-holy-theotokos.html'>The Most Holy Theotokos</option><option value='canon-canon-to-the-guardian-angel.html'>The Guardian Angel</option><option value='canon-canon-of-repentance-to-our-lord-jesus-christ.html'>Repentance to Our Lord Jesus Christ</option></select></div><div class='src-toggle' id='compline-akathist-row' style='display:none'><span class='rubric'>Akathist:&nbsp;</span><select class='src-select' id='compline-akathist-select' onchange="setComplineAkathist(this.value, true)"><optgroup label='Our Lord'><option value='akathist-preparation-for-nativity.html'>Preparation for the Nativity</option><option value='akathist-nativity-of-christ.html'>Nativity of Christ</option><option value='akathist-nativity-of-christ-archaic.html'>Nativity of Christ (Archaic Text)</option><option value='akathist-glory-to-god-for-all-things.html'>Thanksgiving (Glory to God for All Things)</option><option value='akathist-akathist-to-our-sweetest-lord-jesus.html'>Our Sweetest Lord Jesus</option><option value='akathist-jesus-conqueror-of-death.html'>Jesus, Conqueror of Death</option><option value='akathist-hymn-of-gratitude.html'>Hymn of Gratitude</option><option value='akathist-light-to-those-in-darkness.html'>Light to Those in Darkness</option><option value='akathist-life-bearing-tomb.html'>Life-bearing Tomb</option><option value='akathist-divine-passion.html'>Divine Passion</option><option value='akathist-intercessory-prayer.html'>Intercessory Prayer</option></optgroup><optgroup label='The Theotokos'><option value='akathist-theotokos-joy-of-all-who-sorrow.html'>The Theotokos, Joy of All Who Sorrow</option><option value='akathist-tikhvin-icon.html'>The Wonderworking Tikhvin Icon of the Mother of God</option><option value='akathist-our-lady-of-sitka.html'>Our Lady of Sitka</option><option value='akathist-theotokos.html'>The Most Holy Theotokos</option><option value='akathist-theotokos-nurturer-of-children.html'>Theotokos, Nurturer of Children</option><option value='akathist-theotokos-inexhaustible-cup.html'>Theotokos, the Inexhaustible Cup</option><option value='akathist-dormition-of-the-theotokos.html'>Dormition of the Theotokos</option><option value='akathist-our-lady-of-kazan.html'>Our Lady of Kazan</option></optgroup><optgroup label='Saints'><option value='akathist-all-north-american-saints.html'>All Saints of North America</option><option value='akathist-st-herman-of-alaska.html'>St. Herman of Alaska</option><option value='akathist-st-innocent-of-moscow.html'>St. Innocent of Moscow</option><option value='akathist-st-jacob-of-alaska.html'>St. Jacob of Alaska</option><option value='akathist-st-nicholas.html'>St. Nicholas of Myra</option><option value='akathist-st-innocent-life.html'>St. Innocent of Moscow (Life)</option><option value='akathist-st-john-chrysostom.html'>St. John Chrysostom</option><option value='akathist-st-panteleimon.html'>St. Panteleimon the Great Martyr</option><option value='akathist-st-james-brother-of-the-lord.html'>St. James the Brother of the Lord</option><option value='akathist-st-daniel-the-prophet.html'>St. Daniel the Prophet</option><option value='akathist-st-elizabeth-new-martyr.html'>St. Elizabeth the New Martyr</option><option value='akathist-st-tikhon-patriarch-of-moscow.html'>St. Tikhon, Patriarch of Moscow</option><option value='akathist-st-john-the-forerunner.html'>St. John the Forerunner</option><option value='akathist-st-andrew-first-called.html'>St. Andrew the First-Called</option><option value='akathist-st-mary-of-egypt.html'>St. Mary of Egypt</option><option value='akathist-st-gregory-palamas.html'>St. Gregory Palamas</option><option value='akathist-holy-myrrhbearers.html'>Holy Myrrhbearers</option><option value='akathist-joachim-and-anna.html'>Sts. Joachim and Anna</option><option value='akathist-three-holy-hierarchs.html'>Three Holy Hierarchs</option><option value='akathist-st-matthew.html'>St. Matthew</option><option value='akathist-st-anthony-the-great.html'>St. Anthony the Great</option><option value='akathist-st-alexis-of-wilkes-barre.html'>St. Alexis of Wilkes-Barre</option><option value='akathist-st-john-of-chicago.html'>St. John of Chicago</option><option value='akathist-st-macarius-the-great.html'>St. Macarius the Great</option><option value='akathist-st-luke-the-evangelist.html'>St. Luke the Evangelist</option><option value='akathist-st-john-the-theologian.html'>St. John the Theologian</option><option value='akathist-st-john-of-kronstadt.html'>St. John of Kronstadt</option><option value='akathist-st-paisios-the-athonite.html'>St. Paisios the Athonite</option><option value='akathist-st-maximos-the-hut-burner.html'>St. Maximos the Hut-Burner</option><option value='akathist-st-david-the-king-and-prophet.html'>David the King and Prophet</option><option value='akathist-st-joseph-the-betrothed.html'>Joseph the Betrothed</option><option value='akathist-st-raphael-of-brooklyn.html'>Raphael of Brooklyn</option><option value='akathist-st-sava-of-serbia.html'>Sava of Serbia</option><option value='akathist-ss-peter-and-paul.html'>Peter and Paul</option><option value='akathist-st-demetrios-the-great-martyr.html'>Demetrios the Great Martyr</option><option value='akathist-st-mary-magdalene.html'>Mary Magdalene</option><option value='akathist-st-nektarios-of-aegina.html'>Nektarios of Aegina</option><option value='akathist-st-xenia-of-st-petersburg.html'>Xenia of St. Petersburg</option><option value='akathist-st-charalampos.html'>Charalampos (Haralambos)</option><option value='akathist-ss-simeon-and-anna.html'>Simeon and Anna</option><option value='akathist-st-sophrony-of-essex.html'>Sophrony of Essex</option><option value='akathist-st-nikiforos-the-leper.html'>Nikiforos the Leper</option><option value='akathist-st-sophia-faith-hope-and-love.html'>Sophia, Faith, Hope and Love</option><option value='akathist-twelve-apostles.html'>Twelve Apostles</option><option value='akathist-st-varus-the-martyr.html'>Varus the Martyr</option></optgroup><optgroup label='Other'><option value='akathist-forgiveness-sunday.html'>Forgiveness Sunday</option><option value='akathist-elevation-of-the-cross.html'>Elevation of the Cross</option><option value='akathist-precious-cross.html'>The Precious Cross</option><option value='akathist-guardian-angel.html'>The Guardian Angel</option></optgroup></select></div><div class='src-toggle' id='compline-mode-row' style='display:none'><span class='rubric'>Display:&nbsp;</span><select class='src-select' id='compline-mode-select' onchange="setComplineMode(this.value, true)"><option value='linked' selected>Linked</option><option value='embedded'>Embedded</option></select></div></div>
 <p>Through the prayers of our holy Fathers, Lord Jesus Christ our God, have mercy on us and save us. Amen.</p>
 <h2>Trisagion Prayers</h2>
 <p>Glory to Thee, our God, glory to Thee.</p>
@@ -160,6 +160,8 @@ footer{margin-top:3em;color:#777;font-size:.85em;border-top:1px solid #ccc;paddi
 <script>
 var complineTroparion = 'default';
 var complineInsert = 'none';
+var complineCanonFile = '';
+var complineAkathistFile = '';
 var complineMode = 'linked';
 function _savePref(k,v){ try{ if(window.ServicePrefs) ServicePrefs.save(k,v); }catch(e){} }
 function toggleOpts(btn){ var p=document.getElementById('opts-panel'); if(!p) return; var open=p.style.display!=='none'; p.style.display=open?'none':'block'; btn.innerHTML=open?'⚙ Service options ▸':'⚙ Service options ▾'; }
@@ -189,8 +191,10 @@ function toneOfWeek(d){
 function applyComplineTroparion(){
   var def=document.getElementById('compline-trop-default');
   var day=document.getElementById('compline-trop-day');
-  var sel=document.getElementById('compline-trop-select');
-  if(sel) sel.value=complineTroparion;
+  var bd=document.getElementById('compline-trop-default-btn');
+  var by=document.getElementById('compline-trop-day-btn');
+  if(bd) bd.classList.toggle('active', complineTroparion==='default');
+  if(by) by.classList.toggle('active', complineTroparion==='day');
   if(!def || !day) return;
   if(complineTroparion!=='day'){ def.style.display=''; day.style.display='none'; return; }
   var now=new Date();
@@ -211,33 +215,91 @@ function setComplineTroparion(v, fromUser){
   complineTroparion=v; applyComplineTroparion();
   if(fromUser) _savePref('compline_troparion', v);
 }
+function complineKind(){
+  if(complineInsert.indexOf('canon-')===0) return 'canon';
+  if(complineInsert.indexOf('akathist-')===0) return 'akathist';
+  return 'none';
+}
 function applyComplineInsert(){
-  var sel=document.getElementById('compline-insert-select');
-  if(sel) sel.value=complineInsert;
+  var kind=complineKind();
+  ['none','canon','akathist'].forEach(function(k){
+    var b=document.getElementById('compline-kind-'+k);
+    if(b) b.classList.toggle('active', k===kind);
+  });
+  var crow=document.getElementById('compline-canon-row');
+  var arow=document.getElementById('compline-akathist-row');
+  if(crow) crow.style.display = kind==='canon' ? '' : 'none';
+  if(arow) arow.style.display = kind==='akathist' ? '' : 'none';
+  var csel=document.getElementById('compline-canon-select');
+  var asel=document.getElementById('compline-akathist-select');
+  if(csel){
+    if(!complineCanonFile) complineCanonFile=csel.options[0].value;
+    if(kind==='canon') complineCanonFile=complineInsert;
+    csel.value=complineCanonFile;
+  }
+  if(asel){
+    if(!complineAkathistFile) complineAkathistFile=asel.options[0].value;
+    if(kind==='akathist') complineAkathistFile=complineInsert;
+    asel.value=complineAkathistFile;
+  }
   var row=document.getElementById('compline-mode-row');
-  if(row) row.style.display = complineInsert!=='none' ? '' : 'none';
+  if(row) row.style.display = kind!=='none' ? '' : 'none';
   var slot=document.getElementById('compline-insert');
   if(!slot) return;
   // Embedded mode: the app spliced the text in natively and marked
   // the slot; never touch its content (option changes reload).
   if(slot.getAttribute('data-embedded')==='1') return;
-  if(complineInsert==='none'){ slot.innerHTML=''; return; }
+  if(kind==='none'){ slot.innerHTML=''; return; }
   if(complineMode==='embedded') return; // the app splices the text in natively
   var title=complineInsert;
+  var sel = kind==='canon' ? csel : asel;
   if(sel){ var o=sel.querySelector('option[value="'+complineInsert+'"]'); if(o) title=o.textContent; }
   slot.innerHTML="<p class='rubric'>Read: <a class='insert-link' href='#' onclick=\"openComplineInsert(); return false;\">"+title+" ▸</a></p>";
 }
 function openComplineInsert(){
   try{ if(window.ServiceApp && ServiceApp.openComplineInsert) ServiceApp.openComplineInsert(complineInsert); }catch(e){}
 }
+function _complineInsertChanged(){
+  _savePref('compline_insert', complineInsert);
+  // The app recomposes the page (embedded splice / slot state) and
+  // reloads it, restoring the scroll position.
+  try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
+}
 function setComplineInsert(v, fromUser){
   complineInsert=v; applyComplineInsert();
-  if(fromUser){
-    _savePref('compline_insert', v);
-    // The app recomposes the page (embedded splice / slot state) and
-    // reloads it, restoring the scroll position.
-    try{ if(window.ServiceApp && ServiceApp.complineReload) ServiceApp.complineReload(); }catch(e){}
+  if(fromUser) _complineInsertChanged();
+}
+function setComplineKind(kind, fromUser){
+  if(kind==='canon'){
+    var csel=document.getElementById('compline-canon-select');
+    complineInsert = complineCanonFile || (csel ? csel.options[0].value : 'none');
+  } else if(kind==='akathist'){
+    var asel=document.getElementById('compline-akathist-select');
+    complineInsert = complineAkathistFile || (asel ? asel.options[0].value : 'none');
+  } else {
+    complineInsert='none';
   }
+  applyComplineInsert();
+  if(fromUser) _complineInsertChanged();
+}
+function setComplineCanon(v, fromUser){
+  complineCanonFile=v; complineInsert=v; applyComplineInsert();
+  if(fromUser){ _savePref('compline_canon', v); _complineInsertChanged(); }
+}
+function setComplineAkathist(v, fromUser){
+  complineAkathistFile=v; complineInsert=v; applyComplineInsert();
+  if(fromUser){ _savePref('compline_akathist', v); _complineInsertChanged(); }
+}
+// App-applied on load (saved per-kind picks); never reloads.
+function setComplineCanonFile(v){
+  complineCanonFile=v;
+  var csel=document.getElementById('compline-canon-select');
+  if(csel) csel.value=v;
+}
+function setComplineAkathistFile(v){
+  complineAkathistFile=v;
+  var asel=document.getElementById('compline-akathist-select');
+  if(asel) asel.value=v;
 }
 function setComplineMode(v, fromUser){
   complineMode=v;
